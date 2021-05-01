@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" 
+        integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Human Resource Portal</title>
 </head>
 <body>
-    <!--Navbar -->
+    <!--Upper Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark black">
         <a class="navbar-brand" href="#">Human Resource Portal (HRP)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
@@ -20,46 +22,65 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <a href="#" class="about-link hvr-pulse-grow ml-auto white-text">About HRP</a>
+            <div class = "vertical ml-auto"></div>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                        <span class="sr-only">(current)</span>
+                        <i class="fab fa-facebook-square sm-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fab fa-instagram"></i> Instagram
+                        <i class="fab fa-instagram sm-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                    <i class="fab fa-twitter-square sm-icon"></i>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <!--/.Navbar -->
+
+    <!-- Lower Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark grey">
         <a class="navbar-brand" href="#">
-            <img src="https://st4.depositphotos.com/5040187/19756/v/600/depositphotos_197569290-stock-illustration-logo-swoosh-global-red-letter.jpg" height="30" class="d-inline-block align-top"
-                alt="mdb logo"> HR Portal
+            <img src="https://i.pinimg.com/originals/ff/a3/52/ffa35228f5be0900d63c341189a0a6f3.png" 
+                height="30" class="d-inline-block align-top hr-logo" alt="mdb logo"> HR Portal
         </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('home') }}">
+                        <i class="fas fa-home"></i>Home <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Website</a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-globe"></i>Website</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="{{ url_for('register') }}">
+                        <i class="fas fa-user-plus"></i>Register
+                    </a>
                 </li>
-                <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Sign in
+                <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3 text-capitalize" type="submit">
+                    Sign in
                 </button>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Duties</a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>My Duties</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Employee
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i>Employee
                     </a>
                     <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item" href="#">New Employee</a>
@@ -70,7 +91,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i> Profile </a>
+                        <i class="fas fa-user"></i> Profile 
+                    </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-info"
                         aria-labelledby="navbarDropdownMenuLink-4">
                         <a class="dropdown-item" href="#">My account</a>
@@ -81,9 +103,9 @@
         </div>
     </nav>
 
-
     {% block content %}
     {% endblock %}
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
