@@ -6,6 +6,7 @@
 
 .sm-icon {
     font-size: 30px;
+    color: black;
 }
 
 /* lower navbar */
@@ -51,11 +52,11 @@
 .card {
     width: 35%;
     margin-top: 5px;
-    margin-bottom: 7px;
-    height: 390px;
+    margin-bottom: 20px;
+    height: 420px;
 }
 
-.card-header, {
-    margin-top: 2px;
+.card-header {
+    margin-top: 0px;
 }
 
