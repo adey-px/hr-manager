@@ -44,7 +44,7 @@
                     Sign in
                 </button>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="">
                         <i class="fas fa-briefcase"></i>My Duties</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -65,7 +65,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-info"
                         aria-labelledby="navbarDropdownMenuLink-4">
-                        <a class="dropdown-item" href="#">My account</a>
+                        <a class="dropdown-item" href="">Dashboard</a>
                         <a class="dropdown-item" href="#">Log out</a>
                     </div>
                 </li>
@@ -73,8 +73,23 @@
         </div>
     </nav>
 
-    {% block content %}
-    {% endblock %}
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="light-blue lighten-4 text-center">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+    
+        {% block content %}
+        {% endblock %}
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
         crossorigin="anonymous"></script>

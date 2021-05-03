@@ -1,35 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="h2-responsive text-center font-weight-bolder card-header"> 
+      <div class="h2-responsive text-center font-weight-bolder card-header"> 
         Register 
-    </div>
-    <div class="row">
+      </div>
+      <div class="row">
             <div class="card mx-auto">
                 <div class="card-body"> 
                     <form method="POST" action="{{ url_for('register') }}">
                         <div class="md-form">
                             <i class="fas fa-user-plus prefix text-black-60"></i>
-                            <input type="text" name="fullname" id="fullname" class="form-control validate">
-                            <label for="fullname">Full Name</label>
+                            <input type="text" name="full_name" id="full_name"  minlength="5" maxlength="50" 
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
+                            <label for="full_name">Full Name</label>
                         </div>
                     
                         <div class="md-form">
                             <i class="fas fa-envelope prefix text-black-60"></i>
-                            <input type="text" name="email" id="email" class="form-control validate">
+                            <input type="text" name="email" id="email" class="form-control validate" required>
                             <label for="email">E-mail</label>
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-user-lock prefix text-black-60"></i>
-                            <input type="password" name="password" id="password" class="form-control validate">
+                            <input type="password" name="password" id="password" minilenght="5" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
                             <label for="password">Create password</label>
                         </div>
                         
                         <div class="md-form">
                             <i class="fas fa-user-lock prefix text-black-60"></i>
-                            <input type="password" name="confirmpassword" id="confirmpassword" class="form-control validate">
-                            <label for="confirmpassword">Confirm password</label>
+                            <input type="password" name="confirm_password" id="confirm_password" 
+                            minilenght="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
+                            <label for="confirm_password">Confirm password</label>
                         </div>
 
                         <div class="form-group row text-center">
@@ -42,14 +45,14 @@
                     </form>
                 </div> 
             </div>
-    </div>
-    <div class="row card-bottom">
+      </div>
+      <div class="row card-bottom">
         <div class="col sm12">
             <p class="text-center">
                 Already Registered?
                 <a href="" class="blue-text">Log In</a>
             </p>
         </div>
-    </div>
+      </div>
 
 {% endblock %}
