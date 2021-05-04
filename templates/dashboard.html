@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% for item in employees %}
+        {{ item.department }}<br>
+        {{ item.full_name }}<br>
+        {{ item.email }}<br>
+        {{ item.phone }}<br>
+        {{ item.home_address }}<br>
+        {{ item.gender }}<br>
+        {{ item.employment_date }}<br>
+    {% endfor %}
+
+
+    <div class="card" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="font-weight-bold mb-3">My Dashboard</h5>
+            <p class="mb-0">Your information is diplayed here for your perusal.
+                Kindly contact the HR department in case you have any question or for any update to your info. </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Department: </li>
+            <li class="list-group-item">Full Name:</li>
+            <li class="list-group-item">Email: </li>
+            <li class="list-group-item">Phone: </li>
+            <li class="list-group-item">Home Address: </li>
+        </ul>
+        <div class="card-body">
+            <a href="#!" class="card-link">Card link</a>
+            <a href="#!" class="card-link">Another link</a>
+        </div>
+    </div>
+
+{% endblock %}

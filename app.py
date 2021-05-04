@@ -24,27 +24,43 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        #check if user is already being added to employees in db by admin user
-        existing_employee = mongo.db.employees.find_one({"email": request.form.get(
-            "email").lower()})
+        # check if user has been added to employees by admin user
+        existing_employee = mongo.db.employees.find_one(
+                {"email": request.form.get("email").lower()})
+        # check if user has already registered as an employee
         existing_user = mongo.db.users.find_one({"email": request.form.get(
             "email").lower()})
- 
+        
+        if existing_employee:
+            register = {
+                "full_name": request.form.get("full_name").lower(),
+                "email": request.form.get("email").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password")),
+                "confirm_password": generate_password_hash(
+                    request.form.get("confirm_password"))
+                }
+
+        else:
+            flash("You are not eligible to register. Please contact HR.")
+
         if existing_user:
-            flash("This employee already registered, please login or try again")
+            flash("This employee has already registered. Login or Try again")
+            return redirect(url_for("register"))
+
+        password = generate_password_hash(
+                 request.form.get("password"))
+        confirm_password = generate_password_hash(
+                 request.form.get("confirm_password"))
+                                
+        if password == confirm_password:
+            mongo.db.users.insert_one(register)
+
+        else:
+            flash("Passwords do not match. Please try again.")
             return redirect(url_for("register"))
  
-        register = {
-            "full_name": request.form.get("full_name").lower(),
-            "email": request.form.get("email").lower(),
-            "password": generate_password_hash(
-                 request.form.get("password")),
-            "confirm_password": generate_password_hash(
-                 request.form.get("confirm_password"))
-            }
-        mongo.db.users.insert_one(register)
- 
-        #Put the new user into session cookie
+        # Put the new user into session cookie
         session["user"] = request.form.get("email").lower()
         flash("You have registered successfully")
     return render_template("register.html")
@@ -52,7 +68,14 @@ def register():
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    return render_template("login.html",)
+
+
+@app.route("/get_employee")
+def get_employee():
+    item = list(mongo.db.employees.find())
+    return render_template("dashboard.html", dashboard=item)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
