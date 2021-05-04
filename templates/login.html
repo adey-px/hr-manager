@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" 
+        integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <title>Sign In - HR Portal</title>
+</head>
+<body>
+    <div class="h2-responsive text-center font-weight-bolder card-header"> 
+        <i class="fas fa-key login-key"></i> Sign In to Human Resource Portal
+      <div class="row login-card">
+            <div class="card mx-auto">
+                <div class="card-body"> 
+                    <form method="POST" action="{{ url_for('register') }}">
+                    
+                        <div class="md-form md-bg input-with-pre-icon">
+                            <i class="fas fa-envelope input-prefix text-black-60" ></i>
+                            <input type="text" name="email" id="email" class="form-control validate" required>
+                            <label for="email">E-mail</label>
+                        </div>
+
+                        <div class="md-form md-bg input-with-pre-icon">
+                            <i class="fas fa-user-lock input-prefix text-black-60"></i>
+                            <input type="password" name="password" id="password" minilenght="5" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
+                            <label for="password">Password</label>
+                        </div>
+                
+                        <div class="form-group row text-center">
+                            <div class="col">
+                                <button type="submit" class="btn btn-block black white-text text-center text-capitalize">
+                                    Register <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col text-left">
+                            <div class="col">
+                                    <i class="fas fa-question-circle"></i> Forgot your password? 
+                            </div>
+                        </div>
+                        <div class="col text-right">
+                            <div class="col">
+                                    <i class="fas fa-home"></i> <a href="{{ url_for('home') }}">Go to Home Page</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+      </div>
+      <div class="row card-bottom card-login-bottom">
+        <div class="col sm12">
+            <p class="text-center">
+                New Here?
+                <a href="{{ url_for('register') }}" class="blue-text">Register</a>
+            </p>
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
+
+

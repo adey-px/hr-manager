@@ -60,3 +60,19 @@
     margin-top: 0px;
 }
 
+/* login page */
+.login-card {
+    font-size: 16px;
+    height: 250px;
+    margin-bottom: 150px;
+}
+
+.login-key {
+    font-size: 18px;
+    color: orange;
+}
+
+.card-login-bottom {
+    font-size: 18px;
+    padding-top: 50px;
+}
