@@ -14,12 +14,12 @@
     <title>Sign In - HR Portal</title>
 </head>
 <body>
-    <div class="h2-responsive text-center font-weight-bolder card-header"> 
+    <div class="h2-responsive text-center font-weight-bolder login-page"> 
         <i class="fas fa-key login-key"></i> Sign In to HR Portal
       <div class="row login-card">
             <div class="card mx-auto">
                 <div class="card-body"> 
-                    <form method="POST" action="{{ url_for('register') }}">
+                    <form method="POST" action="{{ url_for('login') }}">
                     
                         <div class="md-form md-bg input-with-pre-icon">
                             <i class="fas fa-envelope input-prefix text-black-60" ></i>
@@ -37,12 +37,16 @@
                         <div class="form-group row text-center">
                             <div class="col">
                                 <button type="submit" class="btn btn-block black white-text text-center text-capitalize">
-                                    Register <i class="fas fa-sign-in-alt"></i>
+                                    Login <i class="fas fa-sign-in-alt"></i>
                                 </button>
                             </div>
                         </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" name="#" id="#">
+                            <label for="#" class="custom-control-label" >Remember me on this device</label>
+                        </div>
                     </form>
-                    <div class="row">
+                    <div class="row inner-links">
                         <div class="col text-left">
                             <div class="col">
                                     <i class="fas fa-question-circle"></i> Forgot your password? 
@@ -56,7 +60,8 @@
                     </div>
                 </div> 
             </div>
-      </div>
+        </div>
+    </div> 
       <div class="row card-bottom card-login-bottom">
         <div class="col sm12">
             <p class="text-center">

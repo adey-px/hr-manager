@@ -1,3 +1,6 @@
+body {
+    background: #E5E4E2;
+}
 /* upper navbar */
 .vertical {
     height: 20px;
@@ -51,16 +54,20 @@
 /* register page */
 .card {
     width: 35%;
-    margin-top: 5px;
+    margin-top: 30px;
     margin-bottom: 20px;
     height: 420px;
 }
 
 .card-header {
-    margin-top: 0px;
+    margin-top: 5px;
 }
 
 /* login page */
+.login-page {
+    margin-top: 130px;
+}
+
 .login-card {
     font-size: 16px;
     height: 250px;
@@ -72,7 +79,28 @@
     color: orange;
 }
 
+.inner-links {
+    padding-top: 80px;
+}
+
 .card-login-bottom {
     font-size: 18px;
-    padding-top: 50px;
+    padding-top: 80px;
 }
+
+/* dashboard page */
+.card-dashboard {
+    width: 50rem;
+    height: 800px;
+    margin-top: 50px;
+}
+
+.employee-icon {
+    font-size: 100px;
+}
+
+.table-item {
+    margin-top: 50px;
+}
+
+/* file upload */

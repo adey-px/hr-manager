@@ -1,34 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for item in employees %}
-        {{ item.department }}<br>
-        {{ item.full_name }}<br>
-        {{ item.email }}<br>
-        {{ item.phone }}<br>
-        {{ item.home_address }}<br>
-        {{ item.gender }}<br>
-        {{ item.employment_date }}<br>
-    {% endfor %}
 
-
-    <div class="card" style="width: 20rem;">
+    <div class="card card-dashboard mx-auto">
         <div class="card-body">
-            <h5 class="font-weight-bold mb-3">My Dashboard</h5>
-            <p class="mb-0">Your information is diplayed here for your perusal.
-                Kindly contact the HR department in case you have any question or for any update to your info. </p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Department: </li>
-            <li class="list-group-item">Full Name:</li>
-            <li class="list-group-item">Email: </li>
-            <li class="list-group-item">Phone: </li>
-            <li class="list-group-item">Home Address: </li>
-        </ul>
-        <div class="card-body">
-            <a href="#!" class="card-link">Card link</a>
-            <a href="#!" class="card-link">Another link</a>
+            <h2 class="font-weight-bolder mb-3 text-center card-header"></i>Employee Dashboard</h2>
+            <h1 class="text-center"><i class="far fa-user fa-border cyan-text employee-icon"></i></h1>
+            <div class="text-center">
+                <p class="mb-0">Your information is diplayed here for your perusal.<br>
+                        Contact the <a href="#">HR department</a> in case you have any question or for any update.
+                </p>
+            </div>
+            <div class="row">
+                <table class="table table-bordered table-item">
+                  {% for item in employees %}
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col"><strong>Department:</strong> </th>
+                        <th scope="col">{{ item.department }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"></th>
+                        <td><strong>Full Name:</strong></td>
+                        <td>{{ item.full_name }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td><strong>Email: </strong></td>
+                        <td>{{ item.email }} </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td><strong>Phone:</strong> </td>
+                        <td>{{ item.phone }} </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td><strong>Home Address:</strong> </td>
+                        <td>{{ item.home_address }} </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td><strong>Gender:</strong> </td>
+                        <td>{{ item.gender }} </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td><strong>Employment Date:</strong>  </td>
+                        <td> {{ item.employment_date }} </td>
+                      </tr>
+                    </tbody>
+                    {% endfor %}
+                  </table>
+            </div>
         </div>
     </div>
-
+    
 {% endblock %}

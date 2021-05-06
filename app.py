@@ -1,5 +1,6 @@
 import os
-from flask import Flask, flash, render_template, redirect, request, session, url_for
+from flask import (
+    Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -42,7 +43,7 @@ def register():
                 }
 
         else:
-            flash("You are not eligible to register. Please contact HR.")
+            flash("You are not eligible to register. Please contact Admin.")
 
         if existing_user:
             flash("This employee has already registered. Login or Try again")
@@ -73,9 +74,10 @@ def login():
 
 @app.route("/get_employee")
 def get_employee():
-    item = list(mongo.db.employees.find())
-    return render_template("dashboard.html", dashboard=item)
+    item = mongo.db.employees.find()
+    return render_template("dashboard.html", employees=item)
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
+    app.run(host=os.environ.get("IP"), 
+            port=int(os.environ.get("PORT")), debug=True)
