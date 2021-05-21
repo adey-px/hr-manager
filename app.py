@@ -67,13 +67,36 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html",)
+    if request.method == "POST":
+        # Check if the email input exists in users collection in mongo db
+        # Create a variable named existing_user to store your result
+        existing_user = mongo.db.users.find_one({"email": request.form.get("email").lower()})
+
+        # If the user email input exists in db
+        # means that the user has registered
+        if existing_user:
+            # Check the user input password if it matches hashed password in mongo db
+            # Then if both credentials are correct, put the user in a session with his email
+            if check_password_hash(existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("email").lower()
+                flash("welcome, {}".format(request.form.get("email")))
+                return redirect(url_for("dashboard", email=session["user"]))
+            else:
+                # If incorrect or invalid password, redirect user back login page to retry
+                flash("Incorrect username and/or password")
+                return redirect(url_for("login"))
+
+        else:
+            # If user input email does not exist in the db, redirect back to login page to retry
+            flash("Incorrect username and/or password")
+            return redirect(url_for("login"))
+    return render_template("login.html")
 
 
-@app.route("/get_employee")
-def get_employee():
+@app.route("/dashboard")
+def dashboard():
     item = mongo.db.employees.find()
     return render_template("dashboard.html", employees=item)
 
