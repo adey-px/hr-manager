@@ -101,6 +101,13 @@ def dashboard():
     return render_template("dashboard.html", employees=item)
 
 
+@app.route("/logout")
+def logout():
+    # To log out user, remove or clear active session cookies
+    session.clear()
+    return redirect(url_for("login"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
             port=int(os.environ.get("PORT")), debug=True)
