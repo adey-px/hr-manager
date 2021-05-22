@@ -18,59 +18,64 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark black">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
             <img src="https://i.pinimg.com/originals/ff/a3/52/ffa35228f5be0900d63c341189a0a6f3.png" 
                 height="30" class="d-inline-block align-top hr-logo" alt="mdb logo"> HR Portal
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item nav">
                     <a class="nav-link" href="{{ url_for('home') }}">
-                        <i class="fas fa-home"></i>Home <span class="sr-only">(current)</span>
+                        Home 
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-globe"></i>Website</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('register') }}">
-                        <i class="fas fa-user-plus"></i>Register
-                    </a>
-                </li>
-                <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3 text-capitalize" type="submit">
-                    <a href="{{ url_for('login') }}" class="#">Sign in</a>
-                </button>
-                <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <i class="fas fa-briefcase"></i>My Duties</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user-circle"></i>Employee
-                    </a>
-                    <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="#">New Employee</a>
-                        <a class="dropdown-item" href="#">Employee Directory</a>
-                        <a class="dropdown-item" href="#">Manage Employee</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i> Profile 
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-info"
-                        aria-labelledby="navbarDropdownMenuLink-4">
-                        <a class="dropdown-item" href="{{ url_for('dashboard') }}">Dashboard</a>
-                        <a class="dropdown-item" href="{{ url_for('logout') }}">Log out</a>
-                    </div>
-                </li>
+                {% if session.user %}
+                    <li class="nav-item nav">
+                        <a class="nav-link" href="">
+                            My Duties
+                        </a>
+                    </li>
+                        {% if session.user|lower == "admin@hrportal.com"|lower %}
+                            <li class="nav-item dropdown nav">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                        Employee
+                                </a>
+                                <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                                    <a class="dropdown-item" href="#">New Employee</a>
+                                    <a class="dropdown-item" href="#">Employee Directory</a>
+                                    <a class="dropdown-item" href="#">Manage Employee</a>
+                                </div>
+                            </li>
+                        {% endif %}
+                    <li class="nav-item dropdown nav">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                                Profile 
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info"
+                            aria-labelledby="navbarDropdownMenuLink-4">
+                            <a class="dropdown-item" href="{{ url_for('dashboard') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ url_for('logout') }}">Log out</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item nav">
+                        <a class="nav-link" href="#">
+                            Website
+                        </a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="nav-link" href="{{ url_for('register') }}">
+                            Register
+                        </a>
+                    </li>
+                    <button type="button" class="btn btn-info btn-rounded btn-login">
+                        <a class="btn-login-label" href="{{ url_for('login') }}">
+                            Sign in
+                        </a>
+                    </button>
+                {% endif %}
             </ul>
         </div>
     </nav>

@@ -12,6 +12,24 @@ body {
     color: black;
 }
 
+.btn-login {
+    border-radius: 10%;
+    height: 8px;
+    width: 10px;
+}
+
+.btn-login-label {
+    font-size: 15px;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
 /* lower navbar */
 .hr-logo {
     border-radius: 20px;

@@ -93,7 +93,7 @@ def login():
             flash("Incorrect username and/or password")
             return redirect(url_for("login"))
     return render_template("login.html")
-
+  
 
 @app.route("/dashboard")
 def dashboard():
