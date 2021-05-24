@@ -22,13 +22,13 @@
                     <form method="POST" action="{{ url_for('login') }}">
                     
                         <div class="md-form md-bg input-with-pre-icon">
-                            <i class="fas fa-envelope input-prefix text-black-60" ></i>
+                            <i class="fas fa-envelope input-prefix black-text" ></i>
                             <input type="text" name="email" id="email" class="form-control validate" required>
                             <label for="email">E-mail</label>
                         </div>
 
                         <div class="md-form md-bg input-with-pre-icon">
-                            <i class="fas fa-user-lock input-prefix text-black-60"></i>
+                            <i class="fas fa-user-lock input-prefix black-text"></i>
                             <input type="password" name="password" id="password" minilenght="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
                             <label for="password">Password</label>
@@ -36,7 +36,7 @@
                 
                         <div class="form-group row text-center">
                             <div class="col">
-                                <button type="submit" class="btn btn-block black white-text text-center text-capitalize">
+                                <button type="submit" class="btn btn-block default-color white-text text-center login-label text-capitalize">
                                     Login <i class="fas fa-sign-in-alt"></i>
                                 </button>
                             </div>
@@ -49,12 +49,12 @@
                     <div class="row inner-links">
                         <div class="col text-left">
                             <div class="col">
-                                    <i class="fas fa-question-circle"></i> Forgot your password? 
+                                    <i class="fas fa-question-circle"></i><a href="#"><span style="color: black;">Forgot your password?</span> </a>
                             </div>
                         </div>
                         <div class="col text-right">
                             <div class="col">
-                                    <i class="fas fa-home"></i> <a href="{{ url_for('home') }}">Go to Home Page</a> 
+                                    <i class="fas fa-home"></i><a href="{{ url_for('home') }}"><span style="color: black;">Go to Home Page</span></a> 
                             </div>
                         </div>
                     </div>

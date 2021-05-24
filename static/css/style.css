@@ -1,38 +1,32 @@
 body {
-    background: #E5E4E2;
-}
-/* upper navbar */
-.vertical {
-    height: 20px;
-    border-left: 1.5px solid white;
+    background: white;
 }
 
-.sm-icon {
-    font-size: 30px;
-    color: black;
+/* Main navbar */
+.button {
+    background-color: blueviolet;
+    border-radius: 10px;
 }
 
-.btn-login {
-    border-radius: 10%;
-    height: 8px;
-    width: 10px;
+/* Home page navbar */
+.icon {
+    font-size: 25px;
 }
 
-.btn-login-label {
-    font-size: 15px;
-    color: white;
-    text-transform: capitalize;
-    text-align: center;
+.default-color {
+   background-color: #2C3539;
 }
 
-.nav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-/* lower navbar */
-.hr-logo {
-    border-radius: 20px;
+.nav-item:not(.button) a:hover { 
+    background: rgb(187, 187, 212);
+}
+
+​.hm-nav-right {
+    margin-right: 40px;
+}
+
+.hm-nav-left {
+    margin-left: 40px;
 }
 
 /* home page right and left columns */
@@ -74,7 +68,7 @@ body {
     width: 35%;
     margin-top: 30px;
     margin-bottom: 20px;
-    height: 420px;
+    height: 430px;
 }
 
 .card-header {
@@ -95,6 +89,14 @@ body {
 .login-key {
     font-size: 18px;
     color: orange;
+}
+
+.input-prefix {
+    font-size: 20px;
+}
+
+.login-label {
+    font-size: 15px;
 }
 
 .inner-links {
@@ -121,4 +123,5 @@ body {
     margin-top: 50px;
 }
 
-/* file upload */
+
+/*       */

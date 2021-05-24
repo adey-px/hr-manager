@@ -9,26 +9,26 @@
                 <div class="card-body"> 
                     <form method="POST" action="{{ url_for('register') }}">
                         <div class="md-form">
-                            <i class="fas fa-user-plus prefix text-black-60"></i>
+                            <i class="fas fa-user-plus prefix grey-text"></i>
                             <input type="text" name="full_name" id="full_name" class="form-control validate" required>
                             <label for="full_name">Full Name</label>
                         </div>
                     
                         <div class="md-form">
-                            <i class="fas fa-envelope prefix text-black-60"></i>
+                            <i class="fas fa-envelope prefix grey-text"></i>
                             <input type="text" name="email" id="email" class="form-control validate" required>
                             <label for="email">E-mail</label>
                         </div>
 
                         <div class="md-form">
-                            <i class="fas fa-user-lock prefix text-black-60"></i>
+                            <i class="fas fa-user-lock prefix grey-text"></i>
                             <input type="password" name="password" id="password" minilenght="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
                             <label for="password">Create password</label>
                         </div>
                         
                         <div class="md-form">
-                            <i class="fas fa-user-lock prefix text-black-60"></i>
+                            <i class="fas fa-user-lock prefix grey-text"></i>
                             <input type="password" name="confirm_password" id="confirm_password" 
                             minilenght="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
                             <label for="confirm_password">Confirm password</label>
@@ -36,7 +36,7 @@
 
                         <div class="form-group row text-center">
                             <div class="col">
-                                <button type="submit" class="btn btn-block black white-text text-center text-capitalize">
+                                <button type="submit" class="btn btn-block default-color white-text text-center text-capitalize login-label">
                                     Register <i class="fas fa-sign-in-alt"></i>
                                 </button>
                             </div>
