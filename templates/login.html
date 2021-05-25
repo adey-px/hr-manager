@@ -14,62 +14,77 @@
     <title>Sign In - HR Portal</title>
 </head>
 <body>
-    <div class="h2-responsive text-center font-weight-bolder login-page"> 
-        <i class="fas fa-key login-key"></i> Sign in to HR Portal
-      <div class="row login-card">
-            <div class="card mx-auto">
-                <div class="card-body"> 
-                    <form method="POST" action="{{ url_for('login') }}">
-                    
-                        <div class="md-form md-bg input-with-pre-icon">
-                            <i class="fas fa-envelope input-prefix black-text" ></i>
-                            <input type="text" name="email" id="email" class="form-control validate" required>
-                            <label for="email">E-mail</label>
-                        </div>
+   
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="red-text lighten-4 mx-auto">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+      </section>
 
-                        <div class="md-form md-bg input-with-pre-icon">
-                            <i class="fas fa-user-lock input-prefix black-text"></i>
-                            <input type="password" name="password" id="password" minilenght="5" 
+    <div class="h2-responsive text-center font-weight-bolder login-page"> 
+        <i class="fas fa-key login-key"></i>Sign In to HR Portal
+    </div>
+    <div class="row login-card">
+        <div class="card mx-auto">
+            <div class="card-body"> 
+                <form method="POST" action="{{ url_for('login') }}">
+                    
+                    <div class="md-form md-bg input-with-pre-icon">
+                        <i class="fas fa-envelope input-prefix black-text" ></i>
+                        <input type="text" name="email" id="email" class="form-control validate" required>
+                        <label for="email">E-mail</label>
+                    </div>
+
+                    <div class="md-form md-bg input-with-pre-icon">
+                        <i class="fas fa-user-lock input-prefix black-text"></i>
+                        <input type="password" name="password" id="password" minilenght="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
-                            <label for="password">Password</label>
-                        </div>
+                        <label for="password">Password</label>
+                    </div>
                 
-                        <div class="form-group row text-center">
-                            <div class="col">
-                                <button type="submit" class="btn btn-block default-color white-text text-center login-label text-capitalize">
-                                    Login <i class="fas fa-sign-in-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" name="#" id="#">
-                            <label for="#" class="custom-control-label" >Remember me on this device</label>
-                        </div>
-                    </form>
-                    <div class="row inner-links">
-                        <div class="col text-left">
-                            <div class="col">
-                                    <i class="fas fa-question-circle"></i><a href="#"><span style="color: black;">Forgot your password?</span> </a>
-                            </div>
-                        </div>
-                        <div class="col text-right">
-                            <div class="col">
-                                    <i class="fas fa-home"></i><a href="{{ url_for('home') }}"><span style="color: black;">Go to Home Page</span></a> 
-                            </div>
+                    <div class="form-group row text-center">
+                        <div class="col">
+                            <button type="submit" class="btn btn-block default-color white-text text-center login-label text-capitalize">
+                                Login <i class="fas fa-sign-in-alt"></i>
+                            </button>
                         </div>
                     </div>
-                </div> 
-            </div>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" name="#" id="#">
+                        <label for="#" class="custom-control-label" >Remember me on this device</label>
+                    </div>
+                </form>
+                <div class="row inner-links">
+                    <div class="col text-left">
+                        <div class="col">
+                                <i class="fas fa-question-circle"></i><a href="#"><span style="color: black;">Forgot your password?</span> </a>
+                        </div>
+                    </div>
+                    <div class="col text-right">
+                        <div class="col">
+                                <i class="fas fa-home"></i><a href="{{ url_for('home') }}"><span style="color: black;">Go to Home Page</span></a> 
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
-    </div> 
-      <div class="row card-bottom card-login-bottom">
+    </div>
+    
+    <div class="row card-bottom card-login-bottom">
         <div class="col sm12">
             <p class="text-center">
                 New Employee?
                 <a href="{{ url_for('register') }}" class="blue-text">Register</a>
             </p>
         </div>
-      </div>
+    </div>
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
         crossorigin="anonymous"></script>

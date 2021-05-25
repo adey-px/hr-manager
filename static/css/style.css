@@ -82,8 +82,8 @@ body {
 
 .login-card {
     font-size: 16px;
-    height: 250px;
-    margin-bottom: 150px;
+    height: 400px;
+    margin-bottom: 60px;
 }
 
 .login-key {
@@ -100,12 +100,12 @@ body {
 }
 
 .inner-links {
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .card-login-bottom {
     font-size: 18px;
-    padding-top: 80px;
+    padding-top: 20px;
 }
 
 /* dashboard page */
@@ -124,4 +124,7 @@ body {
 }
 
 
-/*       */
+/* Add_employee form */
+.add-form {
+    width: 40%;
+}
