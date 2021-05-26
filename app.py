@@ -90,7 +90,7 @@ def login():
                 return redirect(url_for("dashboard", email=session["user"]))
             else:
                 # If incorrect or invalid password, redirect user back login page to retry
-                flash("Incorrect username and/or password")
+                flash("Incorrect username and/or password. Try again!")
                 return redirect(url_for("login"))
 
         else:

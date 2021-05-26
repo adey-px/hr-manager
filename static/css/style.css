@@ -2,13 +2,13 @@ body {
     background: white;
 }
 
-/* Main navbar */
+/* Main navbar for all pages*/
 .button {
     background-color: blueviolet;
     border-radius: 10px;
 }
 
-/* Home page navbar */
+/* Home page top navbar */
 .icon {
     font-size: 25px;
 }
@@ -29,7 +29,7 @@ body {
     margin-left: 40px;
 }
 
-/* home page right and left columns */
+/* Home page employee image and self service */
 .btn-block {
     width: 100%;
 }
@@ -63,7 +63,17 @@ body {
     padding-right: 30px;
 }
 
-/* register page */
+.app-store {
+    width: 150px;
+    height: 40px;
+}
+
+/* Home page mobile download links */
+.mobile-apps {
+    margin-top: 30px;
+}
+
+/* Register page */
 .card {
     width: 35%;
     margin-top: 30px;
@@ -75,7 +85,7 @@ body {
     margin-top: 5px;
 }
 
-/* login page */
+/* Login page */
 .login-page {
     margin-top: 130px;
 }
@@ -108,7 +118,7 @@ body {
     padding-top: 20px;
 }
 
-/* dashboard page */
+/* Dashboard page */
 .card-dashboard {
     width: 50rem;
     height: 800px;

@@ -1,5 +1,5 @@
-<!-- Home page navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark black">
+  <!-- Home page top navbar begins -->
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark black">
     <a class="navbar-brand hm-nav-right" href="#">Human Resource Portal</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav ml-auto nav-flex-icons hm-nav-left">
@@ -14,51 +14,71 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fab fa-youtube-square icon"></i>
-            </a>
-          </li>
+          <a class="nav-link waves-effect waves-light">
+            <i class="fab fa-youtube-square icon"></i>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
+  <!-- Home page top navbar ends -->
+
 {% extends "base.html" %}
 {% block content %}
-    <div class="container-fluid">
-        <div class="row top">
-            <div class="col-md-8 left-column-home">
-                <div class="view overlay">
-                    <img src="https://www.bizlibrary.com/wp-content/uploads/2019/05/30141657/employeeretention.png" 
-                        class="img-fluid" alt="employees_image">
-                    <div class="mask flex-center waves-effect rgba-red-light">
-                        <p class="white-text">Dedicated & Happy Employees</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 right-column-home">
-                <div class="text-center right-home-title">
-                    <span>Self Service Center</span>
-                </div>
-                    <button type="button"
-                        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-                        <i class="fas fa-graduation-cap btn-home-icon"></i>Career Opportunities</button>
 
-                    <button type="button"
-                        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-                        <i class="fab fa-adversal btn-home-icon"></i>External Advertisement</button>
-
-                    <button type="button"
-                        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-                        <i class="fas fa-envelope-open-text btn-home-icon"></i>Submit an Application</button>
-
-                    <button type="button"
-                        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-                        <i class="fas fa-user-check btn-home-icon"></i>Check Application Status</button>
-
-                    <button type="button"
-                        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-                        <i class="fas fa-question-circle btn-home-icon"></i>Help Desk</button>
-            </div>
+  <!-- Employee image and self service starts -->
+  <div class="container-fluid">
+    <div class="row top">
+      <div class="col-md-8 left-column-home">
+        <div class="view overlay">
+          <img src="https://www.bizlibrary.com/wp-content/uploads/2019/05/30141657/employeeretention.png" 
+              class="img-fluid" alt="employees_image">
+          <div class="mask flex-center waves-effect">
+                <p class="blue-text">Dedicated & Happy Employees</p>
+          </div>
         </div>
+      </div>
+      <div class="col-md-4 right-column-home">
+      <div class="text-center right-home-title">
+        <span>Self Service Center</span>
+      </div>
+      <button type="button"
+        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
+        <i class="fas fa-graduation-cap btn-home-icon"></i>Career Opportunities</button>
+
+      <button type="button"
+        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
+        <i class="fab fa-adversal btn-home-icon"></i>External Advertisement</button>
+
+      <button type="button"
+        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
+        <i class="fas fa-envelope-open-text btn-home-icon"></i>Submit an Application</button>
+
+      <button type="button"
+        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
+        <i class="fas fa-user-check btn-home-icon"></i>Check Application Status</button>
+
+      <button type="button"
+        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
+        <i class="fas fa-question-circle btn-home-icon"></i>Help Desk</button>
+      </div>
     </div>
+  </div>
+  <!-- Employee image and self service starts -->
+    
+  <!-- Mobile app download links -->
+  <section class="mobile-apps">
+    <div class="row">
+      <div class="mx-auto d-flex align-items-center">
+        <h6 style="padding-right: 15px;"><strong>Download our Mobile App Now</strong></h6>
+        <span style="padding-right: 8px;"><a href="https://play.google.com/store" target="_blank">
+          <img src="https://miro.medium.com/max/4000/1*OIIv4FEjJQMqh-zEPhtlYA.png" class="app-store" alt="google-play"></a></span>
+
+        <span style="padding-right: 8px;"><a href="https://www.apple.com/app-store/" target="_blank">
+          <img src="https://www.smoobu.com/wp-content/uploads/2018/11/download-on-appstore.png" class="app-store" alt="apple-store"></a></span>
+      </div>
+    </div>
+  </section>
+  <!-- Mobile app download links end -->
 
 {% endblock %}
