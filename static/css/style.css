@@ -64,13 +64,14 @@ body {
 }
 
 .app-store {
-    width: 150px;
-    height: 40px;
+    width: 130px;
+    height: 35px;
 }
 
 /* Home page mobile download links */
 .mobile-apps {
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* Register page */
