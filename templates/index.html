@@ -34,7 +34,7 @@
           <img src="https://www.bizlibrary.com/wp-content/uploads/2019/05/30141657/employeeretention.png" 
               class="img-fluid" alt="employees_image">
           <div class="mask flex-center waves-effect">
-                <p class="blue-text">Dedicated & Happy Employees</p>
+                <p><h4 class="blue-text" style="background-color: rgb(232, 247, 103); border-radius: 10px;">Dedicated & Happy Employees</h4></p>
           </div>
         </div>
       </div>
@@ -67,20 +67,22 @@
   <!-- Employee image and self service starts -->
     
   <!-- Mobile app download links -->
-  <section class="mobile-apps">
+  <div class="container mobile-apps">
     <div class="row">
-      <div class="mx-auto d-flex align-items-center">
-        <h6 style="padding-right: 15px;"><strong>Download our Mobile App Now</strong></h6>
+      <div class="col-sm">
+        <h6 class="text-right"><strong>Download our Mobile App Now</strong></h6>
+      </div>
+      <div class="col-sm">
         <span style="padding-right: 8px;"><a href="https://play.google.com/store" target="_blank">
           <img src="https://miro.medium.com/max/4000/1*OIIv4FEjJQMqh-zEPhtlYA.png" class="app-store" alt="google-play"></a></span>
-
         <span style="padding-right: 8px;"><a href="https://www.apple.com/app-store/" target="_blank">
           <img src="https://www.smoobu.com/wp-content/uploads/2018/11/download-on-appstore.png" class="app-store" alt="apple-store"></a></span>
       </div>
     </div>
-  </section>
+  </div>
   <!-- Mobile app download links end -->
 
+  <!-- Solution section for employees -->
   <div class="container">
     <div class="row">
       <div class="col-sm">
@@ -96,7 +98,7 @@
           <p class="card-text" align="justify" >Get to your dashboard, view your assigned duties
             and do all other internal operations and designated activities.
           </p>
-          <a class="btn btn-unique" style="width: 100%;">Click here</a>
+          <a href="{{ url_for('login') }}" class="btn btn-unique" style="width: 100%;">Log In</a>
         </div>
       </div>
 
@@ -126,7 +128,7 @@
         </a>
       </div>
       <div class="card-body card-body-cascade">
-        <h4 class="card-title text-center">Reset your password</h4>
+        <h4 class="card-title text-center">To reset your password</h4>
         <p class="card-text" align="justify" >Get to your dashboard, view your assigned duties
           and do all other internal operations and activities.
         </p>
@@ -135,5 +137,6 @@
       </div>
     </div>
   </div>
+  <!-- Solution section for employees ends -->
 
 {% endblock %}
