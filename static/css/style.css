@@ -24,6 +24,7 @@ body {
 
 .nav-item:not(.button) a:hover { 
     background: rgb(187, 187, 212);
+    border-radius: 10px;
 }
 
 ​.hm-nav-right {
@@ -80,7 +81,8 @@ body {
 }
 
 /* footer */
-.list-styled a:hover {
+.list-styled a:hover,
+.footer-copyright a:hover {
     text-decoration: underline;
 }
 
