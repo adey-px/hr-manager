@@ -18,6 +18,11 @@
             <i class="fab fa-youtube-square icon"></i>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light">
+            <i class="fab fa-instagram-square icon"></i>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -34,7 +39,7 @@
           <img src="https://www.bizlibrary.com/wp-content/uploads/2019/05/30141657/employeeretention.png" 
               class="img-fluid" alt="employees_image">
           <div class="mask flex-center waves-effect">
-                <p><h4 class="blue-text" style="background-color: rgb(232, 247, 103); border-radius: 10px;">Dedicated & Happy Employees</h4></p>
+                <p><h6 class="blue-text" style="background-color: rgb(232, 247, 103); border-radius: 6px;">Dedicated & Happy Employees</h6></p>
           </div>
         </div>
       </div>
@@ -138,5 +143,91 @@
     </div>
   </div>
   <!-- Solution section for employees ends -->
+
+  <footer class="page-footer font-small stylish-color-dark pt-4">
+    <div class="container text-center text-md-left">
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About HRP</h5>
+          <p>The Human Resource Portal (HRP) is built with latest 
+            technologies and offers lots of benefits to HR managers and company's executives. 
+            It automates all core processes in daily operations of employees.
+          </p>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <div class="col-md-4 mx-auto">
+
+          <h5 class="font-weight-bold text-capitalize mt-3 mb-4">Features of HRP</h5>
+
+          <ul class="list-styled">
+            <li>Instant Online Access</li>
+            <li>Robust, Secure & Flexible</li>
+            <li>Saves Time & Resources</li>
+            <li>One Platform; Multiple Users</li>
+          </ul>
+        </div>
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <div class="col-md-2 mx-auto">
+          <h5 class="font-weight-bold text-capitalize mt-3 mb-4">Quick Links</h5>
+          <ul class="list-styled">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Sign In</a></li>
+            <li><a href="#!">Help Desk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Need HRP to manage your employees?</h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="#" class="btn btn-danger btn-rounded" style="border-radius: 25px;">Contact Us</a>
+      </li>
+    </ul>
+
+    <hr>
+    <h5 class="mb-1 text-center">Connect with us</h5>
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fab fa-facebook icon"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter icon"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin icon"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-youtube icon"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-instagram icon"></i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="#">CI - Milestone Project 3</a>
+    </div>
+  </footer>
 
 {% endblock %}

@@ -8,6 +8,11 @@ body {
     border-radius: 10px;
 }
 
+.button a:hover {
+    background-color: orange;
+    border-radius: 10px;
+}
+
 /* Home page top navbar */
 .icon {
     font-size: 25px;
@@ -68,10 +73,19 @@ body {
     height: 35px;
 }
 
-/* Home page mobile download links */
+/* mobile download links */
 .mobile-apps {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+/* footer */
+.list-styled a:hover {
+    text-decoration: underline;
+}
+
+.btn-danger:hover {
+    color: blue;
 }
 
 /* Register page */
