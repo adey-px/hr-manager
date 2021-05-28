@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Sign In - HR Portal</title>
 </head>
-<body>
+<body style="background-color: gray;">
 
-    <div class="h2-responsive text-center font-weight-bolder login-page"> 
-        <i class="fas fa-key login-key"></i>Sign In to HR Portal
+    <div class="h2-responsive text-center font-weight-bolder login-header white-text"> 
+        <i class="fas fa-key login-key"></i><span>Sign In to HR Portal</span> 
     </div>
     <section>
         <!-- flash messages -->
@@ -34,23 +34,24 @@
         <div class="card mx-auto">
             <div class="card-body"> 
                 <form method="POST" action="{{ url_for('login') }}">
-                    
-                    <div class="md-form md-bg input-with-pre-icon">
-                        <i class="fas fa-envelope input-prefix grey-text" ></i>
-                        <input type="text" name="email" id="email" class="form-control validate" placeholder="Email" required>
-                        <label for="email"></label>
-                    </div>
 
-                    <div class="md-form md-bg input-with-pre-icon">
-                        <i class="fas fa-user-lock input-prefix grey-text"></i>
+                    <div class="md-form md-outline">
+                        <i class="fas fa-envelope prefix" style="color: gray;"></i>
+                        <input type="text" name="email" id="email" class="form-control validate" required>
+                        <label for="email">E-mail address</label>
+                      </div>
+                    
+                    <div class="md-form md-outline">
+                        <i class="fas fa-user-lock prefix" style="color: gray"></i>
                         <input type="password" name="password" id="password" minilenght="5" 
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" placeholder="Password" required>
-                        <label for="password"></label>
-                    </div>
-                
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
+                        <label for="password">Password</label>
+                      </div>
+
                     <div class="form-group row text-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-block default-color white-text text-center login-label text-capitalize">
+                            <button type="submit" class="btn btn-block white-text text-center login-label text-capitalize" 
+                                style="background-color: gray;">
                                 Login <i class="fas fa-sign-in-alt"></i>
                             </button>
                         </div>
@@ -63,12 +64,12 @@
                 <div class="row inner-links">
                     <div class="col text-left">
                         <div class="col">
-                                <i class="fas fa-question-circle"></i><a href="#"><span style="color: black;">Forgot your password?</span> </a>
+                            <i class="fas fa-question-circle"></i><a href="#"><span style="color: black;">Forgot your password?</span></a>
                         </div>
                     </div>
                     <div class="col text-right">
                         <div class="col">
-                                <i class="fas fa-home"></i><a href="{{ url_for('home') }}"><span style="color: black;">Go to Home Page</span></a> 
+                            <i class="fas fa-home"></i><a href="{{ url_for('home') }}"><span style="color: black;">Go to Home Page</span></a> 
                         </div>
                     </div>
                 </div>
@@ -78,9 +79,9 @@
     
     <div class="row card-bottom card-login-bottom">
         <div class="col sm12">
-            <p class="text-center">
+            <p class="text-center white-text">
                 New Employee?
-                <a href="{{ url_for('register') }}" class="blue-text">Register</a>
+                <a href="{{ url_for('register') }}" class="yellow-text">Register</a>
             </p>
         </div>
     </div>

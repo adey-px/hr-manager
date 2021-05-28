@@ -18,60 +18,66 @@
     {% endwith %}
   </section>
 
-    <div class="card card-dashboard mx-auto">
-        <div class="card-body">
-            <h1 class="text-center"><i class="far fa-user fa-border cyan-text employee-icon"></i></h1>
-            <div class="text-center">
-                <p class="mb-0">Your information is diplayed here for your perusal.<br>
-                        Contact the <a href="#">HR department</a> in case you have any question or for any update.
-                </p>
-            </div>
-            <div class="row">
-                <table class="table table-bordered table-item">
-                  {% for item in employees %}
-                    <thead>
-                      <tr>
-                        <th scope="col"></th>
-                        <th scope="col"><strong>Department:</strong> </th>
-                        <th scope="col">{{ item.department }}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"></th>
-                        <td><strong>Full Name:</strong></td>
-                        <td>{{ item.full_name }}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td><strong>Email: </strong></td>
-                        <td>{{ item.email }} </td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td><strong>Mobile:</strong> </td>
-                        <td>{{ item.mobile }} </td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td><strong>Home Address:</strong> </td>
-                        <td>{{ item.address }} </td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td><strong>Gender:</strong> </td>
-                        <td>{{ item.gender }} </td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td><strong>Employment Date:</strong>  </td>
-                        <td> {{ item.employment_date }} </td>
-                      </tr>
-                    </tbody>
-                    {% endfor %}
-                  </table>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card card-dashboard mx-auto">
+          <div class="card-body">
+              <h1 class="text-center"><i class="far fa-user fa-border cyan-text employee-icon"></i></h1>
+              <div class="text-center">
+                  <p class="mb-0">Your information is diplayed here for your perusal.<br>
+                          Contact the <a href="#">HR department</a> in case you have any question or for any update.
+                  </p>
+              </div>
+              <div class="row">
+                  <table class="table table-bordered table-item">
+                    {% for item in employees %}
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col"><strong>Department:</strong> </th>
+                          <th scope="col">{{ item.department }}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row"></th>
+                          <td><strong>Full Name:</strong></td>
+                          <td>{{ item.full_name }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <td><strong>Email: </strong></td>
+                          <td>{{ item.email }} </td>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <td><strong>Mobile:</strong> </td>
+                          <td>{{ item.mobile }} </td>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <td><strong>Home Address:</strong> </td>
+                          <td>{{ item.address }} </td>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <td><strong>Gender:</strong> </td>
+                          <td>{{ item.gender }} </td>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <td><strong>Employment Date:</strong>  </td>
+                          <td> {{ item.employment_date }} </td>
+                        </tr>
+                      </tbody>
+                      {% endfor %}
+                    </table>
+              </div>
+          </div>
+      </div>
+      </div>
     </div>
+  </div>
     
 {% endblock %}

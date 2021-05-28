@@ -103,8 +103,9 @@ body {
 }
 
 /* Login page */
-.login-page {
+.login-header {
     margin-top: 130px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .login-card {
@@ -116,10 +117,6 @@ body {
 .login-key {
     font-size: 18px;
     color: orange;
-}
-
-.input-prefix {
-    font-size: 20px;
 }
 
 .login-label {
