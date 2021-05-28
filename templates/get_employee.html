@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="h2-responsive text-center font-weight-bolder card-header"> 
+    Employees Directory
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-dark default-color">
+          <span class="navbar-text white-text mx-auto">
+            <strong>Total Number of Current Employees:</strong> 
+          </span>
+        </nav>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <input class="form-control mb-4" id="tableSearch" type="text"
+            placeholder="Serach by typing here">
+        
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Employment</th>
+                <th>Mobile</th>
+                <th>Email Address</th>
+                <th>Gender</th>
+              </tr>
+            </thead>
+            <tbody id="myTable">
+              <tr>
+                <td>Jonathan</td>
+                <td>Smith</td>
+                <td>5th January, 2005</td>
+                <td>1234567789</td>
+                <td>j.smith124@youremail.com</td>
+                <td>Male</td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

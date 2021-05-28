@@ -67,11 +67,6 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/add_employee")
-def add_employee():
-    return render_template("add_employee.html")
-    
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -112,7 +107,20 @@ def logout():
     session.clear()
     return redirect(url_for("login"))
 
+@app.route("/add_employee")
+def add_employee():
+    return render_template("add_employee.html")
 
+
+@app.route("/get_employee")
+def get_employee():
+    return render_template("get_employee.html")
+
+
+@app.route("/manage_employee")
+def manage_employee():
+    return render_template("manage_employee.html")
+    
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
             port=int(os.environ.get("PORT")), debug=True)
