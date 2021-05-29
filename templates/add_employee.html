@@ -5,50 +5,59 @@
     <div class="h2-responsive text-center font-weight-bolder card-header"> 
         New Employee
     </div>
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h5 class="red-text mx-auto message">{{ message }}</h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
-        <div class="row">
-            <div class="col-12">
-                <form class="text-center border border-light p-5 mx-auto add-form" action="#!">
-                    <select class="browser-default custom-select mb-4">
-                        <option value="" disabled>Choose option</option>
-                        <option value="1" selected>Department</option>
-                        <option value="2">Administration</option>
-                        <option value="3">Finance</option>
-                        <option value="4">Technology</option>
-                        <option value="5">Marketing</option>
-                        <option value="6">Sales & Advertising</option>
-                        <option value="7">Supply Chain</option>
-                    </select>
-                
-                    <input type="text" name="full_name" id="full_name" class="form-control mb-4" placeholder="Full Name">
-                    <input type="email" id="email" class="form-control mb-4" placeholder="E-mail">
-                    <input type="text" name="mobile" id="mobile" class="form-control mb-4" placeholder="Mobile">
-                    <input type="text" name="address" id="address" class="form-control mb-4" placeholder="Home Address">
+    <div class="row">
+        <div class="col-12">
+            <form class="text-center border border-light p-5 mx-auto add-form" method="POST" action="{{ url_for('add_employee') }}">
+                <select class="browser-default custom-select mb-4 validate" name="department" id="department" required>
+                    <option value="Department" selected>Department</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales & Advertising">Sales & Advertising</option>
+                    <option value="Supply Chain">Supply Chain</option>
+                </select>
             
-                    <select class="browser-default custom-select mb-4">
-                        <option value="" disabled>Choose option</option>
-                        <option value="1" selected>Gender</option>
-                        <option value="2">Male</option>
-                        <option value="3">Female</option>
-                    </select>
+                <input type="text" name="first_name" id="first_name" class="form-control mb-4 validate" placeholder="First Name" required>
+                <input type="text" name="last_name" id="last_name" class="form-control mb-4 validate" placeholder="Last Name" required>
+                <input type="email" name="email" id="email" class="form-control mb-4 validate" placeholder="E-mail" required>
+                <input type="text" name="mobile" id="mobile" class="form-control mb-4 validate" placeholder="Mobile" required>
+                <input type="text" name="address" id="address" class="form-control mb-4 validate" placeholder="Home Address" required>
+        
+                <select class="browser-default custom-select mb-4 validate" name="gender" id="gender" required>
+                    <option value="Gender" selected>Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
 
-                    <div class="md-form md-outline input-with-post-icon datepicker">
-                        <input placeholder="Select date" type="date" id="example" class="form-control">
-                        <label for="example">Employment Date</label>
-                    </div>
-                       
-                    <div class="form-group">
-                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5" placeholder="Duties"></textarea>
-                    </div>
-                
-                    <button type="submit" class="btn btn-block white-text text-center login-label text-capitalize" style="background-color: gray;">
-                         Add Employee <i class="far fa-plus-square"></i>
-                    </button>
-                
-                </form>
-                <!-- Default form contact -->
-            </div>
+                <div class="md-form md-outline input-with-post-icon datepicker">
+                    <input placeholder="Select date" type="date" name="employment_date" id="employment_date" class="form-control validate" required>
+                    <label for="example">Employment Date</label>
+                </div>
+                   
+                <div class="form-group">
+                    <textarea class="form-control rounded-0 validate" name="duties" id="duties" rows="3" placeholder="Duties" required></textarea>
+                </div>
+            
+                <button type="submit" class="btn btn-block white-text text-center login-label text-capitalize" style="background-color: gray;">
+                     Add Employee <i class="far fa-plus-square"></i>
+                </button>
+            </form>
         </div>
-   
+    </div>
+
 
 {% endblock %}

@@ -72,7 +72,8 @@ def login():
     if request.method == "POST":
         # Check if the email input exists in users collection in mongo db
         # Create a variable named existing_user to store your result
-        existing_user = mongo.db.users.find_one({"email": request.form.get("email").lower()})
+        existing_user = mongo.db.users.find_one(
+            {"email": request.form.get("email").lower()})
 
         # If the user email input exists in db
         # means that the user has registered
@@ -107,8 +108,30 @@ def logout():
     session.clear()
     return redirect(url_for("login"))
 
-@app.route("/add_employee")
+@app.route("/add_employee", methods=["GET", "POST"])
 def add_employee():
+    if request.method == "POST":
+        employee = mongo.db.employees.find_one(
+            {"email": request.form.get("email").lower()})
+
+        if employee:
+            flash("This employee already existed. Access denied!")
+
+        else:
+            new_employee = {
+                "department": request.form.get("department"),
+                "first_name": request.form.get("first_name"),
+                "last_name": request.form.get("last_name"),
+                "email": request.form.get("email").lower(),
+                "mobile": request.form.get("mobile"),
+                "address": request.form.get("address"),
+                "gender": request.form.get("gender"),
+                "employment_date": request.form.get("employment_date"),
+                "duties": request.form.get("duties")
+            }
+            mongo.db.employees.insert_one(new_employee)
+            flash("New employee added successfully")
+            return redirect(url_for('add_employee'))
     return render_template("add_employee.html")
 
 

@@ -79,6 +79,14 @@ body {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+.message {
+    width: 100%;
+    background-color: beige;
+    height: 30px; 
+    border-radius: 10px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
 
 /* footer */
 .list-styled a:hover,
@@ -134,9 +142,10 @@ body {
 
 /* Dashboard page */
 .card-dashboard {
-    width: 50rem;
+    width: 40rem;
     height: 800px;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .employee-icon {
@@ -147,6 +156,12 @@ body {
     margin-top: 50px;
 }
 
+.card-cascade {
+    width: 20rem;
+    height: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 /* Add_employee form */
 .add-form {

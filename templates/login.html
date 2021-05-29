@@ -24,12 +24,13 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="red-text lighten-4 mx-auto">{{ message }}</h4>
+                        <h5 class="red-text mx-auto message">{{ message }}</h5>
                     </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
-      </section>
+    </section>
+    
     <div class="row login-card">
         <div class="card mx-auto">
             <div class="card-body"> 
