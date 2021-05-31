@@ -41,7 +41,7 @@ def register():
             confirm_password = request.form.get("confirm_password")
                                 
             if password == confirm_password:
-                valid_password = generate_password_hash("password")
+                valid_password = generate_password_hash(password)
 
             else:
                 flash("Passwords do not match. Please try again.")
@@ -69,28 +69,37 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # Check if the email input exists in users collection in mongo db
-        # Create a variable named existing_user to store your result
+        # Check if the user is still existing as an employee in db
+        existing_employee = mongo.db.employees.find_one(
+                {"email": request.form.get("email").lower()})
+        # Check if user's email input exists in registered users in db
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
 
-        # If the user email input exists in db
-        # means that the user has registered
-        if existing_user:
-            # Check the user input password if it matches hashed password in mongo db
-            # Then if both credentials are correct, put the user in a session with his email
-            if check_password_hash(existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("email").lower()
-                flash("welcome, {}".format(request.form.get("email")))
-                return redirect(url_for("dashboard", email=session["user"]))
-            else:
-                # If incorrect or invalid password, redirect user back login page to retry
-                flash("Incorrect username and/or password. Try again!")
-                return redirect(url_for("login"))
+        if existing_employee:
 
+            if existing_user:
+                # Check the user input password if it matches hashed password in mongo db
+                # Then if both credentials are correct, put the user in a session with his email
+                correct_password = check_password_hash(existing_user["password"], request.form.get("password"))
+            
+                if correct_password:
+                    session["user"] = request.form.get("email").lower()
+                    flash("Welcome, {}".format(request.form.get("email")))
+                    return redirect(url_for("dashboard", email=session["user"]))
+
+                else:
+                    # If incorrect or invalid password, redirect user back login page to retry
+                    flash("Incorrect username and/or password. Try again!")
+                    return redirect(url_for("login"))
+
+            else:
+                # If user input email does not exist in the db, redirect back to login page to retry
+                flash("Incorrect username and/or password")
+                return redirect(url_for("login"))
+        
         else:
-            # If user input email does not exist in the db, redirect back to login page to retry
-            flash("Incorrect username and/or password")
+            flash("Hey! friend, you are not authorized to use this portal.")
             return redirect(url_for("login"))
     return render_template("login.html")
 
