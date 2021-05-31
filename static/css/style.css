@@ -79,13 +79,26 @@ body {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
 .message {
-    width: 100%;
+    width: 75%;
     background-color: beige;
     height: 30px; 
     border-radius: 10px; 
+}
+
+.message-login {
+    width: 50%;
+    background-color: beige;
+    height: 30px; 
+    border-radius: 10px; 
+}
+
+.flash-text {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    font-size: 16px;
+    padding-top: 6px;
 }
 
 /* footer */

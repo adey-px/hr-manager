@@ -5,13 +5,13 @@
     <div class="h2-responsive text-center font-weight-bolder card-header"> 
         New Employee
     </div>
-    <section>
+    <section class="container">
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="row flashes">
-                        <h5 class="red-text mx-auto message">{{ message }}</h5>
+                    <div class="row">
+                        <h5 class="red-text mx-auto message flash-text">{{ message }}</h5>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-12">
             <form class="text-center border border-light p-5 mx-auto add-form" method="POST" action="{{ url_for('add_employee') }}">
-                <select class="browser-default custom-select mb-4 validate" name="department" id="department" required>
+                <select class="browser-default custom-select mb-4" name="department" id="department" required>
                     <option value="Department" selected>Department</option>
                     <option value="Administration">Administration</option>
                     <option value="Finance">Finance</option>
@@ -45,6 +45,7 @@
 
                 <div class="md-form md-outline input-with-post-icon datepicker">
                     <input placeholder="Select date" type="date" name="employment_date" id="employment_date" class="form-control validate" required>
+                    <div class="invalid-feedback">Please select a valid date.</div>
                     <label for="example">Employment Date</label>
                 </div>
                    
@@ -58,6 +59,5 @@
             </form>
         </div>
     </div>
-
 
 {% endblock %}

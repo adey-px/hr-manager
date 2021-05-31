@@ -5,13 +5,13 @@
     Dashboard
   </div>
 
-  <section>
+  <section class="container">
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="blue-text lighten-4 mx-auto">{{ message }}</h4>
+                <div class="row">
+                    <h4 class="blue-text mx-auto message flash-text">{{ message }}</h4>
                 </div>
             {% endfor %}
         {% endif %}
@@ -26,7 +26,7 @@
               <h1 class="text-center"><i class="far fa-user fa-border cyan-text employee-icon"></i></h1>
               <div class="text-center">
                   <p class="mb-0">Your information is diplayed here for your perusal.<br>
-                          Contact the <a href="#">HR department</a> in case you have any question or for any update.
+                          Contact the <a href="#"><em>HR department</em></a> in case you have any question or for any update.
                   </p>
               </div>
               <div class="row">
@@ -76,7 +76,7 @@
                           <td> {{ item.employment_date }} </td>
                         </tr>
                       </tbody>
-                      {% endfor %}
+                     
                     </table>
               </div>
           </div>
@@ -90,10 +90,9 @@
         </div>
       
         <div class="card-body card-body-cascade text-center">
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex minis
-            recusandae. Facere modi sunt, quod quibusdam dignissimos neque rem nihil ratione est placeat vel, natus
-            non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum.</p>
+          <p class="card-text">{{ item.duties }}.</p>
         </div>
+        {% endfor %}
         </div>
       </div>
     </div>

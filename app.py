@@ -25,45 +25,44 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if user has been added to employees by admin user
+        # check if user has been added to employees in db by admin user
         existing_employee = mongo.db.employees.find_one(
                 {"email": request.form.get("email").lower()})
-        # check if user has already registered as an employee
+        # check if user has already registered as an eligible employee
         existing_user = mongo.db.users.find_one({"email": request.form.get(
             "email").lower()})
         
+        if existing_user:
+            flash("This employee has already registered. Go login or try again!")
+            return redirect(url_for("register"))
+
+        else:
+            password = request.form.get("password")
+            confirm_password = request.form.get("confirm_password")
+                                
+            if password == confirm_password:
+                valid_password = generate_password_hash("password")
+
+            else:
+                flash("Passwords do not match. Please try again.")
+                return redirect(url_for("register"))
+
         if existing_employee:
             register = {
                 "full_name": request.form.get("full_name").lower(),
                 "email": request.form.get("email").lower(),
-                "password": generate_password_hash(
-                    request.form.get("password")),
-                "confirm_password": generate_password_hash(
-                    request.form.get("confirm_password"))
+                "password": valid_password
                 }
-
-        else:
-            flash("You are not eligible to register. Please contact Admin.")
-
-        if existing_user:
-            flash("This employee has already registered. Login or Try again")
-            return redirect(url_for("register"))
-
-        password = generate_password_hash(
-                 request.form.get("password"))
-        confirm_password = generate_password_hash(
-                 request.form.get("confirm_password"))
-                                
-        if password == confirm_password:
             mongo.db.users.insert_one(register)
 
         else:
-            flash("Passwords do not match. Please try again.")
+            flash("Hey! What is going on? You are not eligible to register.")
             return redirect(url_for("register"))
- 
+    
         # Put the new user into session cookie
         session["user"] = request.form.get("email").lower()
-        flash("You have registered successfully")
+        flash("Hey! Congratulations. You have registered successfully")
+        return redirect(url_for("register", email=session["user"]))
     return render_template("register.html")
 
 
@@ -94,12 +93,6 @@ def login():
             flash("Incorrect username and/or password")
             return redirect(url_for("login"))
     return render_template("login.html")
-  
-
-@app.route("/dashboard")
-def dashboard():
-    item = mongo.db.employees.find()
-    return render_template("dashboard.html", employees=item)
 
 
 @app.route("/logout")
@@ -107,6 +100,7 @@ def logout():
     # To log out user, remove or clear active session cookies
     session.clear()
     return redirect(url_for("login"))
+
 
 @app.route("/add_employee", methods=["GET", "POST"])
 def add_employee():
@@ -135,6 +129,12 @@ def add_employee():
     return render_template("add_employee.html")
 
 
+@app.route("/dashboard")
+def dashboard():
+    item = mongo.db.employees.find()
+    return render_template("dashboard.html", employees=item)
+
+
 @app.route("/get_employee")
 def get_employee():
     return render_template("get_employee.html")
@@ -143,7 +143,8 @@ def get_employee():
 @app.route("/manage_employee")
 def manage_employee():
     return render_template("manage_employee.html")
-    
+
+
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"), 
+    app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")), debug=True)
