@@ -25,31 +25,36 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if user has been added to employees in db by admin user
+        # check if user has been added to employees in db by admin
         existing_employee = mongo.db.employees.find_one(
                 {"email": request.form.get("email").lower()})
+
         # check if user has already registered as an eligible employee
         existing_user = mongo.db.users.find_one({"email": request.form.get(
             "email").lower()})
-        
+
         if existing_user:
-            flash("This employee has already registered. Go login or try again!")
+            flash("This employee has registered. Go login or try again!")
             return redirect(url_for("register"))
 
         else:
             password = request.form.get("password")
             confirm_password = request.form.get("confirm_password")
 
-            # Use comparison to generate a variable password
-            # store it another variable named valid_password
+            # Use comparison to generate a variable named password
+            # store it in another variable named valid_password
+            # NB: If a string is passed into (), it bcomes default password
             if password == confirm_password:
                 valid_password = generate_password_hash(password)
 
             else:
+                # If both password inputs from Register form do not match
                 flash("Passwords do not match. Please try again.")
                 return redirect(url_for("register"))
 
-        # Pass in the variable password created in generate_password_hash above
+        # Create a variable register to insert an Array of the Register form inputs
+        # Pass in the variable named password generated above
+        # NB: the variable password stands for both password inputs from the form
         if existing_employee:
             register = {
                 "full_name": request.form.get("full_name").lower(),
@@ -59,10 +64,11 @@ def register():
             mongo.db.users.insert_one(register)
 
         else:
-            flash("Hey! What is going on? You are not eligible to register.")
+            # If user is not an existing employee
+            flash("Caution! You are not eligible to register.")
             return redirect(url_for("register"))
-    
-        # Put the new user into session cookie
+
+        # If all conditions are satisfied, put the new user into session cookie
         session["user"] = request.form.get("email").lower()
         flash("Hey! Congratulations. You have registered successfully")
         return redirect(url_for("register", email=session["user"]))
@@ -72,9 +78,10 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # Check if the user is still existing as an employee in db
+        # Check if user is still existing in employees' coll in db
         existing_employee = mongo.db.employees.find_one(
                 {"email": request.form.get("email").lower()})
+
         # Check if user's email input exists in registered users in db
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
@@ -82,26 +89,28 @@ def login():
         if existing_employee:
 
             if existing_user:
-                # Check the user input password if it matches hashed password in mongo db
-                # Then if both credentials are correct, put the user in a session with his email
-                correct_password = check_password_hash(existing_user["password"], request.form.get("password"))
-            
+                # Check user input password if it matches hashed password in db
+                correct_password = check_password_hash(
+                    existing_user["password"], request.form.get("password"))
+
+                # If both conditions are satisfied, put the user in a session
                 if correct_password:
                     session["user"] = request.form.get("email").lower()
                     flash("Welcome, {}".format(request.form.get("email")))
                     return redirect(url_for("dashboard", email=session["user"]))
 
                 else:
-                    # If incorrect or invalid password, redirect user back login page to retry
+                    # If incorrect or invalid password, redirect user back
                     flash("Incorrect username and/or password. Try again!")
                     return redirect(url_for("login"))
 
             else:
-                # If user input email does not exist in the db, redirect back to login page to retry
+                # If user input email does not exist in the db, redirect back
                 flash("Incorrect username and/or password")
                 return redirect(url_for("login"))
-        
+
         else:
+            # If user is not a recognized employee
             flash("Hey! friend, you are not authorized to use this portal.")
             return redirect(url_for("login"))
     return render_template("login.html")
@@ -144,6 +153,7 @@ def add_employee():
 @app.route("/dashboard/<email>", methods=["GET", "POST"])
 def dashboard(email):
     item = mongo.db.employees.find_one({"email": email})
+
     if "user" in session:
         return render_template("dashboard.html", employees=item)
 
