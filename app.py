@@ -39,7 +39,9 @@ def register():
         else:
             password = request.form.get("password")
             confirm_password = request.form.get("confirm_password")
-                                
+
+            # Use comparison to generate a variable password
+            # store it another variable named valid_password
             if password == confirm_password:
                 valid_password = generate_password_hash(password)
 
@@ -47,6 +49,7 @@ def register():
                 flash("Passwords do not match. Please try again.")
                 return redirect(url_for("register"))
 
+        # Pass in the variable password created in generate_password_hash above
         if existing_employee:
             register = {
                 "full_name": request.form.get("full_name").lower(),
@@ -138,10 +141,11 @@ def add_employee():
     return render_template("add_employee.html")
 
 
-@app.route("/dashboard")
-def dashboard():
-    item = mongo.db.employees.find()
-    return render_template("dashboard.html", employees=item)
+@app.route("/dashboard/<email>", methods=["GET", "POST"])
+def dashboard(email):
+    item = mongo.db.employees.find_one({"email": email})
+    if "user" in session:
+        return render_template("dashboard.html", employees=item)
 
 
 @app.route("/get_employee")

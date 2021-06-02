@@ -31,52 +31,55 @@
               </div>
               <div class="row">
                   <table class="table table-bordered table-item">
-                    {% for item in employees %}
                       <thead>
                         <tr>
                           <th scope="col"></th>
                           <th scope="col"><strong>Department:</strong> </th>
-                          <th scope="col">{{ item.department }}</th>
+                          <th scope="col">{{ employees.department }}</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th scope="row"></th>
                           <td><strong>First Name:</strong></td>
-                          <td>{{ item.first_name }}</td>
+                          <td>{{ employees.first_name }}</td>
                         </tr>
                         <tr>
                         <tr>
                           <th scope="row"></th>
                           <td><strong>Last Name:</strong></td>
-                          <td>{{ item.last_name }}</td>
+                          <td>{{ employees.last_name }}</td>
                         </tr>
                           <th scope="row"></th>
                           <td><strong>Email: </strong></td>
-                          <td>{{ item.email }} </td>
+                          <td>{{ employees.email }} </td>
                         </tr>
                         <tr>
                           <th scope="row"></th>
                           <td><strong>Mobile:</strong> </td>
-                          <td>{{ item.mobile }} </td>
+                          <td>{{ employees.mobile }} </td>
                         </tr>
                         <tr>
                           <th scope="row"></th>
                           <td><strong>Home Address:</strong> </td>
-                          <td>{{ item.address }} </td>
+                          <td>{{ employees.address }} </td>
                         </tr>
                         <tr>
                           <th scope="row"></th>
                           <td><strong>Gender:</strong> </td>
-                          <td>{{ item.gender }} </td>
+                          <td>{{ employees.gender }} </td>
                         </tr>
                         <tr>
                           <th scope="row"></th>
                           <td><strong>Employment Date:</strong>  </td>
-                          <td> {{ item.employment_date }} </td>
+                          <td> {{ employees.employment_date }} </td>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <td><strong>Duties</strong>  </td>
+                          <td> {{ employees.duties }} </td>
                         </tr>
                       </tbody>
-                     
                     </table>
               </div>
           </div>
@@ -86,13 +89,11 @@
     <div class="col-4">
       <div class="card card-cascade wider">
         <div class="view view-cascade gradient-card-header peach-gradient">
-          <h4 class="white-text text-center"><strong><em>Responsibilties</em></strong></h4>
+          <h4 class="white-text text-center"><strong><em>Attendance</em></strong></h4>
         </div>
-      
         <div class="card-body card-body-cascade text-center">
-          <p class="card-text">{{ item.duties }}.</p>
+          <p class="card-text">hello </p>
         </div>
-        {% endfor %}
         </div>
       </div>
     </div>
