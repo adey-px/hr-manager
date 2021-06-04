@@ -96,7 +96,8 @@ def login():
                 # If both conditions are satisfied, put the user in a session
                 if correct_password:
                     session["user"] = request.form.get("email").lower()
-                    flash("Welcome, {}".format(request.form.get("email")))
+                    flash("Hello {}, welcome to your dashboard".format(
+                        request.form.get("email")))
                     return redirect(url_for("dashboard", email=session["user"]))
 
                 else:

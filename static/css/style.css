@@ -87,6 +87,12 @@ body {
     border-radius: 10px; 
 }
 
+.message-d {
+    width: 75%;
+    height: 30px; 
+    border-radius: 10px; 
+}
+
 .message-login {
     width: 50%;
     background-color: beige;
@@ -99,12 +105,6 @@ body {
     text-align: center;
     font-size: 16px;
     padding-top: 6px;
-}
-
-/* footer */
-.list-styled a:hover,
-.footer-copyright a:hover {
-    text-decoration: underline;
 }
 
 .btn-danger:hover {
@@ -154,29 +154,27 @@ body {
 }
 
 /* Dashboard page */
-.card-dashboard {
-    width: 40rem;
-    height: 800px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.employee-icon {
-    font-size: 100px;
-}
-
 .table-item {
     margin-top: 50px;
 }
 
-.card-cascade {
-    width: 20rem;
-    height: 800px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.circle-icon {
+    background: rgb(218, 228, 231);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
 }
 
 /* Add_employee form */
 .add-form {
     width: 40%;
+}
+
+/* footer */
+.list-styled a:hover,
+.footer-copyright a:hover {
+    text-decoration: underline;
 }
