@@ -161,7 +161,8 @@ def dashboard(email):
 
 @app.route("/get_employee")
 def get_employee():
-    return render_template("get_employee.html")
+    employee = list(mongo.db.employees.find())
+    return render_template("get_employee.html", staff=employee)
 
 
 @app.route("/manage_employee")

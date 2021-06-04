@@ -13,7 +13,6 @@
             <strong>Total Number of Current Employees:</strong> 
           </span>
         </nav>
-       
       </div>
     </div>
   </div>
@@ -37,18 +36,21 @@
                 <th>Gender</th>
               </tr>
             </thead>
+          {% if staff|length > 0 %}
             <tbody id="myTable">
-              <tr>
-                <td>Jonathan</td>
-                <td>Smith</td>
-                <td>Administration</td>
-                <td>5th January, 2005</td>
-                <td>1234567789</td>
-                <td>j.smith124@youremail.com</td>
-                <td>Male</td>
-              </tr>
-              <tr>
+              {% for person in staff %}
+                <tr>
+                  <td>{{ person.first_name }}</td>
+                  <td>{{ person.last_name }}</td>
+                  <td>{{ person.department }}</td>
+                  <td>{{ person.employment_date }}</td>
+                  <td>{{ person.mobile }}</td>
+                  <td>{{ person.email }}</td>
+                  <td>{{ person.gender }}</td>
+                </tr>
+              {% endfor %}
             </tbody>
+          {% endif %}
           </table>
         </div>
       </div>

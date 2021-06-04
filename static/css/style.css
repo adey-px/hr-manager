@@ -156,6 +156,7 @@ body {
 /* Dashboard page */
 .table-item {
     margin-top: 50px;
+    font-size: 18px;
 }
 
 .circle-icon {
@@ -175,6 +176,7 @@ body {
 
 /* footer */
 .list-styled a:hover,
+.footer-links-dash a:hover,
 .footer-copyright a:hover {
     text-decoration: underline;
 }
