@@ -167,7 +167,13 @@ def get_employee():
 
 @app.route("/manage_employee")
 def manage_employee():
-    return render_template("manage_employee.html")
+    employee = list(mongo.db.employees.find())
+    return render_template("manage_employee.html", staff=employee)
+
+
+@app.route("/all_departments")
+def all_departments():
+    return render_template("all_departments.html")
 
 
 if __name__ == "__main__":

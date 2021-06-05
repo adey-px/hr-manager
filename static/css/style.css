@@ -161,6 +161,7 @@ body {
 
 .circle-icon {
     background: rgb(218, 228, 231);
+    color: rgb(141, 141, 212);
     width: 80px;
     height: 80px;
     border-radius: 50%;
