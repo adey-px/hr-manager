@@ -161,7 +161,7 @@ def dashboard(email):
 
 @app.route("/get_employee")
 def get_employee():
-    employee = list(mongo.db.employees.find())
+    employee = list(mongo.db.employees.find().sort("first_name", 1))
     return render_template("get_employee.html", staff=employee)
 
 
