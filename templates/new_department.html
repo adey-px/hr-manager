@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="h2-responsive text-center font-weight-bolder card-header"> 
+        New Department
+    </div>
+
+    <div class="container">
+      <div class="card w-75 mb-3 mx-auto" style="height: 250px; margin-top: 80px;">
+        <div class="card-body">
+          <div class="md-form" style="padding-top: 50px;">
+            <i class="fas fa-folder-open prefix" style="color: gray; padding-top: 50px;"></i>
+            <input type="text" id="inputIconEx1" class="form-control">
+            <label for="inputIconEx1" style="padding-top: 50px;">Department Name</label>
+          </div>
+          <div class="text-center">
+            <a href="#!" class="btn white-text text-capitalize" style="background-color: gray; font-size: 15px;">
+              Add Department<i class="fas fa-plus-square white-text" 
+              style="font-size: 20px; padding-left: 5px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+{% endblock %}

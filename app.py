@@ -171,6 +171,10 @@ def manage_employee():
     return render_template("manage_employee.html", staff=employee)
 
 
+@app.route("/new_department")
+def new_department():
+    return render_template("new_department.html")
+
 @app.route("/all_departments")
 def all_departments():
     return render_template("all_departments.html")
