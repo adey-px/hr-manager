@@ -124,8 +124,8 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_employee", methods=["GET", "POST"])
-def add_employee():
+@app.route("/new_employee", methods=["GET", "POST"])
+def new_employee():
     if request.method == "POST":
         employee = mongo.db.employees.find_one(
             {"email": request.form.get("email").lower()})
@@ -147,8 +147,10 @@ def add_employee():
             }
             mongo.db.employees.insert_one(new_employee)
             flash("New employee added successfully")
-            return redirect(url_for('add_employee'))
-    return render_template("add_employee.html")
+            return redirect(url_for('new_employee'))
+
+    departm = list(mongo.db.departments.find().sort("department", 1))
+    return render_template("new_employee.html", dpt=departm)
 
 
 @app.route("/dashboard/<email>", methods=["GET", "POST"])
@@ -175,7 +177,7 @@ def manage_employee():
 def new_department():
     if request.method == "POST":
         existing_department = mongo.db.departments.find_one(
-            {"department": request.form.get("department").capitalize()})
+            {"department": request.form.get("department_name").capitalize()})
 
         if existing_department:
             flash("Whoops! This Department already exists.")
@@ -183,7 +185,7 @@ def new_department():
 
         else:
             department = {
-                "department": request.form.get("department").capitalize()
+                "department": request.form.get("department_name").capitalize()
             }
             mongo.db.departments.insert_one(department)
             flash("Bravo! You have just created a new Department")

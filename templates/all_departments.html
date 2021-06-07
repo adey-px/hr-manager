@@ -5,24 +5,21 @@
     All Departments 
   </div>
 
-{% for item in ment %}
+
   <div class="container">
     <div class="row row-cols-1 row-cols-md-4">
-      <div class="col mb-4">
-        <div class="card" style="width: 100%; height: 200px; background: rgb(216, 240, 240);">
-          <div class="card-body mx-auto">
-            <span><h4 class="card-title text-center">{{ item.department }}</h4></span>
-              <button type="button" class="btn btn-unique btn-md" style="margin-top: 80px;">Edit</button>
-              <button type="button" class="btn btn-danger btn-md" style="margin-top: 80px;">Delete</button>
+      {% for item in ment %}
+        <div class="col mb-4">
+          <div class="card" style="width: 100%; height: 200px; background: rgb(216, 240, 240);">
+            <div class="card-body mx-auto">
+              <span><h4 class="card-title text-center">{{ item.department }}</h4></span>
+                <button type="button" class="btn btn-unique btn-md" style="margin-top: 80px;">Edit</button>
+                <button type="button" class="btn btn-danger btn-md" style="margin-top: 80px;">Delete</button>
+            </div>
           </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
-{% endfor %}
-  
-    
-    
+
 {% endblock %}
-
-

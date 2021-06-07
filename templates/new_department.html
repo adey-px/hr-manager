@@ -19,12 +19,13 @@
 
     <div class="container">
       <form action="{{ url_for('new_department') }}" method="POST">
-        <div class="card w-75 mb-3 mx-auto" style="height: 250px; margin-top: 80px;">
+        <div class="card w-75 mb-3 mx-auto" style="height: 250px; margin-top: 80px; background: rgb(240, 245, 245);"">
           <div class="card-body">
             <div class="md-form" style="padding-top: 50px;">
               <i class="fas fa-folder-open prefix" style="color: gray; padding-top: 50px;"></i>
-              <input type="text" name="department" id="department" class="form-control">
-              <label for="department" style="padding-top: 50px;">Department Name</label>
+              <input type="text" name="department_name" id="department_name" class="form-control validate" 
+                minlength="3" maxlength="25" required>
+              <label for="department_name" style="padding-top: 50px;">Department Name</label>
             </div>
             <div class="text-center">
               <button class="btn white-text text-capitalize" style="background-color: gray; font-size: 15px;">
