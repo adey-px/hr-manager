@@ -171,13 +171,30 @@ def manage_employee():
     return render_template("manage_employee.html", staff=employee)
 
 
-@app.route("/new_department")
+@app.route("/new_department", methods=["GET", "POST"])
 def new_department():
+    if request.method == "POST":
+        existing_department = mongo.db.departments.find_one(
+            {"department": request.form.get("department").capitalize()})
+
+        if existing_department:
+            flash("Whoops! This Department already exists.")
+            return redirect(url_for("new_department"))
+
+        else:
+            department = {
+                "department": request.form.get("department").capitalize()
+            }
+            mongo.db.departments.insert_one(department)
+            flash("Bravo! You have just created a new Department")
+            return redirect(url_for("new_department"))
     return render_template("new_department.html")
+
 
 @app.route("/all_departments")
 def all_departments():
-    return render_template("all_departments.html")
+    dpt = mongo.db.departments.find().sort("department", 1)
+    return render_template("all_departments.html", ment=dpt)
 
 
 if __name__ == "__main__":

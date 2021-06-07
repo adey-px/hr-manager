@@ -5,22 +5,36 @@
       New Department
     </div>
 
+    <section class="container">
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                  <div class="row">
+                      <h5 class="red-text mx-auto message flash-text">{{ message }}</h5>
+                  </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+    </section>
+
     <div class="container">
-      <div class="card w-75 mb-3 mx-auto" style="height: 250px; margin-top: 80px;">
-        <div class="card-body">
-          <div class="md-form" style="padding-top: 50px;">
-            <i class="fas fa-folder-open prefix" style="color: gray; padding-top: 50px;"></i>
-            <input type="text" id="inputIconEx1" class="form-control">
-            <label for="inputIconEx1" style="padding-top: 50px;">Department Name</label>
-          </div>
-          <div class="text-center">
-            <a href="#!" class="btn white-text text-capitalize" style="background-color: gray; font-size: 15px;">
-              Add Department<i class="fas fa-plus-square white-text" 
-              style="font-size: 20px; padding-left: 5px;"></i>
-            </a>
+      <form action="{{ url_for('new_department') }}" method="POST">
+        <div class="card w-75 mb-3 mx-auto" style="height: 250px; margin-top: 80px;">
+          <div class="card-body">
+            <div class="md-form" style="padding-top: 50px;">
+              <i class="fas fa-folder-open prefix" style="color: gray; padding-top: 50px;"></i>
+              <input type="text" name="department" id="department" class="form-control">
+              <label for="department" style="padding-top: 50px;">Department Name</label>
+            </div>
+            <div class="text-center">
+              <button class="btn white-text text-capitalize" style="background-color: gray; font-size: 15px;">
+                Add Department<i class="fas fa-plus-square white-text" 
+                style="font-size: 20px; padding-left: 5px;"></i>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   
     
