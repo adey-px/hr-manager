@@ -172,7 +172,7 @@ def manage_employee():
     employk = list(mongo.db.departments.find())
     alice = list(mongo.db.employees.find())
     return render_template(
-        "manage_employee.html", departments=employk, staff=alice)
+        "manage_employee.html", depo=employk, staff=alice)
 
 
 @app.route("/new_department", methods=["GET", "POST"])
@@ -195,18 +195,25 @@ def new_department():
     return render_template("new_department.html")
 
 
-@app.route("/edit_department/<department_id>", methods=["GET", "POST"])
-def edit_department(department_id):
+@app.route("/edit_department/<item_id>", methods=["GET", "POST"])
+def edit_department(item_id):
     if request.method == "POST":
         edit = {
             "department": request.form.get("department_name")
         }
-        mongo.db.departments.update({"_id": ObjectId(department_id)}, edit)
+        mongo.db.departments.update({"_id": ObjectId(item_id)}, edit)
         flash("Department Updated Successfully")
         return redirect(url_for("all_departments"))
 
-    edica = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
+    edica = mongo.db.departments.find_one({"_id": ObjectId(item_id)})
     return render_template("edit_department.html", edico=edica)
+
+
+@app.route("/delete_department/<item_id>")
+def delete_department(item_id):
+    mongo.db.departments.remove({"_id": ObjectId(item_id)})
+    flash("Department Deleted Successfully")
+    return redirect(url_for("all_departments"))
 
 
 @app.route("/all_departments")

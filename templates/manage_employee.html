@@ -5,6 +5,7 @@
     Manage Employees
   </div>
 
+  <!-- Top search bar section-->
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark grey lighten-2 mb-4">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -16,12 +17,15 @@
     </nav>
   </div>
 
-  
+  <!-- Accordion section to display departments to user -->
   <div class="container-fluid" style="width: 90%;">
-    
-    <div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist"
-      aria-multiselectable="true" style="background-color: azure;">
-      {% for department in departments %}
+
+    <!-- Iterate through departments in Department collection in db. 
+    This ensures one department is bound to each Accordion displayed to user
+    -->
+    {% for dment in depo %}
+      <div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist" aria-multiselectable="true"
+        style="background-color: azure;">
         <div class="card-header" role="tab" id="headingUnfiled">
           <div class="dropdown float-left">
             <button class="btn btn-info btn-sm m-0 mr-3 p-2 dropdown-toggle" type="button" data-toggle="dropdown"
@@ -32,19 +36,25 @@
               <a class="dropdown-item" href="#">Delete</a>
             </div>
           </div>
-          
-          <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled-{{ loop.index }}" aria-expanded="true"
-            aria-controls="collapseUnfiled">
+
+          <!-- Add loop.index to update href link of the Accordion 
+          and its div id below, to ensure each Accordion opens and closes separately
+          -->
+          <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled-{{ loop.index }}"
+            aria-expanded="true" aria-controls="collapseUnfiled">
+
+            <!-- Select appropriate department name from db for each Accordion -->
             <h5 class="mt-1 mb-0">
-              <span>{{ department.department }}</span>
+              <span>{{ dment.department }}</span>
               <i class="fas fa-angle-down rotate-icon"></i>
             </h5>
           </a>
         </div>
 
+        <!-- Add loop.index to update div id of the Accordion -->
         <div id="collapseUnfiled-{{ loop.index }}" class="collapse" role="tabpanel" aria-labelledby="headingUnfiled"
           data-parent="#accordionEx78">
-          <div class="card-body">
+          <div class="card-body" style="background-color: rgb(214, 234, 235);">
             <div class="table-responsive mx-3">
 
               <table class="table table-hover mb-0">
@@ -54,6 +64,7 @@
                       <input class="form-check-input" type="checkbox" id="checkbox">
                       <label for="checkbox" class="mr-2 label-table"></label>
                     </th>
+                    <!-- Accordion table headers -->
                     <th class="th-lg"><a>First Name <i class="fas fa-sort ml-1"></i></a></th>
                     <th class="th-lg"><a>Last Name<i class="fas fa-sort ml-1"></i></a></th>
                     <th class="th-lg"><a>Email<i class="fas fa-sort ml-1"></i></a></th>
@@ -64,44 +75,47 @@
                     <th></th>
                   </tr>
                 </thead>
-              
+
                 <tbody>
                   <tr>
                     <th scope="row">
                       <input class="form-check-input" type="checkbox" id="checkbox1">
                       <label for="checkbox1" class="label-table"></label>
                     </th>
+
+                    <!-- Iterate through employees in employees collection in db,
+                    selcting only the employees for appropriate department in db.
+                    Note that department collection is already iterated through, in for-Loop above.
+                    -->
                     {% for person in staff %}
-                      {% if person.department == department.department %}
-                    <td>{{ person.first_name }}</td>
-                    <td>{{ person.last_name }}</td>
-                    <td>{{ person.email }}</td>
-                    <td>{{ person.mobile }}</td>
-                    <td>{{ person.address }}</td>
-                    <td>{{ person.gender }}</td>
-                    <td>{{ person.employment_date }}</td>
-                    <td>
+                      {% if person.department == dment.department %}
+                      <td>{{ person.first_name }}</td>
+                      <td>{{ person.last_name }}</td>
+                      <td>{{ person.email }}</td>
+                      <td>{{ person.mobile }}</td>
+                      <td>{{ person.address }}</td>
+                      <td>{{ person.gender }}</td>
+                      <td>{{ person.employment_date }}</td>
+                      <td>
                       {% endif %}
                     {% endfor %}
-                      <a><i class="fas fa-pen-square mx-1" data-toggle="tooltip" 
-                        data-placement="top" title="Edit" style="font-size: 20px; color: green; padding-right: 20px;">
+                      <a><i class="fas fa-pen-square mx-1" data-toggle="tooltip" data-placement="top" title="Edit"
+                          style="font-size: 20px; color: green; padding-right: 20px;">
                         </i>
                       </a>
-                      <a><i class="fas fa-times-circle mx-1" data-toggle="tooltip" 
-                        data-placement="top" title="Terminate" style="font-size: 22px; color: red;">
+                      <a><i class="fas fa-times-circle mx-1" data-toggle="tooltip" data-placement="top" title="Terminate"
+                          style="font-size: 22px; color: red;">
                         </i>
                       </a>
                     </td>
                   </tr>
                 </tbody>
-              
               </table>
             </div>
           </div>
         </div>
-         {% endfor %}
-    </div>
-   
+      </div>
+    {% endfor %}
   </div>
   
 {% endblock %}
