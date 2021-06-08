@@ -117,6 +117,11 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/resources")
+def resources():
+    return render_template("resources.html")
+
+
 @app.route("/logout")
 def logout():
     # To log out user, remove or clear active session cookies
