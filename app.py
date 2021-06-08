@@ -149,28 +149,30 @@ def new_employee():
             flash("New employee added successfully")
             return redirect(url_for('new_employee'))
 
-    departm = list(mongo.db.departments.find().sort("department", 1))
-    return render_template("new_employee.html", dpt=departm)
+    depa = list(mongo.db.departments.find().sort("department", 1))
+    return render_template("new_employee.html", dpt=depa)
 
 
 @app.route("/dashboard/<email>", methods=["GET", "POST"])
 def dashboard(email):
-    item = mongo.db.employees.find_one({"email": email})
+    dash = mongo.db.employees.find_one({"email": email})
 
     if "user" in session:
-        return render_template("dashboard.html", employees=item)
+        return render_template("dashboard.html", employ=dash)
 
 
-@app.route("/get_employee")
+@app.route("/get_employee", methods=["GET", "POST"])
 def get_employee():
-    employee = list(mongo.db.employees.find().sort("first_name", 1))
-    return render_template("get_employee.html", staff=employee)
+    emplo = list(mongo.db.employees.find().sort("first_name", 1))
+    return render_template("get_employee.html", staff=emplo)
 
 
 @app.route("/manage_employee")
 def manage_employee():
-    employee = list(mongo.db.employees.find())
-    return render_template("manage_employee.html", staff=employee)
+    employk = list(mongo.db.departments.find())
+    alice = list(mongo.db.employees.find())
+    return render_template(
+        "manage_employee.html", departments=employk, staff=alice)
 
 
 @app.route("/new_department", methods=["GET", "POST"])
@@ -191,6 +193,20 @@ def new_department():
             flash("Bravo! You have just created a new Department")
             return redirect(url_for("new_department"))
     return render_template("new_department.html")
+
+
+@app.route("/edit_department/<department_id>", methods=["GET", "POST"])
+def edit_department(department_id):
+    if request.method == "POST":
+        edit = {
+            "department": request.form.get("department_name")
+        }
+        mongo.db.departments.update({"_id": ObjectId(department_id)}, edit)
+        flash("Department Updated Successfully")
+        return redirect(url_for("all_departments"))
+
+    edica = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
+    return render_template("edit_department.html", edico=edica)
 
 
 @app.route("/all_departments")

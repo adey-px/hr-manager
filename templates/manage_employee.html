@@ -16,10 +16,12 @@
     </nav>
   </div>
 
+  
   <div class="container-fluid" style="width: 90%;">
+    
     <div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist"
       aria-multiselectable="true" style="background-color: azure;">
-
+      {% for department in departments %}
         <div class="card-header" role="tab" id="headingUnfiled">
           <div class="dropdown float-left">
             <button class="btn btn-info btn-sm m-0 mr-3 p-2 dropdown-toggle" type="button" data-toggle="dropdown"
@@ -30,17 +32,17 @@
               <a class="dropdown-item" href="#">Delete</a>
             </div>
           </div>
-
-          <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled" aria-expanded="true"
+          
+          <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled-{{ loop.index }}" aria-expanded="true"
             aria-controls="collapseUnfiled">
             <h5 class="mt-1 mb-0">
-              <span>Administration</span>
+              <span>{{ department.department }}</span>
               <i class="fas fa-angle-down rotate-icon"></i>
             </h5>
           </a>
         </div>
 
-        <div id="collapseUnfiled" class="collapse" role="tabpanel" aria-labelledby="headingUnfiled"
+        <div id="collapseUnfiled-{{ loop.index }}" class="collapse" role="tabpanel" aria-labelledby="headingUnfiled"
           data-parent="#accordionEx78">
           <div class="card-body">
             <div class="table-responsive mx-3">
@@ -64,13 +66,13 @@
                 </thead>
               
                 <tbody>
-                  {% if staff %}
                   <tr>
                     <th scope="row">
                       <input class="form-check-input" type="checkbox" id="checkbox1">
                       <label for="checkbox1" class="label-table"></label>
                     </th>
                     {% for person in staff %}
+                      {% if person.department == department.department %}
                     <td>{{ person.first_name }}</td>
                     <td>{{ person.last_name }}</td>
                     <td>{{ person.email }}</td>
@@ -79,6 +81,7 @@
                     <td>{{ person.gender }}</td>
                     <td>{{ person.employment_date }}</td>
                     <td>
+                      {% endif %}
                     {% endfor %}
                       <a><i class="fas fa-pen-square mx-1" data-toggle="tooltip" 
                         data-placement="top" title="Edit" style="font-size: 20px; color: green; padding-right: 20px;">
@@ -90,13 +93,15 @@
                       </a>
                     </td>
                   </tr>
-                  {% endif %}
                 </tbody>
               
               </table>
             </div>
           </div>
         </div>
+         {% endfor %}
     </div>
+   
   </div>
+  
 {% endblock %}
