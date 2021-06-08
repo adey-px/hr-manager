@@ -112,7 +112,7 @@ def login():
 
         else:
             # If user is not a recognized employee
-            flash("Hey! friend, you are not authorized to use this portal.")
+            flash("Incorrect or unathourized username and/or password.")
             return redirect(url_for("login"))
     return render_template("login.html")
 
@@ -121,6 +121,7 @@ def login():
 def logout():
     # To log out user, remove or clear active session cookies
     session.clear()
+    flash("You have logged out of your current session")
     return redirect(url_for("login"))
 
 

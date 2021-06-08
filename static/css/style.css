@@ -82,7 +82,7 @@ body {
 
 .message {
     width: 75%;
-    background-color: beige;
+    background-color: rgb(157, 207, 240);
     height: 30px; 
     border-radius: 10px; 
 }
@@ -93,17 +93,9 @@ body {
     border-radius: 10px; 
 }
 
-.message-login {
-    width: 50%;
-    background-color: beige;
-    height: 30px; 
-    border-radius: 10px; 
-}
-
 .flash-text {
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     padding-top: 6px;
 }
 
