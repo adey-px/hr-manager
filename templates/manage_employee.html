@@ -37,7 +37,7 @@
             </div>
           </div>
 
-          <!-- Add loop.index to update href link of the Accordion 
+          <!-- Add -{{ loop.index }} to update href link of the Accordion 
           and its div id below, to ensure each Accordion opens and closes separately
           -->
           <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled-{{ loop.index }}"
@@ -51,7 +51,7 @@
           </a>
         </div>
 
-        <!-- Add loop.index to update div id of the Accordion -->
+        <!-- Add -{{ loop.index }} to update div id of the Accordion -->
         <div id="collapseUnfiled-{{ loop.index }}" class="collapse" role="tabpanel" aria-labelledby="headingUnfiled"
           data-parent="#accordionEx78">
           <div class="card-body" style="background-color: rgb(214, 234, 235);">
@@ -77,6 +77,8 @@
                 </thead>
 
                 <tbody>
+                  {% for person in staff %}
+                      {% if person.department == dment.department %}
                   <tr>
                     <th scope="row">
                       <input class="form-check-input" type="checkbox" id="checkbox1">
@@ -87,8 +89,6 @@
                     selcting only the employees for appropriate department in db.
                     Note that department collection is already iterated through, in for-Loop above.
                     -->
-                    {% for person in staff %}
-                      {% if person.department == dment.department %}
                       <td>{{ person.first_name }}</td>
                       <td>{{ person.last_name }}</td>
                       <td>{{ person.email }}</td>
@@ -96,9 +96,8 @@
                       <td>{{ person.address }}</td>
                       <td>{{ person.gender }}</td>
                       <td>{{ person.employment_date }}</td>
-                      <td>
-                      {% endif %}
-                    {% endfor %}
+
+                    <td>
                       <a><i class="fas fa-pen-square mx-1" data-toggle="tooltip" data-placement="top" title="Edit"
                           style="font-size: 20px; color: green; padding-right: 20px;">
                         </i>
@@ -109,6 +108,8 @@
                       </a>
                     </td>
                   </tr>
+                    {% endif %}
+                  {% endfor %}
                 </tbody>
               </table>
             </div>
@@ -119,3 +120,4 @@
   </div>
   
 {% endblock %}
+
