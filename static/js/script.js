@@ -28,23 +28,14 @@ $(document).ready(function(){
       })();
   // New employee form inputs validation ends
 
+  // Data Picker Initialization
+    $('.datepicker').datepicker({
+      inline: true
+    });
+
   });
 
 // Set focus for table search in employees directory
 document.getElementById("tableSearch").focus();
 // Focus for table search ends
 
-
-// Date picker code
-$(document).ready(function(){
-  var date_input=$('input[name="date"]'); 
-  console.log(date_input);
-  var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-  var options={
-    format: 'mm/dd/yyyy',
-    container: container,
-    todayHighlight: true,
-    autoclose: true,
-  };
-  date_input.datepicker(options);
-});
