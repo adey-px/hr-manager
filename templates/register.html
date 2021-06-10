@@ -23,15 +23,15 @@
                 <form method="POST" action="{{ url_for('register') }}">
                     <div class="md-form">
                         <i class="fas fa-user-plus prefix" style="color: gray;"></i>
-                        <input type="text" name="full_name" id="full_name" class="form-control validate" 
-                            pattern="^[a-zA-Z]{5,15}$" required>
+                        <input type="text" name="full_name" id="full_name" class="form-control" 
+                            minlength="5" maxlength="25" pattern="^[a-zA-Z ]{5,25}$" required>
                         <label for="full_name">Full Name</label>
                     </div>
                     
                     <div class="md-form">
                         <i class="fas fa-envelope prefix" style="color: gray;"></i>
                         <input type="text" name="email" id="email" class="form-control" 
-                            pattern="^[a-z0-9]{5,15}$" required>
+                            minlength="5" maxlength="15" required>
                         <label for="email">E-mail</label>
                     </div>
 
