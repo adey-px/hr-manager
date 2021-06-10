@@ -34,59 +34,52 @@
         <div class="card mx-auto">
             <div class="card-body"> 
                 <form method="POST" action="{{ url_for('login') }}">
-
                     <div class="md-form md-outline">
                         <i class="fas fa-envelope prefix" style="color: gray;"></i>
-                        <input type="text" name="email" id="email" class="form-control validate" required>
+                        <input type="text" name="email" id="email" class="form-control" required>
                         <label for="email">E-mail address</label>
-                      </div>
+                    </div>
                     
                     <div class="md-form md-outline">
                         <i class="fas fa-user-lock prefix" style="color: gray"></i>
-                        <input type="password" name="password" id="password" minilenght="5" 
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
+                        <input type="password" name="password" id="password" minilenght="3" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{3,15}$" class="form-control" required>
                         <label for="password">Password</label>
                     </div>
 
-                    <div class="form-group row text-center">
+                    <div class="form-group row text-center" style="padding-top: 40px;">
                         <div class="col">
-                            <button type="submit" class="btn btn-block white-text text-center login-label text-capitalize" 
-                                style="background-color: gray;">
+                            <button type="submit" style="background-color: gray;" 
+                                class="btn btn-block white-text text-center login-label text-capitalize" >
                                 Login <i class="fas fa-sign-in-alt"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input" name="#" id="#">
-                        <label for="#" class="custom-control-label" >Remember me on this device</label>
-                    </div>
                 </form>
-                <div class="row inner-links">
+
+                <div class="row inner-links" style="padding-top: 120px;">
                     <div class="col text-left">
-                        <div class="col">
-                            <i class="fas fa-question-circle"></i><a href="#"><span style="color: black;">Forgot your password?</span></a>
+                        <div class="col login">
+                            <i class="fas fa-home"></i>
+                            <a href="{{ url_for('home') }}">
+                                <span style="color: black;">Go to Home Page</span>
+                            </a> 
                         </div>
                     </div>
                     <div class="col text-right">
                         <div class="col">
-                            <i class="fas fa-home"></i><a href="{{ url_for('home') }}"><span style="color: black;">Go to Home Page</span></a> 
+                            <p class="black-text login">
+                                New Employee?
+                                <a href="{{ url_for('register') }}" class="red-text"><strong>Register</strong></a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div> 
         </div>
     </div>
-    
-    <div class="row card-bottom card-login-bottom">
-        <div class="col sm12">
-            <p class="text-center white-text">
-                New Employee?
-                <a href="{{ url_for('register') }}" class="yellow-text">Register</a>
-            </p>
-        </div>
-    </div>
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
@@ -95,6 +88,3 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
-
-
-

@@ -140,11 +140,6 @@ body {
     padding-top: 60px;
 }
 
-.card-login-bottom {
-    font-size: 18px;
-    padding-top: 20px;
-}
-
 /* Dashboard page */
 .table-item {
     margin-top: 50px;
@@ -176,6 +171,7 @@ body {
 
 /* footer */
 .list-styled a:hover,
+.login a:hover,
 .footer-links-dash a:hover,
 .footer-copyright a:hover {
     text-decoration: underline;

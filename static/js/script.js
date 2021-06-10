@@ -35,9 +35,10 @@ document.getElementById("tableSearch").focus();
 // Focus for table search ends
 
 
-
+// Date picker code
 $(document).ready(function(){
-  var date_input=$('input[name="date"]'); //our date input has the name "date"
+  var date_input=$('input[name="date"]'); 
+  console.log(date_input);
   var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
   var options={
     format: 'mm/dd/yyyy',
