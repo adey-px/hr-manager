@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- Material form contact -->
     <div class="h2-responsive text-center font-weight-bolder card-header"> 
         New Employee
     </div>
+
+    <!-- Flash message -->
     <section class="container">
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -17,7 +18,9 @@
             {% endif %}
         {% endwith %}
     </section>
+    <!-- Flash message ends -->
 
+    <!-- New employee form -->
     <div class="row">
         <div class="col-12">
             <form class="text-center border border-light p-5 mx-auto add-form needs-validation" 
@@ -34,40 +37,45 @@
         
                 <input type="text" name="first_name" id="first_name" class="form-control mb-4" 
                     placeholder="First Name" required>
-                <input type="text" name="last_name" id="last_name" class="form-control mb-4" placeholder="Last Name" required>
-                <input type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail" required>
-                <input type="text" name="mobile" id="mobile" class="form-control mb-4" placeholder="Mobile" required>
-                <input type="text" name="address" id="address" class="form-control mb-4" placeholder="Home Address" required>
+
+                <input type="text" name="last_name" id="last_name" class="form-control mb-4" 
+                    placeholder="Last Name" required>
+
+                <input type="email" name="email" id="email" class="form-control mb-4" 
+                    placeholder="E-mail" required>
+
+                <input type="number" name="mobile" id="mobile" class="form-control mb-4" 
+                    placeholder="Mobile" required>
+
+                <input type="text" name="address" id="address" class="form-control mb-4" 
+                    placeholder="Home Address" required>
         
-                <select class="browser-default custom-select mb-4" name="gender" id="gender" required>
+                <select class="custom-select mb-4" name="gender" 
+                    id="gender" required>
                     <option value="">Gender</option>
                     <option>Male</option>
                     <option>Female</option>
                 </select>
 
                 <div class="md-form md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="date" name="employment_date" id="employment_date" class="form-control" required>
+                    <input type="date" name="employment_date" id="employment_date" 
+                        class="form-control" placeholder="Employment Date" required>
                     <div class="invalid-feedback">Please select a valid date.</div>
                     <label for="example">Employment Date</label>
                 </div>
 
-                <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                    <input placeholder="Select date" type="text" id="example" class="form-control">
-                    <label for="example">Try me...</label>
-                    <i class="fas fa-calendar input-prefix"></i>
-                  </div>
-                   
                 <div class="form-group">
-                    <textarea class="form-control rounded-0" name="duties" id="duties" rows="3" placeholder="Duties" required></textarea>
+                    <textarea class="form-control rounded-0" name="duties" id="duties" rows="3" 
+                        placeholder="Duties" required></textarea>
                 </div>
             
-                <button type="submit" class="btn btn-block white-text text-center login-label text-capitalize" style="background-color: gray;">
+                <button type="submit" class="btn btn-block white-text text-center login-label text-capitalize" 
+                    style="background-color: gray;">
                      Add Employee <i class="fas fa-plus-square" style="font-size: 20px;"></i>
                 </button>
             </form>
         </div>
     </div>
-
+    <!-- New employee form ends -->
 
 {% endblock %}
-

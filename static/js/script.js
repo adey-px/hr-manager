@@ -27,15 +27,8 @@ $(document).ready(function(){
       }, false);
       })();
   // New employee form inputs validation ends
-
-  // Data Picker Initialization
-    $('.datepicker').datepicker({
-      inline: true
-    });
-
-  });
+});
 
 // Set focus for table search in employees directory
 document.getElementById("tableSearch").focus();
 // Focus for table search ends
-
