@@ -27,6 +27,11 @@ def careers():
     return render_template("careers.html")
 
 
+@app.route("/adverts")
+def adverts():
+    return render_template("adverts.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
