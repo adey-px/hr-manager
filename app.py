@@ -22,9 +22,9 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/service_center")
-def service_center():
-    return render_template("service_center.html")
+@app.route("/careers")
+def careers():
+    return render_template("careers.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
