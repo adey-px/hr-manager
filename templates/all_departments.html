@@ -5,6 +5,7 @@
     All Departments 
   </div>
 
+  <!-- Flash message -->
   <section class="container">
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -16,19 +17,27 @@
         {% endif %}
     {% endwith %}
   </section>
+  <!-- Flash message ends -->
 
+  <!-- List of departments section -->
   <div class="container">
     <div class="row row-cols-1 row-cols-md-4">
       {% for item in ment %}
         <div class="col mb-4">
           <div class="card" style="width: 100%; height: 200px; background: rgb(216, 240, 240);">
             <div class="card-body mx-auto">
-              <span><h4 class="card-title text-center">{{ item.department }}</h4></span>
+              <span>
+                <h4 class="card-title text-center">
+                  {{ item.department }}
+                </h4>
+              </span>
+
                 <button type="button" class="btn btn-unique btn-md" style="margin-top: 80px;">
                   <a href="{{ url_for('edit_department', item_id=item._id) }}">
                     <span class="white-text">Edit</span> 
                   </a>
                 </button>
+
                 <button type="button" class="btn btn-danger btn-md" style="margin-top: 80px;">
                   <a href="{{ url_for('delete_department', item_id=item._id) }}">
                     <span class="white-text">Delete</span> 
@@ -40,5 +49,6 @@
       {% endfor %}
     </div>
   </div>
+  <!-- List of departments section ends -->
 
 {% endblock %}
