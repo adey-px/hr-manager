@@ -19,18 +19,23 @@
                       {% if messages %}
                           {% for message in messages %}
                               <div class="row">
-                                  <h4 class="black-text mx-auto message-d flash-text">{{ message }}</h4>
+                                  <h4 class="black-text mx-auto message-d flash-text">
+                                    {{ message }}
+                                  </h4>
                               </div>
                           {% endfor %}
                       {% endif %}
                   {% endwith %}
                 </section>
+                <!-- flash messages ends -->
 
                 <div class="text-center">
-                  <p class="mb-0">Your information is diplayed here for your perusal.<br>
-                    Contact the <a href="#"><em>HR Department</em></a> in case you have any question or for any update.
+                  <p class="mb-0">
+                    Your information is diplayed here for your perusal.<br>
                   </p>
                 </div>
+
+                <!-- Employee information table -->
                 <div class="row">
                   <table class="table table-bordered table-item">
                     <thead>
@@ -84,12 +89,15 @@
                     </tbody>
                   </table>
                 </div>
+                <!-- Employee information table ends -->
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Right panel widget section-->
       <div class="col-5">
         <div class="card" style="width: 100%; height: 760px;">
           <ul class="list-group list-group-flush">
@@ -138,6 +146,8 @@
           </ul>
         </div>
       </div>
+      <!-- Right panel widget section ends -->
+
     </div>
   </div>
 
