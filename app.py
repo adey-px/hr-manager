@@ -37,6 +37,11 @@ def jobs_apply():
     return render_template("jobs_apply.html")
 
 
+@app.route("/apply_status")
+def apply_status():
+    return render_template("apply_status.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

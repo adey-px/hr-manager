@@ -52,9 +52,9 @@
       <button type="button"
         class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
         <i class="fas fa-graduation-cap btn-home-icon"></i>
-        <a href="{{ url_for('careers') }}">
-          Career Opportunities
-        </a> 
+          <a href="{{ url_for('careers') }}">
+            Career Opportunities
+          </a> 
       </button>
 
       <button type="button"
@@ -75,7 +75,11 @@
 
       <button type="button"
         class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-        <i class="fas fa-user-check btn-home-icon"></i>Check Application Status</button>
+        <i class="fas fa-user-check btn-home-icon"></i>
+          <a href="{{ url_for('apply_status') }}">
+            Check Application Status
+          </a>
+      </button>
 
       <button type="button"
         class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
