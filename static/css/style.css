@@ -74,6 +74,33 @@ body {
     height: 35px;
 }
 
+.hm-text1 {
+    background-color: white;
+    height: 30px;
+    width: 161px;
+    padding-top: 3px;
+    padding-left: 12px;
+    border-radius: 15px;
+}
+
+.hm-text2 {
+    background-color: white;
+    height: 30px;
+    width: 245px;
+    padding-top: 3px;
+    padding-left: 13px;
+    border-radius: 15px;
+}
+
+.hm-text3 {
+    background-color: white;
+    height: 30px;
+    width: 180px;
+    padding-top: 3px;
+    padding-left: 15px;
+    border-radius: 15px;
+}
+
 /* mobile download links */
 .mobile-apps {
     margin-top: 50px;

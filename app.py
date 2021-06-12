@@ -22,6 +22,11 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/about_hrp")
+def about_hrp():
+    return render_template("about_hrp.html")
+
+
 @app.route("/careers")
 def careers():
     return render_template("careers.html")
@@ -40,6 +45,11 @@ def jobs_apply():
 @app.route("/apply_status")
 def apply_status():
     return render_template("apply_status.html")
+
+
+@app.route("/help_desk")
+def help_desk():
+    return render_template("help_desk.html")
 
 
 @app.route("/register", methods=["GET", "POST"])

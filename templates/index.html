@@ -49,41 +49,45 @@
       <div class="text-center right-home-title">
         <span>Self Service Center</span>
       </div>
-      <button type="button"
-        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
+      <a href="{{ url_for('careers') }}">
+        <button type="button"
+        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
         <i class="fas fa-graduation-cap btn-home-icon"></i>
-          <a href="{{ url_for('careers') }}">
             Career Opportunities
-          </a> 
-      </button>
-
-      <button type="button"
-        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-        <i class="fab fa-adversal btn-home-icon"></i>
-          <a href="{{ url_for('adverts') }}">
-            External Advertisement
-          </a>
-      </button>
-
-      <button type="button"
-        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-        <i class="fas fa-envelope-open-text btn-home-icon"></i>
-          <a href="{{ url_for('jobs_apply') }}">
-            Job Application 
-          </a>
         </button>
+      </a> 
 
-      <button type="button"
-        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-        <i class="fas fa-user-check btn-home-icon"></i>
-          <a href="{{ url_for('apply_status') }}">
-            Check Application Status
-          </a>
-      </button>
+      <a href="{{ url_for('adverts') }}">
+        <button type="button"
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          <i class="fab fa-adversal btn-home-icon"></i>
+              External Advertisement
+        </button>
+      </a>
 
-      <button type="button"
-        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left hvr-glow">
-        <i class="fas fa-question-circle btn-home-icon"></i>Help Desk</button>
+      <a href="{{ url_for('jobs_apply') }}">
+        <button type="button"
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          <i class="fas fa-envelope-open-text btn-home-icon"></i>
+              Job Application 
+        </button>
+      </a>
+
+      <a href="{{ url_for('apply_status') }}">
+        <button type="button"
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          <i class="fas fa-user-check btn-home-icon"></i>
+              Check Application Status
+        </button>
+      </a>
+
+      <a href="{{ url_for('help_desk') }}">
+        <button type="button"
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          <i class="fas fa-question-circle btn-home-icon"></i>
+            Help Desk
+        </button>
+      </a>
       </div>
     </div>
   </div>
@@ -108,73 +112,79 @@
   <!-- Solution section for employees -->
   <div class="container">
     <div class="row">
+
       <div class="col-sm">
-        <div class="view view-cascade overlay">
+        <div class="view">
           <img src="{{ url_for('static', filename='images/employees-access.jpg') }}" class="card-img-top"
             alt="narrower">
-          <a>
-            <div class="mask rgba-white-slight"></div>
+          <a href="{{ url_for('login') }}">
+            <div class="mask rgba-white-slight flex-center">
+              <span class="hm-text1 black-text">
+                Employees Access <i class="fas fa-caret-right"></i></span>
+            </div>
           </a>
-        </div>
-        <div class="card-body card-body-cascade">
-          <h4 class="card-title text-center">Employees Access</h4>
-          <p class="card-text" align="justify" >Get to your dashboard, view your assigned duties
-            and do all other internal operations and designated activities.
-          </p>
-          <a href="{{ url_for('login') }}" class="btn btn-unique" style="width: 100%;">Log In</a>
-        </div>
+        </div>  
       </div>
 
       <div class="col-sm">
-        <div class="view view-cascade overlay">
+        <div class="view">
           <img src="{{ url_for('static', filename='images/forgot-email.jpg') }}" class="card-img-top"
             alt="narrower">
-          <a>
-            <div class="mask rgba-white-slight"></div>
+          <a href="{{ url_for('help_desk') }}">
+            <div class="mask rgba-white-slight flex-center">
+              <span class="hm-text2 black-text">
+                Forgot your username (email)?<i class="fas fa-caret-right" style="padding-left: 5px;"></i></span>
+            </div>
           </a>
-        </div>
-        <div class="card-body card-body-cascade">
-          <h4 class="card-title text-center">Forgot your username?</h4>
-          <p class="card-text" align="justify">Retrieve or recover your username through
-            your registered email address with the help of your HR Manager.
-          </p>
-          <a class="btn btn-unique" style="width: 100%;">Click here</a>
         </div>
       </div>
 
       <div class="col-sm">
-       <div class="view view-cascade overlay">
-        <img src="{{ url_for('static', filename='images/reset-password.jpg') }}" class="card-img-top"
-          alt="narrower">
-        <a>
-          <div class="mask rgba-white-slight"></div>
-        </a>
-      </div>
-      <div class="card-body card-body-cascade">
-        <h4 class="card-title text-center">To reset your password</h4>
-        <p class="card-text" align="justify" >Get to your dashboard, view your assigned duties
-          and do all other internal operations and activities.
-        </p>
-        <a class="btn btn-unique" style="width: 100%;">Click here</a>
-      </div>
+        <div class="view">
+          <img src="{{ url_for('static', filename='images/reset-password.jpg') }}" class="card-img-top"
+            alt="narrower">
+          <a href="{{ url_for('help_desk') }}">
+            <div class="mask rgba-white-slight flex-center">
+              <span class="hm-text3 black-text">
+                Reset your password <i class="fas fa-caret-right"></i></span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
   <!-- Solution section for employees ends -->
 
-  <!-- Counter section -->
+  <!-- Important note section -->
+  <div class="container" style="margin-top: 50px; width: 60%;">
+    <p class="note" align="justify">
+      <strong>Important Note:</strong> 
+      Every organization aspiring to be relevant in this digital age needs to include digital resources
+      to boost their exisiting business productivity. They also need to modify their business
+      objectives to reflect the incorporation and inclusion of Custom Applications to effectively and 
+      productively manage thier Human resources since this component is crucial to do day-to-day 
+      administration and management of their business enterprise. This custom-built Application, otherwise 
+      called Human Resource Portal or HR Portal has been developed, tested and certified by industry experts 
+      and professional businessmen who are ready to add more values to their employees and consequently take 
+      their business to the next level.
+    </p>
+  </div>
+  <!-- Important note section ends -->
+
+  <!-- Success story section -->
   <div class="container my-5 z-depth-1 px-0 rounded">
-    <section class="white-text p-5 rounded" style="background-color: gray">
-      <h3 class="text-center font-weight-bold mb-4 pb-2">HR Portal</h3>
+    <section class="white-text p-5 rounded" style="background-color: azure;">
+      <h3 class="text-center mb-4 pb-2 black-text" 
+        style="font-family: Arial, Helvetica, sans-serif;">HRP Success Story</h3>
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="row">
             <div class="col-6 pr-0">
-              <h4 class="display-4 text-right mb-0 count-up" data-from="0" data-to="42" data-time="2000">42</h4>
+              <h4 class="display-4 text-right mb-0 count-up black-text" data-from="0" data-to="42" data-time="2000">1,420</h4>
             </div>
   
             <div class="col-6">
-              <p class="text-uppercase font-weight-normal mb-1">Projects</p>
+              <p class="text-uppercase font-weight-normal mb-1 black-text">Projects</p>
               <p class="mb-0"><i class="fas fa-briefcase fa-2x mb-0"></i></p>
             </div>
           </div>
@@ -183,11 +193,11 @@
         <div class="col-md-4 mb-4">
           <div class="row">
             <div class="col-6 pr-0">
-              <h4 class="display-4 text-right mb-0 count1" data-from="0" data-to="3500" data-time="2000">3,500</h4>
+              <h4 class="display-4 text-right mb-0 count1 black-text" data-from="0" data-to="3500" data-time="2000">60,500</h4>
             </div>
   
             <div class="col-6">
-              <p class="text-uppercase font-weight-normal mb-1">Customers</p>
+              <p class="text-uppercase font-weight-normal mb-1 black-text">Customers</p>
               <p class="mb-0"><i class="fas fa-user fa-2x mb-0"></i></p>
             </div>
           </div>
@@ -195,12 +205,12 @@
   
         <div class="col-md-4 mb-4">
           <div class="row">
-            <div class="col-6 pr-0">
+            <div class="col-6 pr-0 black-text">
               <h4 class="display-4 text-right"><span class="d-flex justify-content-end">
                 <span class="count2" data-from="0" data-to="100" data-time="2000">100</span> %</span></h4>
             </div>
   
-            <div class="col-6">
+            <div class="col-6 black-text">
               <p class="text-uppercase font-weight-normal mb-1">Satisfaction</p>
               <p class="mb-0"><i class="fas fa-smile fa-2x mb-0"></i></p>
             </div>
@@ -210,7 +220,16 @@
       </div>
     </section>
   </div>
-  <!-- Counter section ends -->
+   <!-- Success story section ends -->
+
+  <!-- Help desk link -->
+  <div class="help-desk text-center" style="margin-bottom: 40px; margin-top: 80px;">
+    <h5 style="display: inline;">Do you need help using this Portal?</h5>
+    <a href="{{ url_for('help_desk') }}" class="btn btn-secondary btn-rounded text-capitalize" style="border-radius: 25px;">
+      <i class="fas fa-envelope" style="font-size: 15px; padding-right: 5px;"></i>Contact Help Desk</a>
+  </div>
+  <!-- Help desk link ends -->
+
 
   <!-- Footer section-->
   <footer class="page-footer font-small stylish-color-dark pt-4">
@@ -232,7 +251,7 @@
             <li>Robust, Secure & Flexible</li>
             <li>One Platform; Multiple Users</li>
           </ul>
-          <a href="#">
+          <a href="{{ url_for('about_hrp') }}">
             <h5 class="blue-text text-left">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
           </a>
         </div>
@@ -245,7 +264,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Sign In</a></li>
-            <li><a href="#!">Help Desk</a></li>
+            <li><a href="{{ url_for('help_desk') }}">Help Desk</a></li>
           </ul>
         </div>
       </div>
@@ -258,7 +277,8 @@
         <h5 class="mb-1">Need HRP to manage your employees?</h5>
       </li>
       <li class="list-inline-item">
-        <a href="#" class="btn btn-danger btn-rounded" style="border-radius: 25px;">Contact Us</a>
+        <a href="mailto: aosteph@gmail.com" class="btn btn-danger btn-rounded" 
+          style="border-radius: 25px;">Contact Us</a>
       </li>
     </ul>
 
@@ -298,3 +318,4 @@
   </footer>
 
 {% endblock %}
+
