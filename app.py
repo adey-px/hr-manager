@@ -211,6 +211,14 @@ def manage_employee():
         "manage_employee.html", depo=employk, staff=alice)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    employk = list(mongo.db.departments.find({"$text": {"$search": query}}))
+    alice = list(mongo.db.employees.find())
+    return render_template("manage_employee.html", depo=employk, staff=alice)
+
+
 @app.route("/new_department", methods=["GET", "POST"])
 def new_department():
     if request.method == "POST":
