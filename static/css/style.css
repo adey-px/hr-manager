@@ -174,8 +174,11 @@ body {
 
 /* Dashboard page */
 .table-item {
-    margin-top: 50px;
-    font-size: 18px;
+    margin-top: 15px;
+}
+
+.table-items {
+    font-size: 16px;
 }
 
 .circle-icon {
@@ -208,4 +211,7 @@ body {
 .footer-copyright a:hover {
     text-decoration: underline;
 }
+
+/* Manage employee */
+
 

@@ -126,8 +126,6 @@ def login():
                 # If both conditions are satisfied, put the user in a session
                 if correct_password:
                     session["user"] = request.form.get("email").lower()
-                    flash("Hello {}, welcome to your dashboard".format(
-                        request.form.get("email")))
                     return redirect(url_for("dashboard", email=session["user"]))
 
                 else:
@@ -264,6 +262,8 @@ def delete_department(item_id):
 def all_departments():
     dpt = mongo.db.departments.find().sort("department", 1)
     return render_template("all_departments.html", ment=dpt)
+
+
 
 
 if __name__ == "__main__":

@@ -9,29 +9,18 @@
     <div class="row">
       <div class="col-7">
         <div class="card-deck">
-          <div class="card mb-4" style="height: 900px;">
+          <div class="card mb-4" style="height: 1000px;">
             <div class="card-dashboard">
               <div class="card-body">
 
-                <section class="container">
-                  <!-- flash messages -->
-                  {% with messages = get_flashed_messages() %}
-                      {% if messages %}
-                          {% for message in messages %}
-                              <div class="row">
-                                  <h4 class="black-text mx-auto message-d flash-text">
-                                    {{ message }}
-                                  </h4>
-                              </div>
-                          {% endfor %}
-                      {% endif %}
-                  {% endwith %}
-                </section>
-                <!-- flash messages ends -->
-
-                <div class="text-center">
-                  <p class="mb-0">
-                    Your information is diplayed here for your perusal.<br>
+                <!-- Welcome message to user -->
+                <div class="text-left black-text">
+                  <h4 style="font-size: 16px;">
+                    Hello <strong>{{ employ.email }}</strong>, your information with the company is diplayed here.
+                  </h4>
+                  <p align="justify" style="font-size: 14px" class="grey-text">Your employment service is subject to the corporate policy 
+                    of this organization and you are expected to abide by all rules & regulations guiding our employees. 
+                    Fill the form below to contact HR office if any question or concern.
                   </p>
                 </div>
 
@@ -39,58 +28,71 @@
                 <div class="row">
                   <table class="table table-bordered table-item">
                     <thead>
-                      <tr>
+                      <tr>  
                         <th scope="col"></th>
-                        <th scope="col"><strong>Department:</strong> </th>
-                        <th scope="col">{{ employ.department }}</th>
+                        <th scope="col" class="table-items"><strong>Department:</strong></th>
+                        <th scope="col" class="table-items">{{ employ.department }}</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row"></th>
-                        <td><strong>First Name:</strong></td>
-                        <td>{{ employ.first_name }}</td>
+                        <td class="table-items"><strong>First Name:</strong></td>
+                        <td class="table-items">{{ employ.first_name }}</td>
                       </tr>
                       <tr>
                       <tr>
                         <th scope="row"></th>
-                        <td><strong>Last Name:</strong></td>
-                        <td>{{ employ.last_name }}</td>
+                        <td class="table-items"><strong>Last Name:</strong></td>
+                        <td class="table-items">{{ employ.last_name }}</td>
                       </tr>
                       <th scope="row"></th>
-                      <td><strong>Email: </strong></td>
-                      <td>{{ employ.email }} </td>
+                      <td class="table-items"><strong>Email: </strong></td>
+                      <td class="table-items">{{ employ.email }} </td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td><strong>Mobile:</strong></td>
-                        <td>{{ employ.mobile }} </td>
+                        <td class="table-items"><strong>Mobile:</strong></td>
+                        <td class="table-items">{{ employ.mobile }} </td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td><strong>Home Address:</strong> </td>
-                        <td>{{ employ.address }} </td>
+                        <td class="table-items"><strong>Home Address:</strong> </td>
+                        <td class="table-items">{{ employ.address }} </td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td><strong>Gender:</strong> </td>
-                        <td>{{ employ.gender }} </td>
+                        <td class="table-items"><strong>Gender:</strong> </td>
+                        <td class="table-items">{{ employ.gender }} </td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td><strong>Employment Date:</strong> </td>
-                        <td> {{ employ.employment_date }} </td>
+                        <td class="table-items"><strong>Employment Date:</strong> </td>
+                        <td class="table-items"> {{ employ.employment_date }} </td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td><strong>Primary Duties</strong> </td>
-                         <td>{{ employ.duties }} </td>
+                        <td class="table-items"><strong>Primary Duties</strong> </td>
+                         <td class="table-items">{{ employ.duties }} </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <!-- Employee information table ends -->
 
+                <div class="card text-center mb-3" style="width: 680px; height: 280px;">
+                  <div class="card-body">
+                    <h6 class="card-title">Contact HR Office</h6>
+                    <form class="comment-form">
+                      <div class="md-form">
+                        <textarea id="textarea-char-counter" class="form-control md-textarea" length="120" rows="3"></textarea>
+                        <label for="textarea-char-counter">Type your comment</label>
+                        <a href="#" class="btn btn-mdb-color text-capitalize" style="margin-top: 70px;">Submit</a>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+          
               </div>
             </div>
           </div>
@@ -99,7 +101,7 @@
 
       <!-- Right panel widget section-->
       <div class="col-5">
-        <div class="card" style="width: 100%; height: 760px;">
+        <div class="card" style="width: 100%; height: 820px;">
           <ul class="list-group list-group-flush">
 
             <a href="#">
@@ -117,10 +119,10 @@
             <a href="#">
               <li class="list-group-item" style="height: 170px; padding-top: 15px;">
                 <h6 class="black-text" style="padding-left: 135px; padding-bottom: 0px; padding-top: 20px;">
-                  <strong>Need Assistance?</strong></h6>
-                <i class="far fa-comment-dots text-left circle-icon"></i>
+                  <strong>Change your password</strong></h6>
+                <i class="fas fa-door-closed text-left circle-icon"></i>
                 <h6 style="display: inline; padding-left: 50px; color: rgb(126, 83, 228);">
-                  We are here to help. Feel free to reach out to us
+                  For your information security & privacy
                 </h6>
               </li>
             </a>
@@ -136,11 +138,9 @@
               </li>
             </a>
 
-            <div class="earn" style="background-color: rgb(218, 229, 233); height: 250px;">
-              <i class="fas fa-gift" style="font-size: 100px; padding-left: 30px; padding-top: 40px; color: rgb(141, 141, 212);"></i>
-              <h4 style="padding-left: 30px; display: inline-block;"><strong>Refer & Earn</strong></h4>
-              <span><h6 style="padding-left: 143px;">Spread the goodnews of our Quality products <br> and get rewarded</h6></span>
-              <span><h6 style="padding-left: 143px;"><a href="#">Read more...</a></h6></span>
+            <div class="earn mx-auto" style="background-color: white; height: 250px;">
+              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Africa%2FLagos&amp;src=ZW4uY2hyaXN0aWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4ubmcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=aWl0YjZucmwxb2l2YjFjNnAydmowbmNrc2x0dm5mdTJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=MW5lZjA2M2oxa2JkbG4wYnM3OHQ3NjllZjRkOWFraXJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%234285F4&amp;color=%23009688&amp;color=%23795548&amp;color=%23D50000&amp;showTitle=0&amp;showPrint=1&amp;showTabs=0&amp;showCalendars=1&amp;showTz=0" 
+              style="border-width:0; margin-top: 20px;" width="510" height="280" frameborder="0" scrolling="no"></iframe>
             </div>
             
           </ul>
