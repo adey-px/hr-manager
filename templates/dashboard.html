@@ -5,22 +5,21 @@
     Dashboard
   </div>
 
-  <div class="container-fluid" style="width: 80%;">
+  <div class="container-fluid" style="width: 70%;">
     <div class="row">
       <div class="col-7">
         <div class="card-deck">
-          <div class="card mb-4" style="height: 1000px;">
+          <div class="card mb-4 border-light" style="height: 1000px;">
             <div class="card-dashboard">
               <div class="card-body">
 
                 <!-- Welcome message to user -->
                 <div class="text-left black-text">
                   <h4 style="font-size: 16px;">
-                    Hello <strong>{{ employ.email }}</strong>, your information with the company is diplayed here.
+                    Hello <strong>{{ employ.email }}</strong>, your information with the company is shown here.
                   </h4>
-                  <p align="justify" style="font-size: 14px" class="grey-text">Your employment service is subject to the corporate policy 
+                  <p align="justify" style="font-size: 14px" class="grey-text">Your service is subject to the corporate policy 
                     of this organization and you are expected to abide by all rules & regulations guiding our employees. 
-                    Fill the form below to contact HR office if any question or concern.
                   </p>
                 </div>
 
@@ -30,64 +29,66 @@
                     <thead>
                       <tr>  
                         <th scope="col"></th>
-                        <th scope="col" class="table-items"><strong>Department:</strong></th>
-                        <th scope="col" class="table-items">{{ employ.department }}</th>
+                        <th class="table-items black-text"><strong>Department:</strong></th>
+                        <th class="table-items">{{ employ.department }}</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row"></th>
-                        <td class="table-items"><strong>First Name:</strong></td>
-                        <td class="table-items">{{ employ.first_name }}</td>
+                        <th class="table-items black-text"><strong>First Name:</strong></th>
+                        <th class="table-items">{{ employ.first_name }}</th>
                       </tr>
                       <tr>
                       <tr>
                         <th scope="row"></th>
-                        <td class="table-items"><strong>Last Name:</strong></td>
-                        <td class="table-items">{{ employ.last_name }}</td>
+                        <th class="table-items black-text"><strong>Last Name:</strong></th>
+                        <th class="table-items">{{ employ.last_name }}</th>
                       </tr>
                       <th scope="row"></th>
-                      <td class="table-items"><strong>Email: </strong></td>
-                      <td class="table-items">{{ employ.email }} </td>
+                      <th class="table-items black-text"><strong>Email: </strong></th>
+                      <th class="table-items">{{ employ.email }}</th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td class="table-items"><strong>Mobile:</strong></td>
-                        <td class="table-items">{{ employ.mobile }} </td>
+                        <th class="table-items black-text"><strong>Mobile:</strong></th>
+                        <th class="table-items">{{ employ.mobile }}</th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td class="table-items"><strong>Home Address:</strong> </td>
-                        <td class="table-items">{{ employ.address }} </td>
+                        <th class="table-items black-text"><strong>Home Address:</strong></th>
+                        <th class="table-items">{{ employ.address }}</th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td class="table-items"><strong>Gender:</strong> </td>
-                        <td class="table-items">{{ employ.gender }} </td>
+                        <th class="table-items black-text"><strong>Gender:</strong></th>
+                        <th class="table-items">{{ employ.gender }}</th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td class="table-items"><strong>Employment Date:</strong> </td>
-                        <td class="table-items"> {{ employ.employment_date }} </td>
+                        <th class="table-items black-text"><strong>Employment Date:</strong></th>
+                        <th class="table-items">{{ employ.employment_date }}</th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td class="table-items"><strong>Primary Duties</strong> </td>
-                         <td class="table-items">{{ employ.duties }} </td>
+                        <th class="table-items black-text"><strong>Primary Duties</strong></th>
+                        <th class="table-items">{{ employ.duties }}</th>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <!-- Employee information table ends -->
 
-                <div class="card text-center mb-3" style="width: 680px; height: 280px;">
+                <div class="card text-center mb-3 border-light" style="width: 580px; height: 250px;">
                   <div class="card-body">
-                    <h6 class="card-title">Contact HR Office</h6>
+                    <h6 class="card-title black-text">Contact HR office for any question or concern</h6>
                     <form class="comment-form">
                       <div class="md-form">
-                        <textarea id="textarea-char-counter" class="form-control md-textarea" length="120" rows="3"></textarea>
-                        <label for="textarea-char-counter">Type your comment</label>
-                        <a href="#" class="btn btn-mdb-color text-capitalize" style="margin-top: 70px;">Submit</a>
+                        <textarea id="textarea-char-counter" class="form-control md-textarea" length="120" rows="4"></textarea>
+                        <label for="textarea-char-counter">Type your message</label>
+                        <button type="button" class="btn btn-outline-secondary waves-effect">
+                          Submit
+                        </button>
                       </div>
                     </form>
                   </div>
@@ -101,48 +102,62 @@
 
       <!-- Right panel widget section-->
       <div class="col-5">
-        <div class="card" style="width: 100%; height: 820px;">
+        <div class="card border-light" style="width: 100%; height: 800px;">
           <ul class="list-group list-group-flush">
 
             <a href="#">
-              <li class="list-group-item" style="height: 170px; padding-top: 15px;">
-                <h6 class="black-text" style="padding-left: 140px;"><strong>Attendance</strong></h6>
-                <i class="far fa-address-book text-left circle-icon"></i>
-                  <h6 style="display: inline; padding-left: 50px; color: red; font-size: 40px;">
-                    <strong>0%</strong>
-                  </h6>
-                <h6 style="padding-left: 140px; color: rgb(126, 83, 228)">
-                  Top Employees have over 90% attendance</h6>
+              <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 22px;">
+                <h6 class="black-text" style="display: inline; padding-left: 30px;">
+                  <strong>Quarterly Attendance </strong></h6>
+                <i class="far fa-user text-center circle-icon"></i>
+                <h5 style="display: block; padding-left: 90px;" class="red-text">
+                 <strong>0.0%</strong>
+                </h5>
+                <h6 style="display: block; padding-left: 90px; color: rgb(103, 64, 194);">
+                  Top employees have over 90% attendance
+                 </h6>
               </li>
             </a>
 
             <a href="#">
-              <li class="list-group-item" style="height: 170px; padding-top: 15px;">
-                <h6 class="black-text" style="padding-left: 135px; padding-bottom: 0px; padding-top: 20px;">
+              <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 35px;">
+                <h6 class="black-text" style="display: inline; padding-left: 30px; padding-bottom: 0px; padding-top: 20px;">
+                  <strong>Upcoming Activity</strong></h6>
+                <i class="far fa-sticky-note text-center circle-icon"></i>
+                <h6 style="display: block; padding-left: 90px; color: rgb(103, 64, 194);">
+                 Curated Articles on latest Industry trends
+                </h6>
+              </li>
+            </a>
+
+            <a href="#">
+              <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 35px;">
+                <h6 class="black-text" style="display: inline; padding-left: 30px; padding-bottom: 0px; padding-top: 20px;">
+                  <strong>Need Assistance?</strong></h6>
+                <i class="far fa-comment-dots text-center circle-icon"></i>
+                <h6 style="display: block; padding-left: 90px; color: rgb(103, 64, 194);">
+                  Reach out to us, we are happy to help
+                </h6>
+              </li>
+            </a>
+
+            <a href="#">
+              <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 28px;">
+                <h6 class="black-text" style="display: inline; padding-left: 30px; padding-bottom: 0px; padding-top: 20px;">
                   <strong>Change your password</strong></h6>
-                <i class="fas fa-door-closed text-left circle-icon"></i>
-                <h6 style="display: inline; padding-left: 50px; color: rgb(126, 83, 228);">
-                  For your information security & privacy
+                <i class="fas fa-ban text-center circle-icon"></i>
+                <h6 style="display: block; padding-left: 90px; color: rgb(103, 64, 194);">
+                  Prevent unauthorized access to your information & privacy
                 </h6>
               </li>
             </a>
-
-            <a href="#">
+            
               <li class="list-group-item" style="height: 170px; padding-top: 15px;">
                 <h6 class="black-text" style="padding-left: 135px; padding-bottom: 0px; padding-top: 20px;">
-                  <strong>Industry Articles</strong></h6>
-                <i class="far fa-sticky-note text-left circle-icon"></i>
-                <h6 style="display: inline; padding-left: 50px; color: rgb(126, 83, 228);">
-                  Curated Articles on latest industry trends
-                </h6>
+                  <strong>Motivational Quotes</strong></h6>
               </li>
-            </a>
-
-            <div class="earn mx-auto" style="background-color: white; height: 250px;">
-              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Africa%2FLagos&amp;src=ZW4uY2hyaXN0aWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4ubmcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=aWl0YjZucmwxb2l2YjFjNnAydmowbmNrc2x0dm5mdTJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=MW5lZjA2M2oxa2JkbG4wYnM3OHQ3NjllZjRkOWFraXJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%234285F4&amp;color=%23009688&amp;color=%23795548&amp;color=%23D50000&amp;showTitle=0&amp;showPrint=1&amp;showTabs=0&amp;showCalendars=1&amp;showTz=0" 
-              style="border-width:0; margin-top: 20px;" width="510" height="280" frameborder="0" scrolling="no"></iframe>
-            </div>
             
+
           </ul>
         </div>
       </div>

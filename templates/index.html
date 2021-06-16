@@ -51,7 +51,7 @@
       </div>
       <a href="{{ url_for('careers') }}">
         <button type="button"
-        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+        class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-overline-reveal">
         <i class="fas fa-graduation-cap btn-home-icon"></i>
             Career Opportunities
         </button>
@@ -59,7 +59,7 @@
 
       <a href="{{ url_for('adverts') }}">
         <button type="button"
-          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-overline-reveal">
           <i class="fab fa-adversal btn-home-icon"></i>
               External Advertisement
         </button>
@@ -67,7 +67,7 @@
 
       <a href="{{ url_for('jobs_apply') }}">
         <button type="button"
-          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-overline-reveal">
           <i class="fas fa-envelope-open-text btn-home-icon"></i>
               Job Application 
         </button>
@@ -75,7 +75,7 @@
 
       <a href="{{ url_for('apply_status') }}">
         <button type="button"
-          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-overline-reveal">
           <i class="fas fa-user-check btn-home-icon"></i>
               Check Application Status
         </button>
@@ -83,7 +83,7 @@
 
       <a href="{{ url_for('help_desk') }}">
         <button type="button"
-          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-glow">
+          class="btn white btn-lg btn-block float-right border border-blue text-capitalize text-left black-text hvr-overline-reveal">
           <i class="fas fa-question-circle btn-home-icon"></i>
             Contact Help Desk
         </button>
@@ -115,20 +115,21 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-sm">
+      <div class="col-sm hvr-reveal">
         <div class="view">
           <img src="{{ url_for('static', filename='images/employees-access.jpg') }}" class="card-img-top"
             alt="narrower">
           <a href="{{ url_for('login') }}">
             <div class="mask rgba-white-slight flex-center">
               <span class="hm-text1 black-text">
-                Employees Access <i class="fas fa-caret-right"></i></span>
+                Employees Access <i class="fas fa-caret-right"></i>
+              </span>
             </div>
           </a>
         </div>  
       </div>
 
-      <div class="col-sm">
+      <div class="col-sm hvr-reveal">
         <div class="view">
           <img src="{{ url_for('static', filename='images/forgot-email.jpg') }}" class="card-img-top"
             alt="narrower">
@@ -141,7 +142,7 @@
         </div>
       </div>
 
-      <div class="col-sm">
+      <div class="col-sm hvr-reveal">
         <div class="view">
           <img src="{{ url_for('static', filename='images/reset-password.jpg') }}" class="card-img-top"
             alt="narrower">
@@ -241,16 +242,21 @@
         </div>
         <hr class="clearfix w-100 d-md-none">
         <hr class="clearfix w-100 d-md-none">
-        <div class="col-md-4 mx-auto">
+        
+        <div class="col-md-4 mx-auto read-more">
           <h5 class="font-weight-bold text-capitalize mt-3 mb-4">Features of HRP</h5>
           <ul class="list-styled">
             <li>Instant Online Access</li>
             <li>Robust, Secure & Flexible</li>
             <li>One Platform; Multiple Users</li>
           </ul>
-          <a href="{{ url_for('about_hrp') }}">
-            <h5 class="blue-text text-left">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
-          </a>
+          <div class="read-more">
+            <a href="{{ url_for('about_hrp') }}">
+              <h5 class="blue-text text-left">
+                Read more <i class="fas fa-angle-double-right ml-2"></i>
+              </h5>
+            </a>
+          </div>
         </div>
 
         <hr class="clearfix w-100 d-md-none">

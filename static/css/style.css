@@ -106,6 +106,10 @@ body {
     margin-bottom: 0px;
 }
 
+.read-more a:hover {
+    color: orange;
+}
+
 /* mobile download links */
 .mobile-apps {
     margin-top: 50px;
@@ -179,17 +183,27 @@ body {
 
 .table-items {
     font-size: 16px;
+    color: rgb(103, 64, 194);
 }
 
 .circle-icon {
-    background: rgb(218, 228, 231);
-    color: rgb(141, 141, 212);
-    width: 80px;
-    height: 80px;
+    background: rgb(243, 241, 241);
+    color: rgb(170, 152, 211);
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     text-align: center;
-    font-size: 40px;
-    padding: 20px;
+    font-size: 35px;
+    padding: 12px;
+    float: left;
+}
+
+.hvr-overline-reveal {
+    width: 100%;
+}
+
+.hvr-reveal {
+    height: 280px;
 }
 
 /* Add_employee form */
