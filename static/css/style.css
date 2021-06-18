@@ -145,6 +145,10 @@ body {
     color: blue;
 }
 
+.read-more a:hover {
+    color: chartreuse;
+}
+
 /* Register page */
 .card {
     width: 35%;
@@ -181,12 +185,6 @@ body {
 
 .inner-links {
     padding-top: 60px;
-}
-
-/* Logout page */
-.logout {
-    height: 40px;
-    margin-top: 0px;
 }
 
 /* Dashboard page */
@@ -233,7 +231,6 @@ body {
 .search-bar1 {
     height: 40px;
     border-width: 1px;
-    border-color: black;
 }
 
 /* footer */

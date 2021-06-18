@@ -15,34 +15,26 @@
 </head>
 <body style="background-color: rgb(207, 230, 228);">
 
-    <div class="container-fluid">
-        <div class="col">
-            <div class="row">
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <h6 class="white-text mx-auto message1 flash-text">
-                                <strong>{{ message }}</strong>
-                            </h6>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
-        </div>
-    </div>
+    <nav class="navbar navbar-dark btn-mdb-color">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <span class="white-text">
+                        <strong>{{ message }}</strong>
+                    </span>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </nav>
 
-    <div class="container-fluid">
-        <div class="col">
-            <div class="row">
-                <h6 style="padding-top: 8px;" class="btn-unique logout white-text">
-                    Thank you for using the HR Portal and we hope it's adding value to your 
-                    overall work satisfaction.
-                </h6>
-            </div>
-        </div>
-    </div>
+    <nav class="navbar navbar-dark btn-unique">
+        <span class="white-text">
+            Thank you for using the HR Portal and we hope it's adding value to your 
+            overall work satisfaction.
+        </span>
+    </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 5px;" >
        <div class="col">
            <div class="row">
                 <span> Go to
