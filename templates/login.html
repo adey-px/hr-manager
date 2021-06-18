@@ -13,25 +13,32 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Sign In - HR Portal</title>
 </head>
-<body style="background-color: gray;">
+<body style="background-color: rgb(207, 230, 228);">
 
-    <div class="h2-responsive text-center font-weight-bolder login-header white-text"> 
-        <i class="fas fa-key login-key"></i><span>Sign In to HR Portal</span> 
-    </div>
-    <section class="container">
+    <section class="container-fluid">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
                     <div class="row">
-                        <h5 class="yellow-text mx-auto flash-text">{{ message }}</h5>
+                        <h5 class="white-text mx-auto message1 flash-text">{{ message }}</h5>
                     </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
     </section>
 
+    
+    <div class="container">
+        <div class="mx-auto login-header">
+            <h5 class="card-header btn-unique white-text text-center py-4">
+                <i class="fas fa-key login-key"></i>
+                <strong>Sign in to HR Portal</strong>
+            </h5>
+        </div>
+    </div>
+
     <div class="row login-card">
-        <div class="card mx-auto">
+        <div class="card mx-auto" style="margin-top: 0px;">
             <div class="card-body"> 
                 <form method="POST" action="{{ url_for('login') }}">
                     <div class="md-form md-outline">
