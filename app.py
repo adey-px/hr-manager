@@ -150,7 +150,12 @@ def logout():
     # To log out user, remove or clear active session cookies
     session.clear()
     flash("You have successfully logged out of your current session")
-    return redirect(url_for("login"))
+    return redirect(url_for("loggout"))
+
+
+@app.route("/loggout")
+def loggout():
+    return render_template("logout.html")
 
 
 @app.route("/new_employee", methods=["GET", "POST"])

@@ -9,13 +9,16 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark grey lighten-2 mb-4">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         <form class="form-inline mx-auto" action="{{ url_for('search') }}" method="post">
           <input class="form-control" type="text" name="query" id="query" style="width: 600px;" 
             minlength="3" maxlength="50" placeholder="Search by typing department name" required>
+
           <a href="{{ url_for('manage_employee') }}" 
             class="btn btn-danger btn-rounded btn-sm my-0 ml-sm-2 text-capitalize">
             <span style="font-size: 14px;">Reset</span>
           </a>
+
           <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2 text-capitalize" 
             type="submit">
             <i class="fas fa-search" style="font-size: 20px;"></i>
@@ -39,7 +42,7 @@
           style="background-color: azure;">
           <div class="card-header" role="tab" id="headingUnfiled">
             <div class="dropdown float-left">
-              <button class="btn btn-info btn-sm m-0 mr-3 p-2 dropdown-toggle" type="button" data-toggle="dropdown"
+              <button class="btn btn-mdb-color  btn-sm m-0 mr-3 p-2 dropdown-toggle" type="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"><i class="fas fa-pencil-alt"></i>
               </button>
               <div class="dropdown-menu dropdown-info">
