@@ -217,6 +217,29 @@ def search():
     return render_template("manage_employee.html", depo=employk, staff=alice)
 
 
+@app.route("/edit_employee/<employee_id>", methods=["GET", "POST"])
+def edit_employee(employee_id):
+    if request.method == "POST":
+        edit = {
+            "department": request.form.get("department"),
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email").lower(),
+            "mobile": request.form.get("mobile"),
+            "address": request.form.get("address"),
+            "gender": request.form.get("gender"),
+            "employment_date": request.form.get("employment_date"),
+            "duties": request.form.get("duties")
+        }
+        mongo.db.employees.update({"_id": ObjectId(employee_id)}, edit)
+        flash("Employee Record Updated Successfully")
+        return redirect(url_for('manage_employee'))
+
+    edica = mongo.db.employees.find_one({"_id": ObjectId(employee_id)})
+    depa = list(mongo.db.departments.find().sort("department", 1))
+    return render_template("edit_employee.html", edico=edica, dpt=depa)
+
+
 @app.route("/new_department", methods=["GET", "POST"])
 def new_department():
     if request.method == "POST":
@@ -235,6 +258,13 @@ def new_department():
             flash("Bravo! You have just created a new Department")
             return redirect(url_for("new_department"))
     return render_template("new_department.html")
+
+
+@app.route("/delete_employee/<employee_id>")
+def delete_employee(employee_id):
+    mongo.db.employees.remove({"_id": ObjectId(employee_id)})
+    flash("Employee Deleted Successfully")
+    return redirect(url_for("manage_employee"))
 
 
 @app.route("/edit_department/<item_id>", methods=["GET", "POST"])
@@ -262,8 +292,6 @@ def delete_department(item_id):
 def all_departments():
     dpt = mongo.db.departments.find().sort("department", 1)
     return render_template("all_departments.html", ment=dpt)
-
-
 
 
 if __name__ == "__main__":

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="h2-responsive text-center font-weight-bolder card-header"> 
+        Edit Employee
+    </div>
+
+    <!-- Flash message -->
+    <section class="container">
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row">
+                        <h5 class="black-text mx-auto message flash-text">{{ message }}</h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+    <!-- Flash message ends -->
+
+    <!-- Edit employee form -->
+    <div class="row">
+        <div class="col-12">
+            <form class="text-center border border-light p-5 mx-auto add-form" 
+                method="POST" action="{{ url_for('edit_employee', employee_id=edico._id) }}">
+
+                {% if dpt|length > 0 %}
+                <select class="custom-select mb-4" name="department" id="department" required>
+                    <option value="">Select Department</option>
+                    {% for item in dpt %}
+                    <option>{{ item.department }}</option>
+                    {% endfor %}
+                </select>
+                {% endif %}
+        
+                <input type="text" name="first_name" id="first_name" class="form-control mb-4" 
+                    placeholder="First Name" value="{{ edico.first_name }}" required>
+
+                <input type="text" name="last_name" id="last_name" class="form-control mb-4" 
+                    placeholder="Last Name"  value="{{ edico.last_name }}" required>
+
+                <input type="email" name="email" id="email" class="form-control mb-4" 
+                    placeholder="E-mail"  value="{{ edico.email }}" required>
+
+                <input type="number" name="mobile" id="mobile" class="form-control mb-4" 
+                    placeholder="Mobile"  value="{{ edico.mobile }}" required>
+
+                <input type="text" name="address" id="address" class="form-control mb-4" 
+                    placeholder="Home Address"  value="{{ edico.address }}" required>
+        
+                <select class="custom-select mb-4" name="gender" 
+                    id="gender" required>
+                    <option value="">Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+
+                <div class="md-form md-outline input-with-post-icon datepicker">
+                    <input type="date" name="employment_date" id="employment_date"
+                        class="form-control" value="{{ edico.employment_date }}" required>
+                    <label for="employment_date">Employment Date</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control rounded-0" name="duties" id="duties" rows="3" 
+                        placeholder="Duties" required></textarea>
+                </div>
+            
+                <div class="text-center">
+                    <button type="submit" class="btn btn-mdb-color white-text text-capitalize" style="font-size: 15px;">
+                      Edit <i class="fas fa-edit right"></i>
+                    </button>
+
+                    <a href="{{ url_for('manage_employee') }}" class="btn btn-danger white-text text-capitalize" style="font-size: 15px;">
+                      Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- Edit employee form ends -->
+
+{% endblock %}
