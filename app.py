@@ -149,13 +149,13 @@ def login():
 def logout():
     # To log out user, remove or clear active session cookies
     session.clear()
-    flash("You have successfully logged out of your current session")
-    return redirect(url_for("loggout"))
+    flash("You have logged out HRP successfully")
+    return redirect(url_for("login"))
 
 
-@app.route("/loggout")
-def loggout():
-    return render_template("logout.html")
+@app.route("/game")
+def game():
+    return render_template("game.html")
 
 
 @app.route("/new_employee", methods=["GET", "POST"])
@@ -193,6 +193,21 @@ def dashboard(email):
 
     if "user" in session:
         return render_template("dashboard.html", employ=dash)
+
+
+@app.route("/emp_message", methods=["GET", "POST"])
+def emp_message(email):
+    if request.method == "POST":
+        messa = {
+            "message": request.form.get("mess")
+        }
+        mongo.db.messages.insert_one(messa)
+        flash("Your message has been sent successfully")
+        return redirect(url_for("dashboard"))
+
+    dash = mongo.db.employees.find_one({"email": email})
+    return render_template("dashboard.html", employ=dash)
+
 
 
 @app.route("/get_employee", methods=["GET", "POST"])

@@ -32,3 +32,4 @@ $(document).ready(function(){
 // Set focus for table search in employees directory
 document.getElementById("tableSearch").focus();
 // Focus for table search ends
+

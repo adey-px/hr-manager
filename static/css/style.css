@@ -125,7 +125,7 @@ body {
 
 .message1 {
     width: 100%;
-    background-color: red;
+    background-color: rgb(77, 16, 16);
     height: 30px; 
     border-radius: 3px; 
 }
@@ -240,7 +240,3 @@ body {
 .footer-copyright a:hover {
     text-decoration: underline;
 }
-
-/* Manage employee */
-
-

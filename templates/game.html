@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" 
         integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}" type="text/css">
     <title>Sign In - HR Portal</title>
 </head>
 <body style="background-color: rgb(207, 230, 228);">
@@ -51,6 +51,38 @@
            </div>
        </div>
     </div>
+
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <div class="wrapper">
+                    <div class="timer">
+                         <span></span>    
+                    </div>
+                    <div class="gameover">GAME OVER</div>
+                    <h1>KILL THE BIRDS <span>(shoot the birds)</span></h1>
+                    <h2>PURE CSS GAME - NO JS!</h2>
+                    <input class="input-circle input-circle1" type="radio" id="circle1" >
+                   <input class="input-circle input-circle2" type="radio" id="circle2" >
+                   <input class="input-circle input-circle3" type="radio" id="circle3" >
+                   <input class="input-circle input-circle4" type="radio" id="circle4" >
+                   <input class="input-circle input-circle5" type="radio" id="circle5" >
+                   <input class="input-circle input-circle6" type="radio" id="circle6" >
+                    
+                    <label for="circle1" class="pajaro pajaro1"><span></span></label>
+                    <label for="circle2" class="pajaro pajaro2"><span></span></label>
+                    <label for="circle3" class="pajaro pajaro3"><span></span></label>
+                    <label for="circle4" class="pajaro pajaro4"><span></span></label>
+                    <label for="circle5" class="pajaro pajaro5"><span></span></label>
+                    <label for="circle6" class="pajaro pajaro6"><span></span></label>
+                    <div class="sum">SCORE:</div>
+            
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
         crossorigin="anonymous"></script>
