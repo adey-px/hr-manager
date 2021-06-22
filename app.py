@@ -17,42 +17,49 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# Home page route
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("index.html")
 
 
+# About HRP page route
 @app.route("/about_hrp")
 def about_hrp():
     return render_template("about_hrp.html")
 
 
+# Careers page route
 @app.route("/careers")
 def careers():
     return render_template("careers.html")
 
 
+# Adverts page route
 @app.route("/adverts")
 def adverts():
     return render_template("adverts.html")
 
 
+# Job Application page route
 @app.route("/jobs_apply")
 def jobs_apply():
     return render_template("jobs_apply.html")
 
-
+# Application Status page route
 @app.route("/apply_status")
 def apply_status():
     return render_template("apply_status.html")
 
 
+# Help Desk page route
 @app.route("/help_desk")
 def help_desk():
     return render_template("help_desk.html")
 
 
+# Register page route
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -106,6 +113,7 @@ def register():
     return render_template("register.html")
 
 
+# Login page route
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -131,12 +139,12 @@ def login():
 
                 else:
                     # If incorrect or invalid password, redirect user back
-                    flash("Incorrect username and/or password. Try again!")
+                    flash("Incorrect username and/or password, try again!")
                     return redirect(url_for("login"))
 
             else:
                 # If user input email does not exist in the db, redirect back
-                flash("Incorrect username and/or password")
+                flash("Incorrect username and/or password, try again!")
                 return redirect(url_for("login"))
 
         else:
@@ -146,6 +154,7 @@ def login():
     return render_template("login.html")
 
 
+# Change Password page route
 @app.route("/change_password", methods=["GET", "POST"])
 def change_password():
     if request.method == "POST":
@@ -165,8 +174,9 @@ def change_password():
             # Create a variable to get new password from form input
             new_password = request.form.get("newpass")
 
-            # Update the old password with the new password thru user id in db
-            mongo.db.users.update_one({"_id": ObjectId(user["_id"])}, {"$set": {"password": generate_password_hash(new_password)}})
+            # Update the old password with the new_password thru user id in db
+            mongo.db.users.update_one({"_id": ObjectId(user["_id"])
+            }, {"$set": {"password": generate_password_hash(new_password)}})
             flash("Your password has been updated successfully")
             return redirect(url_for("change_password"))
         else:
@@ -176,25 +186,28 @@ def change_password():
     return render_template("password.html")
 
 
+# Logout page route
 @app.route("/logout")
 def logout():
     # To log out user, remove or clear active session cookies
     session.clear()
-    flash("You have logged out of HRP successfully")
+    flash("You have logged out of your current")
     return redirect(url_for("login"))
 
 
+# New employee page route
 @app.route("/new_employee", methods=["GET", "POST"])
 def new_employee():
     if request.method == "POST":
-        # Check if employee already exists by form input email
+        # Check if employee already exists in db by their form input email
         employee = mongo.db.employees.find_one(
             {"email": request.form.get("email").lower()})
 
         if employee:
-            flash("This employee already existed. Access denied!")
+            flash("This employee already exists, access denied!")
 
         else:
+            # Create a dictionary to get form inputs to insert in db
             new_employee = {
                 "department": request.form.get("department"),
                 "first_name": request.form.get("first_name"),
@@ -207,26 +220,35 @@ def new_employee():
                 "duties": request.form.get("duties")
             }
             mongo.db.employees.insert_one(new_employee)
-            flash("New employee added successfully")
+            flash("New employee record added successfully")
             return redirect(url_for('new_employee'))
 
+    # Variable to get list of departments into form select options
     depa = list(mongo.db.departments.find().sort("department", 1))
     return render_template("new_employee.html", dpt=depa)
 
 
+# Dashboard page route
 @app.route("/dashboard/<email>", methods=["GET", "POST"])
 def dashboard(email):
+    # Firstly get each employee from db by their email identifier
     dash = mongo.db.employees.find_one({"email": email})
 
+    # Get user/employee individual detail into their active session
+    # Variable employ is applied in dashboard.html to get individual info
     if "user" in session:
         return render_template("dashboard.html", employ=dash)
 
 
+# Employee message route
 @app.route("/emp_message/<email>", methods=["POST"])
 def emp_message(email):
+    # Get user/employee email from db thru their session
+    # This is bcos email of sender should show in message sent
     user_email = mongo.db.users.find_one(
             {"email": session["user"]})["email"]
 
+    # Get form input message along with date & email of sender
     if request.method == "POST":
         messa = {
             "date": datetime.datetime.now(),
@@ -235,35 +257,49 @@ def emp_message(email):
         }
         mongo.db.messages.insert_one(messa)
         flash("Your message has been sent successfully")
+        # Pass route thr email since dashboard temp is rendered thr it
         return redirect(url_for("dashboard", email=user_email))
     return render_template("dashboard.html", email=user_email)
 
 
+# Get employee page route
 @app.route("/get_employee", methods=["GET", "POST"])
 def get_employee():
+    # Ge each user/employee from db & sort by their first name
     emplo = list(mongo.db.employees.find().sort("first_name", 1))
+    # Variable staff is exported to get_employee.html
     return render_template("get_employee.html", staff=emplo)
 
 
+# Manage employee page route
 @app.route("/manage_employee")
 def manage_employee():
+    # Get list of all departments from db and also list of all employees
+    # To display employees by their departments wc are both db collections
     employk = list(mongo.db.departments.find())
     alice = list(mongo.db.employees.find())
+    # Variables depo & staff are exported to manage_employee.html
     return render_template(
         "manage_employee.html", depo=employk, staff=alice)
 
 
+# Employee search route
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # Create variable to get input from search form
     query = request.form.get("query")
+    # Pass thru variables employk & alice for manage_employee temp
+    # Perform text search of employee within list of departments
     employk = list(mongo.db.departments.find({"$text": {"$search": query}}))
     alice = list(mongo.db.employees.find())
     return render_template("manage_employee.html", depo=employk, staff=alice)
 
 
+# Edit employee page route
 @app.route("/edit_employee/<employee_id>", methods=["GET", "POST"])
 def edit_employee(employee_id):
     if request.method == "POST":
+        # Dictionary from new employment template form
         edit = {
             "department": request.form.get("department"),
             "first_name": request.form.get("first_name"),
@@ -275,26 +311,48 @@ def edit_employee(employee_id):
             "employment_date": request.form.get("employment_date"),
             "duties": request.form.get("duties")
         }
+        # Use .update on employee id and pass in the dictionary
         mongo.db.employees.update({"_id": ObjectId(employee_id)}, edit)
         flash("Employee Record Updated Successfully")
         return redirect(url_for('manage_employee'))
 
+    # Get employee thru their id from db & get list of departments
     edica = mongo.db.employees.find_one({"_id": ObjectId(employee_id)})
     depa = list(mongo.db.departments.find().sort("department", 1))
     return render_template("edit_employee.html", edico=edica, dpt=depa)
 
 
+# Delete employee route
+@app.route("/delete_employee/<employee_id>")
+def delete_employee(employee_id):
+    # Use .remove on employee by their id
+    mongo.db.employees.remove({"_id": ObjectId(employee_id)})
+    flash("Employee Deleted Successfully")
+    return redirect(url_for("manage_employee"))
+
+
+# All departments page route
+@app.route("/all_departments")
+def all_departments():
+    # Get all departments from db and sort alphabetically
+    dpt = mongo.db.departments.find().sort("department", 1)
+    return render_template("all_departments.html", ment=dpt)
+
+
+# New department page route
 @app.route("/new_department", methods=["GET", "POST"])
 def new_department():
     if request.method == "POST":
+        # Check if department already exists in db
         existing_department = mongo.db.departments.find_one(
             {"department": request.form.get("department_name").capitalize()})
 
         if existing_department:
-            flash("Whoops! This Department already exists.")
+            flash("Whoops! This department already exists.")
             return redirect(url_for("new_department"))
 
         else:
+            # Create new department thru a dictionary and insert into db
             department = {
                 "department": request.form.get("department_name").capitalize()
             }
@@ -304,40 +362,34 @@ def new_department():
     return render_template("new_department.html")
 
 
-@app.route("/delete_employee/<employee_id>")
-def delete_employee(employee_id):
-    mongo.db.employees.remove({"_id": ObjectId(employee_id)})
-    flash("Employee Deleted Successfully")
-    return redirect(url_for("manage_employee"))
-
-
+# Edit department page route
 @app.route("/edit_department/<item_id>", methods=["GET", "POST"])
 def edit_department(item_id):
     if request.method == "POST":
+        # Create a dictionary to get department name from form input
         edit = {
             "department": request.form.get("department_name")
         }
+        # Use .update method on department id and pass in dictionary variable
         mongo.db.departments.update({"_id": ObjectId(item_id)}, edit)
         flash("Department Updated Successfully")
         return redirect(url_for("all_departments"))
 
+    # Get department by their id from db and route thru the variable
     edica = mongo.db.departments.find_one({"_id": ObjectId(item_id)})
     return render_template("edit_department.html", edico=edica)
 
 
+# Delete department route
 @app.route("/delete_department/<item_id>")
 def delete_department(item_id):
+    # Use .remove method to delete department
     mongo.db.departments.remove({"_id": ObjectId(item_id)})
     flash("Department Deleted Successfully")
     return redirect(url_for("all_departments"))
 
 
-@app.route("/all_departments")
-def all_departments():
-    dpt = mongo.db.departments.find().sort("department", 1)
-    return render_template("all_departments.html", ment=dpt)
-
-
+# Game page route
 @app.route("/game")
 def game():
     return render_template("game.html")
@@ -346,4 +398,3 @@ def game():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")), debug=True)
-
