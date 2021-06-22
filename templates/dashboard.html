@@ -79,12 +79,26 @@
                 </div>
                 <!-- Employee information table ends -->
 
+                <section class="container">
+                  {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <h6 class="red-text mx-auto" style="margin-top: 20px;">
+                                    {{ message }}
+                                  </h6>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {% endwith %}
+              </section>
+
                 <div class="card text-center mb-3" style="width: 580px; height: 250px;">
                   <div class="card-body">
                     <h6 class="card-title black-text"><i class="fas fa-pen-fancy"></i>
-                      Contact HR office for any question or concern
+                      Contact HR office for any complain or concern
                     </h6>
-                    <form class="comment-form" action="{{ url_for('emp_message') }}" method="post">
+                    <form class="comment-form" action="{{ url_for('emp_message', email=employ.email) }}" method="post">
                       <div class="md-form">
                         <textarea id="textarea-char-counter" name="mess" id="mess" class="form-control md-textarea" 
                           length="120" rows="4">
@@ -135,7 +149,7 @@
               </li>
             </a>
 
-            <a href="#">
+            <a href="{{ url_for('help_desk') }}">
               <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 35px;">
                 <h6 class="black-text" style="display: inline; padding-left: 30px; padding-bottom: 0px; padding-top: 20px;">
                   <strong>Need Assistance?</strong></h6>
@@ -146,7 +160,7 @@
               </li>
             </a>
 
-            <a href="#">
+            <a href="{{ url_for('change_password') }}">
               <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 28px;">
                 <h6 class="black-text" style="display: inline; padding-left: 30px; padding-bottom: 0px; padding-top: 20px;">
                   <strong>Change your password</strong></h6>

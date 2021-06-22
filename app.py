@@ -4,6 +4,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+import datetime
 
 if os.path.exists("env.py"):
     import env
@@ -145,22 +146,48 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/change_password", methods=["GET", "POST"])
+def change_password():
+    if request.method == "POST":
+        # Get logged in user from db thru their active session
+        # Note that user is identified by their email in the db
+        user = mongo.db.users.find_one({"email": session["user"]})
+
+        # Also get logged in user password from db thru their active session
+        user_password = mongo.db.users.find_one(
+            {"email": session["user"]})["password"]
+
+        # Compare user password in db with value in form input as old password
+        match_password = check_password_hash(
+            user_password, request.form.get("oldpass"))
+
+        if match_password:
+            # Create a variable to get new password from form input
+            new_password = request.form.get("newpass")
+
+            # Update the old password with the new password thru user id in db
+            mongo.db.users.update_one({"_id": ObjectId(user["_id"])}, {"$set": {"password": generate_password_hash(new_password)}})
+            flash("Your password has been updated successfully")
+            return redirect(url_for("change_password"))
+        else:
+            flash("Your password did not match existing record, try again!")
+            return redirect(url_for("change_password"))
+
+    return render_template("password.html")
+
+
 @app.route("/logout")
 def logout():
     # To log out user, remove or clear active session cookies
     session.clear()
-    flash("You have logged out HRP successfully")
+    flash("You have logged out of HRP successfully")
     return redirect(url_for("login"))
-
-
-@app.route("/game")
-def game():
-    return render_template("game.html")
 
 
 @app.route("/new_employee", methods=["GET", "POST"])
 def new_employee():
     if request.method == "POST":
+        # Check if employee already exists by form input email
         employee = mongo.db.employees.find_one(
             {"email": request.form.get("email").lower()})
 
@@ -195,19 +222,21 @@ def dashboard(email):
         return render_template("dashboard.html", employ=dash)
 
 
-@app.route("/emp_message", methods=["GET", "POST"])
+@app.route("/emp_message/<email>", methods=["POST"])
 def emp_message(email):
+    user_email = mongo.db.users.find_one(
+            {"email": session["user"]})["email"]
+
     if request.method == "POST":
         messa = {
+            "date": datetime.datetime.now(),
+            "email": user_email,
             "message": request.form.get("mess")
         }
         mongo.db.messages.insert_one(messa)
         flash("Your message has been sent successfully")
-        return redirect(url_for("dashboard"))
-
-    dash = mongo.db.employees.find_one({"email": email})
-    return render_template("dashboard.html", employ=dash)
-
+        return redirect(url_for("dashboard", email=user_email))
+    return render_template("dashboard.html", email=user_email)
 
 
 @app.route("/get_employee", methods=["GET", "POST"])
@@ -309,6 +338,12 @@ def all_departments():
     return render_template("all_departments.html", ment=dpt)
 
 
+@app.route("/game")
+def game():
+    return render_template("game.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")), debug=True)
+
