@@ -20,14 +20,15 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row">
-                        <h5 class="white-text mx-auto message1 flash-text">{{ message }}</h5>
+                        <h5 class="white-text mx-auto message1 flash-text">
+                            {{ message }}
+                        </h5>
                     </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
     </section>
 
-    
     <div class="container">
         <div class="mx-auto login-header">
             <h5 class="card-header btn-unique white-text text-center py-4">
@@ -77,7 +78,9 @@
                         <div class="col">
                             <p class="black-text login">
                                 New Employee?
-                                <a href="{{ url_for('register') }}" class="blue-text"><strong>Register</strong></a>
+                                <a href="{{ url_for('register') }}" class="blue-text">
+                                    <strong>Register</strong>
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -88,12 +91,11 @@
 
     <div class="d-flex justify-content-end" style="margin-right: 30px; margin-top: 270px;">
         <h6>
-            Lunch Break?
-            <a href="{{ url_for('game') }}">Play Game</a>
+            Lunch Break
+            <a href="{{ url_for('game') }}">Game</a>
         </h6>
     </div>
 
-       
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

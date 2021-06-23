@@ -59,6 +59,24 @@ def help_desk():
     return render_template("help_desk.html")
 
 
+# Corporate page route
+@app.route("/corporate")
+def corporate():
+    return render_template("corporate.html")
+
+
+# Message page route
+@app.route("/message")
+def message():
+    return render_template("message.html")
+
+
+# Notification page route
+@app.route("/notification")
+def notification():
+    return render_template("notification.html")
+
+
 # Register page route
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -180,7 +198,7 @@ def change_password():
             flash("Your password has been updated successfully")
             return redirect(url_for("change_password"))
         else:
-            flash("Your password did not match existing record, try again!")
+            flash("Whoops! Your password did not match existing record")
             return redirect(url_for("change_password"))
 
     return render_template("password.html")
@@ -191,7 +209,7 @@ def change_password():
 def logout():
     # To log out user, remove or clear active session cookies
     session.clear()
-    flash("You have logged out of your current")
+    flash("You have logged out of your current sesion")
     return redirect(url_for("login"))
 
 

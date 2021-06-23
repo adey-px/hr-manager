@@ -98,12 +98,13 @@
                     <h6 class="card-title black-text"><i class="fas fa-pen-fancy"></i>
                       Contact HR office for any complain or concern
                     </h6>
-                    <form class="comment-form" action="{{ url_for('emp_message', email=employ.email) }}" method="post">
+                    <form class="comment-form needs-validation" action="{{ url_for('emp_message', email=employ.email) }}" 
+                      method="post" novalidate>
                       <div class="md-form">
-                        <textarea id="textarea-char-counter" name="mess" id="mess" class="form-control md-textarea" 
-                          length="120" rows="4">
+                        <textarea name="mess" id="mess" class="form-control md-textarea" 
+                        pattern="^[a-zA-Z0-9]{3,15}$" length="120" rows="4" required>
                         </textarea>
-                        <label for="textarea-char-counter">Type your message</label>
+                        <label for="mess">Type your message</label>
                         <button type="submit" class="btn btn-block btn-mdb-color text-capitalize">
                           <span class="white-text">Submit</span>
                         </button>
@@ -138,10 +139,11 @@
               </li>
             </a>
 
-            <a href="#">
+            <a href="https://scholar.google.com/scholar?q=articles+on+employee+productivity&hl=en&as_sdt=0&as_vis=1&oi=scholart" 
+              target="_blank">
               <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 35px;">
                 <h6 class="black-text" style="display: inline; padding-left: 30px; padding-bottom: 0px; padding-top: 20px;">
-                  <strong>Upcoming Activity</strong></h6>
+                  <strong>Industry Articles</strong></h6>
                 <i class="far fa-sticky-note text-center circle-icon"></i>
                 <h6 style="display: block; padding-left: 90px; color: rgb(103, 64, 194);">
                  Curated Articles on latest Industry trends
@@ -176,7 +178,7 @@
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
                       aria-expanded="false" aria-controls="collapseTwo1">
                       <h6 class="mb-0 white-text text-center">
-                        Quote for the Week
+                        Message from HR Office
                       </h6>
                     </a>
                   </div>
