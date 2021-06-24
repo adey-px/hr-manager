@@ -65,10 +65,11 @@ def corporate():
     return render_template("corporate.html")
 
 
-# Message page route
+# Messaging page route
 @app.route("/message")
 def message():
-    return render_template("message.html")
+    dbmessage = list(mongo.db.messages.find().sort("date"))
+    return render_template("message.html", messages=dbmessage)
 
 
 # Notification page route
@@ -258,19 +259,23 @@ def dashboard(email):
         return render_template("dashboard.html", employ=dash)
 
 
-# Employee message route
-@app.route("/emp_message/<email>", methods=["POST"])
+# Employee message route in dashboard page
+@app.route("/emp_message/<email>", methods=["GET", "POST"])
 def emp_message(email):
-    # Get user/employee email from db thru their session
-    # This is bcos email of sender should show in message sent
+    # Get user/employee email & full name from db thru their session
+    # This is bcos email & name of sender should show in message sent
     user_email = mongo.db.users.find_one(
             {"email": session["user"]})["email"]
+    
+    user_name = mongo.db.users.find_one(
+            {"email": session["user"]})["full_name"]
 
     # Get form input message along with date & email of sender
     if request.method == "POST":
         messa = {
             "date": datetime.datetime.now(),
             "email": user_email,
+            "name": user_name,
             "message": request.form.get("mess")
         }
         mongo.db.messages.insert_one(messa)
