@@ -276,10 +276,13 @@ def dashboard(email):
     # Firstly get each employee from db by their email identifier
     dash = mongo.db.employees.find_one({"email": email})
 
+    # Get all notices from HR inside notifications collection in db
+    notice = mongo.db.notifications.find()
+
     # Get user/employee individual detail into their active session
     # Variable employ is applied in dashboard.html to get individual info
     if "user" in session:
-        return render_template("dashboard.html", employ=dash)
+        return render_template("dashboard.html", employ=dash, notices=notice)
 
 
 # Employee message route in dashboard page
