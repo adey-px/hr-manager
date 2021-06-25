@@ -188,10 +188,14 @@
                     data-parent="#accordionEx1">
                     <div class="card-body">
                       <div>
-                        <h6><span> Sender: <em>{{ notice.sender }}</em> | Date: {{ notice.date }}</span></h6>
-                        <h6><span> <strong>{{ notice.subject }}</strong></span></h6>
+                        <h6><strong>From: </strong><em>{{ notice.sender }}</em> | 
+                          <strong>Date: </strong>{{ notice.date }}
+                        </h6>
+                        <h6 class="text-center">{{ notice.subject }}</h6>
                       </div>
-                      {{ notice.message }}
+                      <p align="justify">
+                        {{ notice.message }}
+                      </p>                      
                     </div>
                   </div>
               </div>
