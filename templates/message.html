@@ -6,30 +6,36 @@
     </div>
 
     <div class="container-fluid" style="width: 80%;">
-      <div class="col-12">
-        <div class="row row-cols-1 row-cols-md-5 g-4">
-          <div class="col">
-            <div class="card h-15" style="width: 100%;">
+      <div class="col">
+        <div class="row row-cols-1 row-cols-md-5 g-5">
+            {% if messages %}
+              {% for message in messages %}
+            <div class="card h-20" style="width: 100%;">
               <div class="card-body">
-                {% if messages %}
-                  {% for message in messages %}
                 <h5 class="card-title text-center">
                   <strong>{{ message.name }}</strong>
                 </h5>
                 <h6 class="card-title text-center">
                   <em>{{ message.email }}</em>
                 </h6>
+                <hr>
                   <p class="card-text">
                     {{ message.message }}
                   </p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">{{ message.date }}</small>
+                <a href="{{ url_for('delete_message', message_id=message._id) }}" title="Delete">
+                  <i class="fas fa-times-circle float-right" 
+                  style="padding-left: 13px; color: red;"></i>
+                </a>
+                <a href="mailto:{{ message.email }}" title="Reply">
+                  <i class="fas fa-reply float-right" style="color: black;"></i>        
+                </a>
               </div>
-                {% endfor %}
-              {% endif %}
             </div>
-          </div>    
+              {% endfor %}
+            {% endif %}
         </div>
       </div>
     </div>

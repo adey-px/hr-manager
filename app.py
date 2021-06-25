@@ -4,7 +4,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-import datetime
+from datetime import date
 
 if os.path.exists("env.py"):
     import env
@@ -72,9 +72,32 @@ def message():
     return render_template("message.html", messages=dbmessage)
 
 
+# Delete message route
+@app.route("/delete_message/<message_id>")
+def delete_message(message_id):
+    # Use .remove on message by their id
+    mongo.db.messages.remove({"_id": ObjectId(message_id)})
+    return redirect(url_for("message"))
+
+
 # Notification page route
-@app.route("/notification")
+@app.route("/notification", methods=["GET", "POST"])
 def notification():
+    if request.method == "POST":
+        today = date.today()
+
+        sender = mongo.db.users.find_one(
+            {"email": session["user"]})["email"]
+
+        notice = {
+            "date": today.strftime("%B %d, %Y"),
+            "sender": sender,
+            "subject": request.form.get("subject"),
+            "message": request.form.get("message")
+        }
+        mongo.db.notifications.insert_one(notice)
+        flash("Your message has been sent to all employees")
+        return redirect(url_for('notification'))
     return render_template("notification.html")
 
 
@@ -269,11 +292,13 @@ def emp_message(email):
     
     user_name = mongo.db.users.find_one(
             {"email": session["user"]})["full_name"]
+    
+    today = date.today()
 
     # Get form input message along with date & email of sender
     if request.method == "POST":
         messa = {
-            "date": datetime.datetime.now(),
+            "date": today.strftime("%B %d, %Y"),
             "email": user_email,
             "name": user_name,
             "message": request.form.get("mess")
