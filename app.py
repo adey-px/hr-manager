@@ -459,7 +459,8 @@ def support():
             "message": request.form.get('message')
         }
         mongo.db.support.insert_one(contact)
-        flash("Your message has been sent to Support Team")
+        flash("Your message has been sent successfully.")
+        flash("Our Support Team would respond in less than 24 hours")
         return redirect(url_for('support'))
     return render_template("help_desk.html")
 
