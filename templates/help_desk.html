@@ -5,6 +5,82 @@
         Help Desk
     </div>
 
-  
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-6">
+                <div style="margin-top: 150px; margin-left: 250px;">
+                    <p>
+                        We appreciate your patience while using this portal.
+                        But in case you encounter any technical issue, feel free
+                        to contact our Support Team through the email and phone 
+                        number below. You may also fill the Contact form for any
+                        other related issue. 
+
+                    </p>
+                </div>
+                <div style="margin-top: 50px; margin-left: 350px;">
+                    <h6><strong>Email:</strong> 
+                        aosteph@gmail.com
+                    </h6>
+                    <h6><strong>Phone:</strong> 
+                        +1 972 381 0966
+                    </h6>
+                </div>
+                <div style="margin-top: 40px; margin-left: 250px;">
+                    <p>
+                        Please note that our Support Team would ask you some security
+                        questions from the personal data you provided while filling the 
+                        registration form, in case you you forgot your username(email) 
+                        or password.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="card" style="width: 60%; height: 600px;">
+
+                    <h5 class="card-header btn-mdb-color white-text text-center py-4">
+                        <strong>Contact us</strong>
+                    </h5>    
+                    <div class="card-body px-lg-5 pt-0">      
+                        <form action="{{ url_for('support') }}" method="post" class="text-center needs-validation" 
+                            style="color: #757575;" novalidate>
+
+                            <div class="md-form mt-3">
+                                <input type="text" id="name" name="name" class="form-control" required>
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="md-form">
+                                <input type="email" id="email" name="email" class="form-control" required>
+                                <label for="email">E-mail</label>
+                            </div>
+                            <span>Subject</span>
+                            <select class="mdb-select" id="subject" name="subject" style="width: 85%;" required>
+                                <option value="" selected disabled>Choose option</option>
+                                <option value="Enquiry">Enquiry</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Report a Bug">Report a bug</option>
+                                <option value="Request Support">Request Support</option>
+                            </select>
+                            <div class="md-form">
+                                <textarea id="message" name="message" class="form-control md-textarea" rows="7" required></textarea>
+                                <label for="materialContactFormMessage">Message</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="materialContactFormCopy">
+                                <label class="form-check-label" for="materialContactFormCopy">
+                                    Send me a copy of this message
+                                </label>
+                            </div>
+                            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
+                                type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>    
+    </div>
     
 {% endblock %}

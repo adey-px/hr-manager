@@ -446,6 +446,24 @@ def game():
     return render_template("game.html")
 
 
+# Support page route
+@app.route("/support", methods=["GET", "POST"])
+def support():
+    if request.method == "POST":
+        today = date.today()
+        contact = {
+            "date": today.strftime("%B %d, %Y"),
+            "name": request.form.get('name'),
+            "email": request.form.get('email'),
+            "subject": request.form.get('subject'),
+            "message": request.form.get('message')
+        }
+        mongo.db.support.insert_one(contact)
+        flash("Your message has been sent to Support Team")
+        return redirect(url_for('support'))
+    return render_template("help_desk.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")), debug=True)
