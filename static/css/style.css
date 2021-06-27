@@ -65,8 +65,7 @@ body {
 .btn-home-icon {
     font-size: 30px;
     color: orange;
-    clear: both;
-    padding-right: 30px;
+    float: left;
 }
 
 .app-store {
