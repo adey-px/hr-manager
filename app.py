@@ -428,7 +428,7 @@ def edit_department(item_id):
         }
         # Use .update method on department id and pass in dictionary variable
         mongo.db.departments.update({"_id": ObjectId(item_id)}, edit)
-        flash("Department Updated Successfully")
+        flash("Department updated successfully")
         return redirect(url_for("all_departments"))
 
     # Get department by their id from db and route thru the variable

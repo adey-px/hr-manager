@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+  <!-- Page header -->
   <div class="h2-responsive text-center font-weight-bolder card-header"> 
     All Departments 
   </div>
@@ -11,7 +12,7 @@
         {% if messages %}
             {% for message in messages %}
                 <div class="row">
-                    <h5 class="black-text mx-auto message flash-text">
+                    <h5 class="white-text mx-auto message flash-text">
                       {{ message }}
                     </h5>
                 </div>
@@ -34,17 +35,17 @@
                 </h4>
               </span>
 
-                <button type="button" class="btn btn-mdb-color btn-md" style="margin-top: 80px;">
                   <a href="{{ url_for('edit_department', item_id=item._id) }}">
-                    <span class="white-text">Edit</span> 
+                    <button type="button" class="btn btn-mdb-color btn-md" style="margin-top: 80px;">
+                      <span class="white-text">Edit</span> 
+                    </button>
                   </a>
-                </button>
 
-                <button type="button" class="btn btn-danger btn-md" style="margin-top: 80px;">
                   <a href="{{ url_for('delete_department', item_id=item._id) }}">
-                    <span class="white-text">Delete</span> 
+                    <button type="button" class="btn btn-danger btn-md" style="margin-top: 80px;">
+                      <span class="white-text">Delete</span> 
+                    </button>
                   </a>
-                </button>
             </div>
           </div>
         </div>
