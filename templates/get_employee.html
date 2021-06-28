@@ -30,14 +30,28 @@
           <table class="table table-bordered table-striped">
             <!-- Table header -->
             <thead>
-              <tr>
-                <th class="text-center"><strong>First Name</strong><i class="fas fa-sort ml-1"></i></th>
-                <th class="text-center"><strong>Last Name</strong><i class="fas fa-sort ml-1"></i></th>
-                <th class="text-center"><strong>Department</strong><i class="fas fa-sort ml-1"></i></th>
-                <th class="text-center"><strong>Date of Employment</strong><i class="fas fa-sort ml-1"></i></th>
-                <th class="text-center"><strong>Mobile</strong><i class="fas fa-sort ml-1"></i></th>
-                <th class="text-center"><strong>Email Address</strong><i class="fas fa-sort ml-1"></i></th>
-                <th class="text-center"><strong>Gender</strong><i class="fas fa-sort ml-1"></i></th>
+              <tr class="text-center">
+                <th>
+                  <strong>First Name</strong><i class="fas fa-sort ml-1"></i>
+                </th>
+                <th>
+                  <strong>Last Name</strong><i class="fas fa-sort ml-1"></i>
+                </th>
+                <th>
+                  <strong>Department</strong><i class="fas fa-sort ml-1"></i>
+                </th>
+                <th>
+                  <strong>Date of Employment</strong><i class="fas fa-sort ml-1"></i>
+                </th>
+                <th>
+                  <strong>Mobile</strong><i class="fas fa-sort ml-1"></i>
+                </th>
+                <th>
+                  <strong>Email Address</strong><i class="fas fa-sort ml-1"></i>
+                </th>
+                <th>
+                  <strong>Gender</strong><i class="fas fa-sort ml-1"></i>
+                </th>
               </tr>
             </thead>
             <!-- Table header ends -->
@@ -46,8 +60,8 @@
             {% if staff|length > 0 %}
               <tbody id="myTable">
                 {% for person in staff %}
-                  <tr>
-                    <td>{{ person.first_name }}</td>
+                  <tr class="text-center">
+                    <td >{{ person.first_name }}</td>
                     <td>{{ person.last_name }}</td>
                     <td>{{ person.department }}</td>
                     <td>{{ person.employment_date }}</td>
