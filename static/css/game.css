@@ -28,7 +28,7 @@ body{
     counter-increment:birds;
   }
   
-  .sum{position:fixed; left:45%; top:60px; font-size:24px; fonot-weight:bold;}
+  .sum{position:fixed; left:48%; top:120px; font-size:24px; fonot-weight:bold;}
   
   /*print to screen dead birds*/
   .sum:after{
@@ -45,7 +45,8 @@ body{
   .input-circle3:not(:checked) ~ .pajaro3,
   .input-circle4:not(:checked) ~ .pajaro4,
   .input-circle5:not(:checked) ~ .pajaro5,
-  .input-circle6:not(:checked) ~ .pajaro6
+  .input-circle6:not(:checked) ~ .pajaro6,
+  .input-circle6:not(:checked) ~ .pajaro7
   {
     opacity:1; 
   }
@@ -56,7 +57,8 @@ body{
   .input-circle3:checked ~ .pajaro3 span,
   .input-circle4:checked ~ .pajaro4 span,
   .input-circle5:checked ~ .pajaro5 span,
-  .input-circle6:checked ~ .pajaro6 span
+  .input-circle6:checked ~ .pajaro6 span,
+  .input-circle6:checked ~ .pajaro7 span
   {
     display:block;
     
@@ -104,6 +106,11 @@ body{
     animation-delay: -20s!important;
     transform:scale(1.4); 
   }
+  .pajaro7{
+    top:200px;
+    animation-delay: -25s!important;
+    transform:scale(1.4); 
+  }
   
   @keyframes move{
   0%{left:0%;}
@@ -125,7 +132,7 @@ body{
     display:block;
     background:repeating-linear-gradient(-45deg, #000, rgba(0, 0, 0, 0) 25px, #FFF 25px, #FFF 50px);
     width:300px; height:50px;
-    animation:timer 30s linear;
+    animation:timer 25s linear;
   }
   
   .timer span:before{  
@@ -149,8 +156,8 @@ body{
   
   .gameover{
     position:fixed; z-index:5000; left:0; top:0; bottom:0; right:0;
-    animation:gameover 30s linear forwards;
-    font-size:80px; color:white; font-weight:bold; text-align:center; 
+    animation:gameover 25s linear forwards;
+    font-size:80px; color:rgb(197, 91, 91); font-weight:bold; text-align:center; 
     text-indent:0;  
     line-height:500px;
   }
