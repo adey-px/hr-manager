@@ -12,7 +12,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row">
-                        <h5 class="black-text mx-auto message flash-text">{{ message }}</h5>
+                        <h5 class="white-text mx-auto message flash-text">{{ message }}</h5>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -50,24 +50,16 @@
                 <input type="text" name="address" id="address" class="form-control mb-4" 
                     placeholder="Home Address" required>
         
-                <select class="custom-select mb-4" name="gender" 
-                    id="gender" required>
+                <select class="custom-select mb-4" name="gender" id="gender" required>
                     <option value="">Gender</option>
                     <option>Male</option>
                     <option>Female</option>
                 </select>
 
-                <div class="md-form md-outline input-with-post-icon datepicker">
-                    <input type="date" name="employment_date" id="employment_date" 
-                        class="form-control" placeholder="Employment Date" required>
-                    <div class="invalid-feedback">Please select a valid date.</div>
-                    <label for="example">Employment Date</label>
-                </div>
-
-                <div class="form-group">
-                    <textarea class="form-control rounded-0" name="duties" id="duties" rows="3" 
-                        placeholder="Duties" required>
-                    </textarea>
+                <div class="md-form">
+                    <textarea id="duties" name="duties" class="form-control rounded-0" rows="5" 
+                        minlength="5" maxlength="50" required></textarea>
+                    <label for="message">Official Duties</label>
                 </div>
             
                 <button type="submit" class="btn btn-block white-text text-center btn-mdb-color login-label text-capitalize">

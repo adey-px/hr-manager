@@ -114,7 +114,7 @@ def register():
             "email").lower()})
 
         if existing_user:
-            flash("This employee has registered. Go login or try again!")
+            flash("This employee has registered, login or try again!")
             return redirect(url_for("register"))
 
         else:
@@ -129,7 +129,7 @@ def register():
 
             else:
                 # If both password inputs from Register form do not match
-                flash("Passwords do not match. Please try again.")
+                flash("Passwords do not match. try again!")
                 return redirect(url_for("register"))
 
         # Create a variable register to insert an Array of the Register form inputs
@@ -245,6 +245,8 @@ def new_employee():
         employee = mongo.db.employees.find_one(
             {"email": request.form.get("email").lower()})
 
+        today = date.today()
+
         if employee:
             flash("This employee already exists, access denied!")
 
@@ -258,7 +260,7 @@ def new_employee():
                 "mobile": request.form.get("mobile"),
                 "address": request.form.get("address"),
                 "gender": request.form.get("gender"),
-                "employment_date": request.form.get("employment_date"),
+                "employment_date": today.strftime("%B %d, %Y"),
                 "duties": request.form.get("duties")
             }
             mongo.db.employees.insert_one(new_employee)
@@ -350,6 +352,9 @@ def search():
 @app.route("/edit_employee/<employee_id>", methods=["GET", "POST"])
 def edit_employee(employee_id):
     if request.method == "POST":
+
+        today = date.today
+        
         # Dictionary from new employment template form
         edit = {
             "department": request.form.get("department"),
@@ -359,7 +364,7 @@ def edit_employee(employee_id):
             "mobile": request.form.get("mobile"),
             "address": request.form.get("address"),
             "gender": request.form.get("gender"),
-            "employment_date": request.form.get("employment_date"),
+            "employment_date": today.strftime("%B %d, %Y"),
             "duties": request.form.get("duties")
         }
         # Use .update on employee id and pass in the dictionary
