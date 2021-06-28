@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+  <!-- Page header -->
   <div class="h2-responsive text-center font-weight-bolder card-header"> 
     Manage Employees
   </div>
@@ -90,15 +91,46 @@
                         <input class="form-check-input" type="checkbox" id="checkbox">
                         <label for="checkbox" class="mr-2 label-table"></label>
                       </th>
+                      
                       <!-- Accordion table headers -->
-                      <th class="th-lg text-center"><a><strong>First Name</strong> <i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg text-center"><a><strong>Last Name</strong><i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg text-center"><a><strong>Email</strong><i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg text-center"><a><strong>Mobile</strong><i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg text-center"><a><strong>Adddress</strong><i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg text-center"><a><strong>Gender</strong><i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg text-center"><a><strong>Employment Date</strong><i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="text-center"><strong>Manage</strong></th>
+                      <th class="th-lg text-center">
+                        <a>
+                          <strong>First Name</strong><i class="fas fa-sort ml-1"></i>
+                        </a>
+                      </th>
+                      <th class="th-lg text-center">
+                        <a>
+                          <strong>Last Name</strong><i class="fas fa-sort ml-1"></i>
+                        </a>
+                      </th>
+                      <th class="th-lg text-center">
+                        <a>
+                          <strong>Email</strong><i class="fas fa-sort ml-1"></i>
+                        </a>
+                      </th>
+                      <th class="th-lg text-center">
+                        <a>
+                          <strong>Mobile</strong><i class="fas fa-sort ml-1"></i>
+                        </a>
+                      </th>
+                      <th class="th-lg text-center">
+                        <a>
+                          <strong>Adddress</strong><i class="fas fa-sort ml-1"></i>
+                        </a>
+                      </th>
+                      <th class="th-lg text-center">
+                        <a>
+                          <strong>Gender</strong><i class="fas fa-sort ml-1"></i>
+                        </a>
+                      </th>
+                      <th class="th-lg text-center">
+                        <a>
+                          <strong>Employment Date</strong><i class="fas fa-sort ml-1"></i>
+                        </a>
+                      </th>
+                      <th class="text-center">
+                        <strong>Manage</strong>
+                      </th>
                     </tr>
                   </thead>
 
@@ -115,14 +147,29 @@
                       selcting only the employees for appropriate department in db.
                       Note that department collection is already iterated through, in for-Loop above.
                       -->
-                        <td>{{ person.first_name }}</td>
-                        <td>{{ person.last_name }}</td>
-                        <td>{{ person.email }}</td>
-                        <td>{{ person.mobile }}</td>
-                        <td>{{ person.address }}</td>
-                        <td>{{ person.gender }}</td>
-                        <td>{{ person.employment_date }}</td>
+                        <td>
+                          {{ person.first_name }}
+                        </td>
+                        <td>
+                          {{ person.last_name }}
+                        </td>
+                        <td>
+                          {{ person.email }}
+                        </td>
+                        <td>
+                          {{ person.mobile }}
+                        </td>
+                        <td>
+                          {{ person.address }}
+                        </td>
+                        <td>
+                          {{ person.gender }}
+                        </td>
+                        <td>
+                          {{ person.employment_date }}
+                        </td>
 
+                      <!-- Manage employee buttons -->
                       <td>
                         <a href="{{ url_for('edit_employee', employee_id=person._id) }}">
                           <i class="fas fa-pen-square mx-1" data-toggle="tooltip" data-placement="top" title="Edit"
@@ -147,7 +194,7 @@
       {% endfor %}
       
         {% else %}
-        <h5 class="text-center" style="margin-top: 50px;">
+        <h5 class="text-center red-text" style="margin-top: 50px;">
           <strong>No Departments found</strong>
         </h5>
     {% endif %}
