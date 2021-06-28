@@ -404,7 +404,7 @@ def new_department():
             {"department": request.form.get("department_name").capitalize()})
 
         if existing_department:
-            flash("Whoops! This department already exists.")
+            flash("Whoops! This department already exists")
             return redirect(url_for("new_department"))
 
         else:
@@ -441,7 +441,7 @@ def edit_department(item_id):
 def delete_department(item_id):
     # Use .remove method to delete department
     mongo.db.departments.remove({"_id": ObjectId(item_id)})
-    flash("Department Deleted Successfully")
+    flash("Department deleted successfully")
     return redirect(url_for("all_departments"))
 
 

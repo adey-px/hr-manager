@@ -1,37 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+  <!-- page header -->
+  <div class="h2-responsive text-center font-weight-bolder card-header"> 
+    Notification
+  </div>
+
+  <!-- flash message -->
     <section class="container">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
                     <div class="row">
-                        <h5 class="black-text mx-auto message flash-text">{{ message }}</h5>
+                        <h5 class="white-text mx-auto message flash-text">
+                          {{ message }}
+                        </h5>
                     </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
     </section>
 
+    <!-- Employee notice form -->
     <div class="container" style="margin-top: 50px;">
       <div class="card mx-auto" style="width: 60%; height: 600px;">        
         <div class="header" style="height: 80px;">
           <div class="row d-flex justify-content-center">
-            <h3 class="black-text mb-0 py-5">
+            <h5 class="black-text mb-0 py-5">
               <strong>Notice To All Employees</strong>
-            </h3>
+            </h5>
           </div>
         </div>
         <form action="{{ url_for('notification') }}" method="post">
           <div class="card-body mx-4">
             <div class="md-form">
-              <input type="text" id="subject" name="subject" class="form-control">
+              <input type="text" id="subject" name="subject" class="form-control" required>
               <label for="form106">Subject</label>
             </div>
 
             <div class="md-form" style="padding-top: 60px;">
-              <textarea id="message" name="message" class="md-textarea form-control" rows="10"></textarea>
-              <label for="message">Message</label>
+              <textarea id="message" name="message" class="md-textarea form-control" rows="10" 
+                placeholder="Message" minlength="5" maxlength="50" required></textarea>
+              
             </div>
 
             <div class="row d-flex align-items-center mb-3 mt-4">
@@ -48,4 +59,6 @@
         </form>          
       </div>
     </div>
+    <!-- Employee notice form ends -->
+    
 {% endblock %}
