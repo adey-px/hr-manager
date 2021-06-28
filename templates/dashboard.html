@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+  <!-- page header -->
   <div class="h2-responsive text-center font-weight-bolder card-header"> 
     Dashboard
   </div>
 
+  <!-- employee information display section-->
   <div class="container-fluid" style="width: 70%;">
     <div class="row">
       <div class="col-7">
@@ -16,10 +18,13 @@
                 <!-- Welcome message to user -->
                 <div class="text-left black-text">
                   <h4 style="font-size: 16px;">
-                    Hello <strong>{{ employ.email }}</strong>, your information with the company is shown here.
+                    Hello <strong>{{ employ.email }}</strong>, 
+                    your information with the company is shown here.
                   </h4>
-                  <p align="justify" style="font-size: 14px" class="grey-text">Your service is subject to the corporate policy 
-                    of this organization and you are expected to abide by all rules & regulations guiding our employees. 
+                  <p align="justify" style="font-size: 14px" class="grey-text">
+                    Your service is subject to the corporate policy of this organization
+                    and you are expected to abide by all rules & regulations guiding our 
+                    employees. 
                   </p>
                 </div>
 
@@ -29,62 +34,99 @@
                     <thead>
                       <tr>  
                         <th scope="col"></th>
-                        <th class="table-items black-text"><strong>Department:</strong></th>
-                        <th class="table-items">{{ employ.department }}</th>
+                        <th class="table-items black-text">
+                          <strong>Department:</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.department }}
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row"></th>
-                        <th class="table-items black-text"><strong>First Name:</strong></th>
-                        <th class="table-items">{{ employ.first_name }}</th>
+                        <th class="table-items black-text">
+                          <strong>First Name:</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.first_name }}
+                        </th>
                       </tr>
                       <tr>
                       <tr>
                         <th scope="row"></th>
-                        <th class="table-items black-text"><strong>Last Name:</strong></th>
-                        <th class="table-items">{{ employ.last_name }}</th>
+                        <th class="table-items black-text">
+                          <strong>Last Name:</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.last_name }}
+                        </th>
                       </tr>
                       <th scope="row"></th>
-                      <th class="table-items black-text"><strong>Email: </strong></th>
-                      <th class="table-items">{{ employ.email }}</th>
+                      <th class="table-items black-text">
+                        <strong>Email: </strong>
+                      </th>
+                      <th class="table-items">
+                        {{ employ.email }}
+                      </th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <th class="table-items black-text"><strong>Mobile:</strong></th>
-                        <th class="table-items">{{ employ.mobile }}</th>
+                        <th class="table-items black-text">
+                          <strong>Mobile:</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.mobile }}
+                        </th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <th class="table-items black-text"><strong>Home Address:</strong></th>
-                        <th class="table-items">{{ employ.address }}</th>
+                        <th class="table-items black-text">
+                          <strong>Home Address:</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.address }}
+                        </th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <th class="table-items black-text"><strong>Gender:</strong></th>
-                        <th class="table-items">{{ employ.gender }}</th>
+                        <th class="table-items black-text">
+                          <strong>Gender:</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.gender }}
+                        </th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <th class="table-items black-text"><strong>Employment Date:</strong></th>
-                        <th class="table-items">{{ employ.employment_date }}</th>
+                        <th class="table-items black-text">
+                          <strong>Employment Date:</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.employment_date }}
+                        </th>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <th class="table-items black-text"><strong>Primary Duties</strong></th>
-                        <th class="table-items">{{ employ.duties }}</th>
+                        <th class="table-items black-text">
+                          <strong>Primary Duties</strong>
+                        </th>
+                        <th class="table-items">
+                          {{ employ.duties }}
+                        </th>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <!-- Employee information table ends -->
 
+                <!-- flash message -->
                 <section class="container">
                   {% with messages = get_flashed_messages() %}
                       {% if messages %}
                           {% for message in messages %}
                               <div class="row">
-                                  <h6 class="red-text mx-auto" style="margin-top: 20px;">
+                                  <h6 class="red-text mx-auto">
                                     {{ message }}
                                   </h6>
                               </div>
@@ -93,6 +135,7 @@
                   {% endwith %}
               </section>
 
+                <!-- form for sending message to hr office -->
                 <div class="card text-center mb-3" style="width: 580px; height: 250px;">
                   <div class="card-body">
                     <h6 class="card-title black-text"><i class="fas fa-pen-fancy"></i>
@@ -100,24 +143,26 @@
                     </h6>
                     <form class="comment-form needs-validation" action="{{ url_for('emp_message', email=employ.email) }}" 
                       method="post" novalidate>
-                      <div class="md-form">
-                        <textarea name="mess" id="mess" class="form-control md-textarea" 
-                        pattern="^[a-zA-Z0-9]{3,15}$" length="120" rows="4" required>
-                        </textarea>
-                        <label for="mess">Type your message</label>
+
+                        <div class="md-form">
+                          <textarea id="message" name="message" class="md-textarea form-control" rows="4" 
+                            placeholder="Message" minlength="5" maxlength="50" required></textarea>
+                        </div>
+            
                         <button type="submit" class="btn btn-block btn-mdb-color text-capitalize">
-                          <span class="white-text">Submit</span>
+                          <span class="white-text">
+                            Submit
+                          </span>
                         </button>
                       </div>
                     </form>
                   </div>
                 </div>
-          
+                <!-- form for sending message to hr office ends -->
               </div>
             </div>
           </div>
         </div>
-      </div>
 
       <!-- Right panel widget section-->
       <div class="col-5">
@@ -173,6 +218,7 @@
               </li>
             </a>
             
+              <!-- Notice from hr office section -->
               <div class="accordion md-accordion btn-mdb-color" id="accordionEx1" role="tablist" aria-multiselectable="true">
                   <div class="card-header" role="tab" id="headingTwo1">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
@@ -207,22 +253,7 @@
         </div>
       </div>
       <!-- Right panel widget section ends -->
-
     </div>
   </div>
-
-  <!-- Footer -->
-  <div class="container-fluid" style="width: 80%;">
-    <div class="row py-4 d-flex align-items-center">
-      <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-        <h6 class="mb-0 black-text">©2021 All rights reserved</h6>
-      </div>
-      <div class="col-md-6 col-lg-7 text-center text-md-right footer-links-dash">
-        <span class="#"><a href="#" class="black-text" style="padding-right: 10px;">Privacy Policy</a></span>
-        <span class="#"><a href="#" class="black-text" style="padding-left: 10px;">Terms of Service</a></span>
-      </div>
-    </div>
-  </div>      
-  <!-- Footer -->
 
 {% endblock %}

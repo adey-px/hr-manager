@@ -353,7 +353,7 @@ def search():
 def edit_employee(employee_id):
     if request.method == "POST":
 
-        today = date.today
+        today = date.today()
         
         # Dictionary from new employment template form
         edit = {
