@@ -52,7 +52,6 @@ body {
 
 .right-column-home, .left-column-home {
     background-color: rgb(213, 222, 223);
-    height: 400px;
 }
 
 .right-home-title {
@@ -66,11 +65,6 @@ body {
     font-size: 30px;
     color: orange;
     float: left;
-}
-
-.app-store {
-    width: 130px;
-    height: 35px;
 }
 
 .hm-text1 {
@@ -115,6 +109,12 @@ body {
     margin-bottom: 50px;
 }
 
+.app-store {
+    width: 130px;
+    height: 35px;
+}
+
+/* flash messages */
 .message {
     width: 75%;
     height: 30px; 

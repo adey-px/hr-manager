@@ -230,24 +230,22 @@
                       </h6>
                     </a>
                   </div>
-                  {% if notices %}
-                    {% for notice in notices %}
+                  {% if notica %}
                   <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
                     data-parent="#accordionEx1">
                     <div class="card-body">
                       <div>
-                        <h6><strong>From: </strong><em>{{ notice.sender }}</em> | 
-                          <strong>Date: </strong>{{ notice.date }}
+                        <h6><strong>From: </strong><em>{{ notica.sender }}</em> | 
+                          <strong>Date: </strong>{{ notica.date }}
                         </h6>
-                        <h6 class="text-center">{{ notice.subject }}</h6>
+                        <h6 class="text-center">{{ notica.subject }}</h6>
                       </div>
                       <p align="justify">
-                        {{ notice.message }}
+                        {{ notica.message }}
                       </p>                      
                     </div>
                   </div>
               </div>
-                    {% endfor %}
                   {% endif %}
             </li>
 
