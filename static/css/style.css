@@ -161,15 +161,10 @@ body {
 }
 
 /* Login page */
-.login-header {
-    margin-top: 120px;
-    margin-bottom: 0px;
-    width: 41%;
-}
-
 .login-card {
     font-size: 16px;
     height: 400px;
+    margin-top: 120px;
     margin-bottom: 60px;
 }
 
@@ -253,11 +248,5 @@ body {
     }
     .column-2 {
         width: 100%;
-    }
-}
-@media (min-width: 992px) {
-    .column-2,
-    .column-1 {
-        width: 33%;
     }
 }

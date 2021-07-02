@@ -29,18 +29,13 @@
         {% endwith %}
     </section>
 
-    <div class="container">
-        <div class="mx-auto login-header">
-            <h5 class="card-header btn-unique white-text text-center py-4">
-                <i class="fas fa-key login-key"></i>
-                <strong>Sign in to HR Portal</strong>
-            </h5>
-        </div>
-    </div>
-
    <div class="container">
         <div class="row login-card">
-            <div class="card column mx-auto" style="margin-top: 0px;">
+            <div class="card column mx-auto">
+                <h5 class="btn-unique white-text text-center py-4">
+                    <i class="fas fa-key login-key"></i>
+                    <strong>Sign in to HR Portal</strong>
+                </h5>
                 <div class="card-body"> 
                     <form method="POST" action="{{ url_for('login') }}">
                         <div class="md-form md-outline">
