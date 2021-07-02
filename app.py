@@ -65,7 +65,7 @@ def corporate():
     return render_template("corporate.html")
 
 
-# Messaging page route
+# Message inbox page route
 @app.route("/message")
 def message():
     dbmessage = list(mongo.db.messages.find().sort("date"))

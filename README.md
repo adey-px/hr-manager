@@ -4,36 +4,67 @@ The application consists of a home page for public users. The home page has a he
 
 The project is deployed to Heroku on https://human-resource-portal.herokuapp.com/
 
+
 2.0 UX
-The website is for people who need repair and servicing of their PCs, tablets and mobile devices. They want to get experts who can handle their jobs professionally and they want to book an appointment to meet them. So the website consists of a form users can fill to book an appointment.
+The web Application is developed for Human Resource Managers of companies to effectively store and manage their employees' data, modify their employees' employment status, communicate internally with their employees, publish job advertisements to the public, receive job applications from prospective employees and send feedback to the applicants.
 
 2.1 User stories
-As a user I want to
+As Human Resource Manager (Admin/Super User), I want to:
 
-read general information about the company including what they do
-view the area of computer repair services offered by the company
-check if those areas of services meet my immediate needs
-check the technicians that work in the repair center and be sure that they are qualified and certified to handle technical jobs in professional manner
-to contact the company and book an appointment by either filling a form, phone call or email
-to be able to connect with them on social media
-to be able to navigate well around the site
+1. create profile account for new employees which would contain their personal data.
+2. enable the new employees' email addresses as their unique identifers which they can use to register on the HR Portal, so as to prevent unemployed/unauthorized persons from gaining access to Portal.
+3. display individual employee's personal data and employment detail on their dashboard, accessible to them after they login
+4. create new departments and modify existing departments in the company so as to group employees into appropriate departments based on their job roles and duties
+5. view all employees list in a tabular form showing detail about their names, departments, date of employment, gender among others
+6. send notice to all current employees accessible directly on their dashboard
+7. receive comments, complains and feedback from all current employees
+8. reply to employees' messages or delete the messages where necessary
+9. modify and update indvidual employee's records or data existing in the company's database
+10. delete employees' records and terminate their contract with the company
+11. advertise new job vacancies to the public, receive applications online and send update to applicants
+12. contact the developers' agent for technical support in case of any issue arising while using the application
+
+As a current employee, I want to:
+1. register on the HR Portal with my email successfully
+2. login into the Portal with my email and password successfully
+3. view my dashboard to see my personal data as it is in the company's record
+4. read notifications sent to all employees by the HR manager
+5. send my comments, complains and feedback to the HR office
+6. receive response to my comments and complains from HR office
+7. change my password at my own will
+8. contact the developers' agent for Technical support such as in case I forget my password or for any other assistance
+9. download mobile apps versions of the HR Portal if necessary
+
+As a public user, I want to:
+1. read brief information about the HR Portal
+2. contact the developers in case I need to get the software for my own company's HR department
+3. view exisitng career opportunities in the company, check current job vacancies, if any
+4. apply for job online, in case there is vacancy, and get update from HR office in regard to my application
+
 2.2 Wireframes
-In order to bring the idea of this project to life, wireframes were produced with the use of Balsamic The folder named "wireframes" has been uploaded in this project's GitHub repository. The folder contains images of the wireframes designed to show Desktop, Tablet and Mobile views of the site.
+In order to bring the idea of this project to life, wireframes were produced with the use of Figma. The folder named "wireframes" has been uploaded in this project's GitHub repository. The folder contains images of the wireframes designed to show Desktop, Tablet and Mobile views of various pages of the application
+
 
 3.0 Features
 3.1 Existing Features
-The home page basically consists of a carousel which displays three scrolling images with fading effect.
-The carousel images are used to present to users what the company does through picture presentation.
-The home page also consists of the company's foussed area of repair services and a lower section that shows four top technical personnel who handles repair services for the company.
-About page consists a summary information about the company with a group photograph of the four main guys.
-Booking page has a form that clients can fill and submit in order to book an appointment and request for repair service.
-Contact page consists of a form for contacting the company, google map with a marker on the company's location, address and phone number to contact the company directly. Carousel images and Our services section allow users to have overview of what the company has to to offer
-Technicians information on home page enables users to have general ideas of the qualified personnel in the company
-Booking form allows users to book an appointment and request a repair service for their
-Google map on contact page allows users to get direction to the company's office location
+1. This Web application basically consists of about twenty-three pages.
+
+2. It has a Home page particularly designed for public users and job seekers in mind. At the right side of the Home page is Self Service center where job seekers can expect to see existing vacancies as published by the Company's HR office. They can also apply for job through the Job Application link, check their job application status and get help from the Support team. If there are job vacancies, the HR office would update the Self Service section as needed. However, as at the time of developing this project, it was assumed that no vacancies existed yet due to the residual impact of COVID-19 pandemic. SO those links are working but no useful content in the pages since no vacancies existed. Job seekers could check again in future.
+
+3. The Home page also has a static image of employees, happy on their jobs and holding a meeting. Also, there are links to download ios & android mobile apps of this application. Although, there are no mobie apps available right now, but this is done in anticipation and as a way to improve use experience in future, such that employees can access their Portal anywhere and at anytime they wish, with the use of their mobile devices.  
+
+4. Coupled with the above, the Home page consists of a brief note about the application, its success story and other information about the HR Portal on the Footer section. The idea here was that those information can enlighten public users and encourage them to try the software in managing their company's Human Resources. It was also done with business mind since more users mean higher profits in case the software is no longer free. Public users could also contact the developers and support team from links available at the Home page
+
+5. Lastly, the Home page has three image links which allow current employees to login, contact Help Desk in case they forgot their passwords or username(email)
+
+
+
+
+
 3.2 Features Left to Implement
 to connect the Booking form to the company's email so the Admin can get an email alert when a prospective client books an appointment.
 to make it possible that the Web Admin would be able to download the client's information pdf format. The contact form would connect to a database Where form inputs are stored for future reference.
+
 3.3 Languages and Technologies Used
 HTML5: The project uses HTML5 for website layout
 CSS3: The project uses CSS3 for styling
@@ -41,6 +72,8 @@ Bootstrap 4: The project uses Boostrap 4 to create carousel image slider on home
 Hover.CSS: It uses Hover.css for button hover
 Font Awesome: It uses Font Awesome for Our services section, Team section and social links
 Google Font:
+
+
 4.0 Testing
 All the internal and external links including menu items on navigation bar works well and the website looks good on Chrome, Mozilla and Edge browsers The website is responsive on mobile devices
 
@@ -75,6 +108,7 @@ The bug I encountered was the navigation bar not displaying properly at mobile v
 
 At mobile view, menu items also displayed horizontally and scattered instead of vertically so I used clear both to separate them and make them display vertically in mobile view
 
+
 5.0 Deployment
 This project is hosted on GitHub as GitHub pages using this procedure:
 
@@ -83,12 +117,15 @@ On the navigation menu, click on Settings Tab on the right side
 Scroll down to GitHub Pages Section
 Click on the drop-down menu under Source and select Master Branch
 I used Cayman theme for this project
+
+
 6.0 Credits
 6.1 Content
 The code for Navigation bar was copied from here
 The code for Goolge map was copied from here platform
 The code for Carousel was copied from here
 The code for Booking form and Contact form was copied from here
+
 6.2 Media
 The photos used in this site were obtained from Google images
 

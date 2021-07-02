@@ -7,11 +7,11 @@
   </div>
 
   <!-- employee information display section-->
-  <div class="container-fluid" style="width: 70%;">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-7">
+      <div class="col-12 col-md-7">
         <div class="card-deck">
-          <div class="card mb-4 border-light" style="height: 1000px;">
+          <div class="card mb-4 border-light">
             <div class="card-dashboard">
               <div class="card-body">
 
@@ -30,93 +30,95 @@
 
                 <!-- Employee information table -->
                 <div class="row">
-                  <table class="table table-bordered table-item">
-                    <thead>
-                      <tr>  
-                        <th scope="col"></th>
-                        <th class="table-items black-text">
-                          <strong>Department:</strong>
-                        </th>
-                        <th class="table-items">
-                          {{ employ.department }}
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-item">
+                      <thead>
+                        <tr>  
+                          <th scope="col"></th>
+                          <th class="table-items black-text">
+                            <strong>Department:</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.department }}
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row"></th>
+                          <th class="table-items black-text">
+                            <strong>First Name:</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.first_name }}
+                          </th>
+                        </tr>
+                        <tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <th class="table-items black-text">
+                            <strong>Last Name:</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.last_name }}
+                          </th>
+                        </tr>
                         <th scope="row"></th>
                         <th class="table-items black-text">
-                          <strong>First Name:</strong>
+                          <strong>Email: </strong>
                         </th>
                         <th class="table-items">
-                          {{ employ.first_name }}
+                          {{ employ.email }}
                         </th>
-                      </tr>
-                      <tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <th class="table-items black-text">
-                          <strong>Last Name:</strong>
-                        </th>
-                        <th class="table-items">
-                          {{ employ.last_name }}
-                        </th>
-                      </tr>
-                      <th scope="row"></th>
-                      <th class="table-items black-text">
-                        <strong>Email: </strong>
-                      </th>
-                      <th class="table-items">
-                        {{ employ.email }}
-                      </th>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <th class="table-items black-text">
-                          <strong>Mobile:</strong>
-                        </th>
-                        <th class="table-items">
-                          {{ employ.mobile }}
-                        </th>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <th class="table-items black-text">
-                          <strong>Home Address:</strong>
-                        </th>
-                        <th class="table-items">
-                          {{ employ.address }}
-                        </th>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <th class="table-items black-text">
-                          <strong>Gender:</strong>
-                        </th>
-                        <th class="table-items">
-                          {{ employ.gender }}
-                        </th>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <th class="table-items black-text">
-                          <strong>Employment Date:</strong>
-                        </th>
-                        <th class="table-items">
-                          {{ employ.employment_date }}
-                        </th>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <th class="table-items black-text">
-                          <strong>Primary Duties</strong>
-                        </th>
-                        <th class="table-items">
-                          {{ employ.duties }}
-                        </th>
-                      </tr>
-                    </tbody>
-                  </table>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <th class="table-items black-text">
+                            <strong>Mobile:</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.mobile }}
+                          </th>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <th class="table-items black-text">
+                            <strong>Home Address:</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.address }}
+                          </th>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <th class="table-items black-text">
+                            <strong>Gender:</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.gender }}
+                          </th>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <th class="table-items black-text">
+                            <strong>Employment Date:</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.employment_date }}
+                          </th>
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <th class="table-items black-text">
+                            <strong>Primary Duties</strong>
+                          </th>
+                          <th class="table-items">
+                            {{ employ.duties }}
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
                 <!-- Employee information table ends -->
 
@@ -133,10 +135,10 @@
                           {% endfor %}
                       {% endif %}
                   {% endwith %}
-              </section>
+                </section>
 
                 <!-- form for sending message to hr office -->
-                <div class="card text-center mb-3" style="width: 580px; height: 250px;">
+                <div class="card text-center mb-3" style="height: 250px;">
                   <div class="card-body">
                     <h6 class="card-title black-text"><i class="fas fa-pen-fancy"></i>
                       Contact HR office for any complain or concern
@@ -165,7 +167,7 @@
         </div>
 
       <!-- Right panel widget section-->
-      <div class="col-5">
+      <div class="col-12 col-md-5">
         <div class="card border-light" style="width: 100%; height: 800px;">
           <ul class="list-group list-group-flush">
 
@@ -210,7 +212,7 @@
             <a href="{{ url_for('change_password') }}">
               <li class="list-group-item hvr-overline-reveal" style="height: 120px; padding-top: 28px;">
                 <h6 class="black-text" style="display: inline; padding-left: 30px; padding-bottom: 0px; padding-top: 20px;">
-                  <strong>Change your password</strong></h6>
+                  <strong>Change password</strong></h6>
                 <i class="fas fa-ban text-center circle-icon"></i>
                 <h6 style="display: block; padding-left: 90px; color: rgb(103, 64, 194);">
                   Prevent unauthorized access to your information & privacy

@@ -38,54 +38,56 @@
         </div>
     </div>
 
-    <div class="row login-card">
-        <div class="card mx-auto" style="margin-top: 0px;">
-            <div class="card-body"> 
-                <form method="POST" action="{{ url_for('login') }}">
-                    <div class="md-form md-outline">
-                        <i class="fas fa-envelope prefix" style="color: gray;"></i>
-                        <input type="text" name="email" id="email" class="form-control" required>
-                        <label for="email">E-mail address</label>
-                    </div>
-                    
-                    <div class="md-form md-outline">
-                        <i class="fas fa-user-lock prefix" style="color: gray"></i>
-                        <input type="password" name="password" id="password" minilenght="3" 
-                            maxlength="15" pattern="^[a-zA-Z0-9]{3,15}$" class="form-control" required>
-                        <label for="password">Password</label>
-                    </div>
+   <div class="container">
+        <div class="row login-card">
+            <div class="card column mx-auto" style="margin-top: 0px;">
+                <div class="card-body"> 
+                    <form method="POST" action="{{ url_for('login') }}">
+                        <div class="md-form md-outline">
+                            <i class="fas fa-envelope prefix" style="color: gray;"></i>
+                            <input type="text" name="email" id="email" class="form-control" required>
+                            <label for="email">E-mail address</label>
+                        </div>
+                        
+                        <div class="md-form md-outline">
+                            <i class="fas fa-user-lock prefix" style="color: gray"></i>
+                            <input type="password" name="password" id="password" minilenght="3" 
+                                maxlength="15" pattern="^[a-zA-Z0-9]{3,15}$" class="form-control" required>
+                            <label for="password">Password</label>
+                        </div>
 
-                    <div class="form-group row text-center" style="padding-top: 40px;">
-                        <div class="col">
-                            <button type="submit"
-                                class="btn btn-block white-text text-center btn-mdb-color login-label text-capitalize" >
-                                Login <i class="fas fa-sign-in-alt"></i>
-                            </button>
+                        <div class="form-group row text-center" style="padding-top: 40px;">
+                            <div class="col">
+                                <button type="submit"
+                                    class="btn btn-block white-text text-center btn-mdb-color login-label text-capitalize" >
+                                    Login <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
 
-                <div class="row inner-links" style="padding-top: 120px;">
-                    <div class="col text-left">
-                        <div class="col login">
-                            <i class="fas fa-home"></i>
-                            <a href="{{ url_for('home') }}">
-                                <span style="color: black;">Go to Home Page</span>
-                            </a> 
+                    <div class="row inner-links" style="padding-top: 120px;">
+                        <div class="col text-left">
+                            <div class="col login">
+                                <i class="fas fa-home"></i>
+                                <a href="{{ url_for('home') }}">
+                                    <span style="color: black;">Go to Home Page</span>
+                                </a> 
+                            </div>
+                        </div>
+                        <div class="col text-right">
+                            <div class="col">
+                                <p class="black-text login">
+                                    New Employee?
+                                    <a href="{{ url_for('register') }}" class="blue-text">
+                                        <strong>Register</strong>
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col text-right">
-                        <div class="col">
-                            <p class="black-text login">
-                                New Employee?
-                                <a href="{{ url_for('register') }}" class="blue-text">
-                                    <strong>Register</strong>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div> 
+                </div> 
+            </div>
         </div>
     </div>
 

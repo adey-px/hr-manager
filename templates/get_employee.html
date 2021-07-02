@@ -27,55 +27,55 @@
       <div class="col">
         <div class="container">
           <input class="form-control mb-4 search-bar1" id="tableSearch" type="text">
-
-          <table class="table table-bordered table-striped">
-            <!-- Table header -->
-            <thead>
-              <tr class="text-center">
-                <th>
-                  <strong>First Name</strong><i class="fas fa-sort ml-1"></i>
-                </th>
-                <th>
-                  <strong>Last Name</strong><i class="fas fa-sort ml-1"></i>
-                </th>
-                <th>
-                  <strong>Department</strong><i class="fas fa-sort ml-1"></i>
-                </th>
-                <th>
-                  <strong>Date of Employment</strong><i class="fas fa-sort ml-1"></i>
-                </th>
-                <th>
-                  <strong>Mobile</strong><i class="fas fa-sort ml-1"></i>
-                </th>
-                <th>
-                  <strong>Email Address</strong><i class="fas fa-sort ml-1"></i>
-                </th>
-                <th>
-                  <strong>Gender</strong><i class="fas fa-sort ml-1"></i>
-                </th>
-              </tr>
-            </thead>
-            <!-- Table header ends -->
-
-             <!-- Table row -->
-            {% if staff|length > 0 %}
-              <tbody id="myTable">
-                {% for person in staff %}
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <!-- Table header -->
+                <thead>
                   <tr class="text-center">
-                    <td >{{ person.first_name }}</td>
-                    <td>{{ person.last_name }}</td>
-                    <td>{{ person.department }}</td>
-                    <td>{{ person.employment_date }}</td>
-                    <td>{{ person.mobile }}</td>
-                    <td>{{ person.email }}</td>
-                    <td>{{ person.gender }}</td>
+                    <th>
+                      <strong>First Name</strong><i class="fas fa-sort ml-1"></i>
+                    </th>
+                    <th>
+                      <strong>Last Name</strong><i class="fas fa-sort ml-1"></i>
+                    </th>
+                    <th>
+                      <strong>Department</strong><i class="fas fa-sort ml-1"></i>
+                    </th>
+                    <th>
+                      <strong>Date of Employment</strong><i class="fas fa-sort ml-1"></i>
+                    </th>
+                    <th>
+                      <strong>Mobile</strong><i class="fas fa-sort ml-1"></i>
+                    </th>
+                    <th>
+                      <strong>Email Address</strong><i class="fas fa-sort ml-1"></i>
+                    </th>
+                    <th>
+                      <strong>Gender</strong><i class="fas fa-sort ml-1"></i>
+                    </th>
                   </tr>
-              {% endfor %}
-              </tbody>
-            {% endif %}
-            <!-- Table row ends -->
-
-          </table>
+                </thead>
+                <!-- Table header ends -->
+    
+                 <!-- Table row -->
+                {% if staff|length > 0 %}
+                  <tbody id="myTable">
+                    {% for person in staff %}
+                      <tr class="text-center">
+                        <td >{{ person.first_name }}</td>
+                        <td>{{ person.last_name }}</td>
+                        <td>{{ person.department }}</td>
+                        <td>{{ person.employment_date }}</td>
+                        <td>{{ person.mobile }}</td>
+                        <td>{{ person.email }}</td>
+                        <td>{{ person.gender }}</td>
+                      </tr>
+                  {% endfor %}
+                  </tbody>
+                {% endif %}
+                <!-- Table row ends -->
+              </table>
+            </div>
         </div>
       </div>
     </div>

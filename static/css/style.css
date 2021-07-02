@@ -149,7 +149,7 @@ body {
 }
 
 /* Register page */
-.card {
+.reg-card {
     width: 35%;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -164,7 +164,7 @@ body {
 .login-header {
     margin-top: 120px;
     margin-bottom: 0px;
-    width: 54%;
+    width: 41%;
 }
 
 .login-card {
@@ -246,6 +246,7 @@ body {
         width: 80%;
     }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
     .column-1 {
         width: 50%;
