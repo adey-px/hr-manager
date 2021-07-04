@@ -29,12 +29,6 @@ $(document).ready(function(){
   // New employee form inputs validation ends
 });
 
-// Alert for contact form submisssion
-$("#send").click(function() {
-  alert("The Form has been Submitted successfully.");
-});
-// Alert for form submisssion ends
-
 // Set focus for table search in employees directory
 document.getElementById("tableSearch").focus();
 // Focus for table search ends

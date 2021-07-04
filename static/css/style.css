@@ -162,7 +162,7 @@ body {
 
 /* Register page */
 .reg-card {
-    width: 35%;
+    width: 50%;
     margin-top: 30px;
     margin-bottom: 20px;
     height: 430px;
@@ -187,6 +187,7 @@ body {
 
 .login-label {
     font-size: 15px;
+    padding-top: 25px;
 }
 
 .inner-links {
