@@ -64,7 +64,6 @@ body {
 .btn-home-icon {
     font-size: 30px;
     color: orange;
-    float: left;
 }
 
 .hm-text1 {
@@ -103,7 +102,7 @@ body {
     color: orange;
 }
 
-/* mobile download links */
+/* Home page mobile download links */
 .mobile-apps {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -112,7 +111,28 @@ body {
 .app-store {
     width: 130px;
     height: 35px;
+    display: inline-block;
 }
+
+/* Hide home page note in mobile view */
+@media (max-width: 812px) {
+    .note {
+      display: none;
+    }
+  }
+
+/* Home page footer */
+.btn-danger:hover {
+    color: blue;
+}
+
+.list-styled a:hover,
+.login a:hover,
+.footer-links-dash a:hover,
+.footer-copyright a:hover {
+    text-decoration: underline;
+}
+
 
 /* flash messages */
 .message {
@@ -138,14 +158,6 @@ body {
     text-align: center;
     font-size: 18px;
     padding-top: 6px;
-}
-
-.btn-danger:hover {
-    color: blue;
-}
-
-.read-more a:hover {
-    color: chartreuse;
 }
 
 /* Register page */
@@ -227,15 +239,7 @@ body {
     border-width: 1px;
 }
 
-/* footer */
-.list-styled a:hover,
-.login a:hover,
-.footer-links-dash a:hover,
-.footer-copyright a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive media queries */
+/* Responsive media queries register & login cards */
 @media (max-width: 812px) {
     .column {
         width: 80%;
