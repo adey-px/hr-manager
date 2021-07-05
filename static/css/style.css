@@ -133,7 +133,6 @@ body {
     text-decoration: underline;
 }
 
-
 /* flash messages */
 .message {
     width: 75%;
@@ -193,6 +192,13 @@ body {
 .inner-links {
     padding-top: 60px;
 }
+
+/* Hide home page note in mobile view */
+@media (max-width: 812px) {
+    .game {
+      display: none;
+    }
+  }
 
 /* Dashboard page */
 .table-item {
