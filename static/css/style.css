@@ -246,12 +246,13 @@ body {
     border-width: 1px;
 }
 
-/* Responsive media queries register & login cards */
+/* Responsive media queries for register & login cards */
 @media (max-width: 812px) {
     .column {
         width: 80%;
     }
 }
+
 
 @media (min-width: 768px) and (max-width: 991px) {
     .column-1 {
