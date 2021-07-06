@@ -1,14 +1,14 @@
-1.0 Project Name: Human Resource Portal (HRP)
+# 1.0 Project Name: Human Resource Portal (HRP)
 The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. 
 The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android & ios mobile apps of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
 
 The project is deployed to Heroku on https://human-resource-portal.herokuapp.com/
 
 
-2.0 UX
+# 2.0 UX
 The web Application is developed for Human Resource Managers of companies to effectively store and manage their employees' data, modify their employees' employment status, communicate internally with their employees, publish job advertisements to the public, receive job applications from prospective employees and send feedback to the applicants.
 
-2.1 User stories
+## 2.1 User stories
 As Human Resource Manager (Admin/Super User), I want to:
 
 1. create profile account for new employees which would contain their personal data.
@@ -40,22 +40,49 @@ As a public user, I want to:
 2. contact the developers in case I need to get the software for my own company's HR department
 3. view exisitng career opportunities in the company, check current job vacancies, if any
 4. apply for job online, in case there is vacancy, and get update from HR office in regard to my application
+5. follow and connect to the company through their social media platforms 
 
-2.2 Wireframes
+## 2.2 Wireframes
 In order to bring the idea of this project to life, wireframes were produced with the use of Figma. The folder named "wireframes" has been uploaded in this project's GitHub repository. The folder contains images of the wireframes designed to show Desktop, Tablet and Mobile views of various pages of the application
 
 
-3.0 Features
-3.1 Existing Features
+# 3.0 Features
+## 3.1 Existing Features
 1. This Web application basically consists of about twenty-three pages.
 
-2. It has a Home page particularly designed for public users and job seekers in mind. At the right side of the Home page is Self Service center where job seekers can expect to see existing vacancies as published by the Company's HR office. They can also apply for job through the Job Application link, check their job application status and get help from the Support team. If there are job vacancies, the HR office would update the Self Service section as needed. However, as at the time of developing this project, it was assumed that no vacancies existed yet due to the residual impact of COVID-19 pandemic. SO those links are working but no useful content in the pages since no vacancies existed. Job seekers could check again in future.
+2. It consists of a top bar designed for Home page only. The top bar displays the project name and social media links by which users can connect to the company using the web application 
 
-3. The Home page also has a static image of employees, happy on their jobs and holding a meeting. Also, there are links to download ios & android mobile apps of this application. Although, there are no mobie apps available right now, but this is done in anticipation and as a way to improve use experience in future, such that employees can access their Portal anywhere and at anytime they wish, with the use of their mobile devices.  
+3. It also consists of a main navigation bar that displays company's logo and menu items. This navigation bar is displayed across all pages of the application
 
-4. Coupled with the above, the Home page consists of a brief note about the application, its success story and other information about the HR Portal on the Footer section. The idea here was that those information can enlighten public users and encourage them to try the software in managing their company's Human Resources. It was also done with business mind since more users mean higher profits in case the software is no longer free. Public users could also contact the developers and support team from links available at the Home page
+4. It has a Home page particularly designed for public users and job seekers in mind. At the right side of the Home page is Self Service center where job seekers can expect to see existing vacancies as published by the Company's HR office. They can also apply for job through the Job Application link, check their job application status and get help from the Support team. If there are job vacancies, the HR office would update the Self Service section as needed. However, as at the time of developing this project, it was assumed that no vacancies existed yet due to the residual impact of COVID-19 pandemic. SO those links are working but no useful content in the pages since no vacancies existed. Job seekers could check again in future.
 
-5. Lastly, the Home page has three image links which allow current employees to login, contact Help Desk in case they forgot their passwords or username(email)
+5. On the top left of the Home page is a static image of employees, happy on their jobs and holding a meeting. 
+
+6. Also on the Home page, there are links to download ios & android mobile apps of this application in future. Although, there are no mobie apps available right now, but this is done in anticipation and as a way to improve use experience in future, such that employees can access their Portal anywhere and at anytime they wish, with the use of their mobile devices.  
+
+6. Moreover, the Home page has three image links which allow current employees to login, contact Help Desk in case they forgot their passwords or username(email).
+
+7. Coupled with the above, the Home page consists of a brief note about the application and its success story.
+
+8. At the Home page footer section, there is brief information about the HR Portal and a link to read more about the application. The idea here was that those information can serve as advertisements for public users to consider using the software in managing their company's Human Resources. Public users could also contact to the developers and technical support team from the links provided at the footer section. 
+
+7. The Home page footer section also consists of Quick links to navigate some important pages in the application.
+
+8. It consists of a Register page which allows employees to register after the HR manager has created their profiles in the company's database records. The employees are required to use the same email address submitted to the HR office at their employment confirmation. No persons or individuals are allowed to register on the Portal without being duly documented as bonafide employees of the company
+
+9. After successful registration, each employee can login to the HR Portal using their registered email and password created. For the purpose of granting access to Code Instistute's Project Assessment Team, the following login credentials are provided for them to login as Super/Admin user and have the HR manager's previledges. 
+
+                   Email: admin@hrportal.com
+                   Password: 1230main
+
+10. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties, Attendance record. 
+
+11. Also On the dashboard, there are links provided for employees to change their password, read industrial articles online and to contact Help Desk for support in case they encounter any issue while using the Portal.
+
+12. Moreover, on the dashboard, there is a Complain form by which employees can send their complains, request or feedback to the HR Office directly. There is also a section on the dashboard where all employees can receive and read notifications sent from HR office. The latest notification is displayed in the space provided.
+
+13. The Corporate page consists of General information to all employees about Code of Conduct and Company Policy
+
 
 
 

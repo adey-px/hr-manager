@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  // Table search functionality for employee directory
+  // Live search functionality for employee directory
     $("#tableSearch").on("keyup", function() {
       var value = $(this).val().toLowerCase();
       $("#myTable tr").filter(function() {
@@ -29,6 +29,6 @@ $(document).ready(function(){
   // New employee form inputs validation ends
 });
 
-// Set focus for table search in employees directory
+// Set focus for Live search in employees directory
 document.getElementById("tableSearch").focus();
 // Focus for table search ends
