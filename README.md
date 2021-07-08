@@ -99,7 +99,7 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 
 ## 3.2 Features Left to Implement
-1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able change their password or create new password through a link that would be sent to their individual's email address.
+1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able to change their password or create new password through a link that would be sent to their individual's email address.
 
 2. Live counting of projects and customers with update on customer review to replace the static information on HR Portal Success story on Home page.
 
@@ -108,6 +108,8 @@ In order to bring the idea of this project to life, wireframes were produced wit
 4. Each employee's attendance record available on their dashboard to be connected to the company's Clock in device that monitores employees' attendance
 
 5. Record of each employee's payroll and account information to be included in thier respective profile
+
+6. To programmatically enable the checkbox on the Contact form which would allow sending of a copy of the message sent to be delievered into sender's email address
 
 
 ## 3.3 Languages and Technologies Used

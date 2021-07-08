@@ -169,18 +169,22 @@
                           {{ person.employment_date }}
                         </td>
 
-                      <!-- Manage employee buttons -->
                       <td>
+                        <!-- Edit employee button -->
                         <a href="{{ url_for('edit_employee', employee_id=person._id) }}">
                           <i class="fas fa-pen-square mx-1" data-toggle="tooltip" data-placement="top" title="Edit"
                             style="font-size: 20px; color: rgb(144, 192, 236); padding-right: 20px;">
                           </i>
                         </a>
-                        <a href="{{ url_for('delete_employee', employee_id=person._id) }}">
+
+                        <!-- Delete employee button -->
+                        <a href="{{ url_for('delete_employee', employee_id=person._id) }}" 
+                          onclick="return confirm('Cofirm dismissal of this employee');">
                           <i class="fas fa-times-circle mx-1" data-toggle="tooltip" data-placement="top" title="Terminate"
                             style="font-size: 20px; color: red;">
                           </i>
                         </a>
+
                       </td>
                     </tr>
                       {% endif %}

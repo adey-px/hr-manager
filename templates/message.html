@@ -46,10 +46,13 @@
               </div>
               <div class="card-footer">
                 <small class="text-muted">{{ message.date }}</small>
-                <a href="{{ url_for('delete_message', message_id=message._id) }}" title="Delete">
+
+                <a href="{{ url_for('delete_message', message_id=message._id) }}" title="Delete"
+                  Onclick="return ConfirmDelete();">
                   <i class="fas fa-times-circle float-right" 
                   style="padding-left: 13px; color: red;"></i>
                 </a>
+                
                 <a href="mailto:{{ message.email }}" title="Reply">
                   <i class="fas fa-reply float-right" style="color: black;"></i>        
                 </a>

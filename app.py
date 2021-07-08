@@ -331,7 +331,7 @@ def get_employee():
 def manage_employee():
     # Get list of all departments from db and also list of all employees
     # To display employees by their departments wc are both db collections
-    employk = list(mongo.db.departments.find())
+    employk = list(mongo.db.departments.find().sort("department", 1))
     alice = list(mongo.db.employees.find())
     # Variables depo & staff are exported to manage_employee.html
     return render_template(
