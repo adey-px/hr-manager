@@ -50,9 +50,9 @@ In order to bring the idea of this project to life, wireframes were produced wit
 ## 3.1 Existing Features
 1. This Web application basically consists of about twenty-three pages.
 
-2. It consists of a top bar designed for Home page only. The top bar displays the project name and social media links by which users can connect to the company using the web application 
+2. It consists of a top bar designed for Home page only. The top bar displays the project name and social media links by which users can connect to the company using the web application.
 
-3. It also consists of a main navigation bar that displays company's logo and menu items. This navigation bar is displayed across all pages of the application
+3. It also consists of a main navigation bar (navbar) that displays company's logo and menu items. This navigation bar is displayed across all pages of the application. Since there are three levels or categories of users, the menu items on this navbar are specifically selected to meet the needs of each user category. Public users can only view Home, Website, Register and Sign in menu links while registered employees who are logged in can view Home, Corporate and Profile menu links which has two submenu links named Dashboard and Logout. The highest level of user (Admin or HR manager) can view three additional menu links restricted to their official roles. The menu links are Internal Memo which comprises of Inbox & Notification submenu links, Operations which comprises of New Department & All Departments submenu links, and Employees which comprises of New Employees, Employee Directory & Manage Employees submenu links. 
 
 4. It has a Home page particularly designed for public users and job seekers in mind. At the right side of the Home page is Self Service center where job seekers can expect to see existing vacancies as published by the Company's HR office. They can also apply for job through the Job Application link, check their job application status and get help from the Support team. If there are job vacancies, the HR office would update the Self Service section as needed. However, as at the time of developing this project, it was assumed that no vacancies existed yet due to the residual impact of COVID-19 pandemic. SO those links are working but no useful content in the pages since no vacancies existed. Job seekers could check again in future.
 
@@ -73,32 +73,61 @@ In order to bring the idea of this project to life, wireframes were produced wit
 9. After successful registration, each employee can login to the HR Portal using their registered email and password created. For the purpose of granting access to Code Instistute's Project Assessment Team, the following login credentials are provided for them to login as Super/Admin user and have the HR manager's previledges. 
 
                    Email: admin@hrportal.com
-                   Password: 1230main
+                   Password: 1230master
 
-10. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties, Attendance record. 
+10. The Login page consists of links to return to Home page and another link to navigate to Register page for new employees
 
-11. Also On the dashboard, there are links provided for employees to change their password, read industrial articles online and to contact Help Desk for support in case they encounter any issue while using the Portal.
+11. Moreover, the Login page consists of link to go to Game page where employees can play a simple Shooting game, as they wish, in their lunch break time so as to relax and releive themselves from the regular stress of work. The game is a pure CSS game.
 
-12. Moreover, on the dashboard, there is a Complain form by which employees can send their complains, request or feedback to the HR Office directly. There is also a section on the dashboard where all employees can receive and read notifications sent from HR office. The latest notification is displayed in the space provided.
+12. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties and Attendance record. 
 
-13. The Corporate page consists of General information to all employees about Code of Conduct and Company Policy
+13. Also On the dashboard, there are links provided for employees to change their password, read industrial articles online and to contact Help Desk for support in case they encounter any issue while using the Portal.
+
+14. Moreover, on the dashboard, there is a Complain form by which employees can send their complains, request or feedback to the HR Office directly. There is also a section on the dashboard where all employees can receive and read notifications sent from HR office. The latest notification is displayed in the space provided.
+
+15. The Corporate page consists of general information to all employees about the company's Code of Conduct and Company Policy
+
+16. Messages sent by employees to HR office are collected and viewable on Inbox page while the HR officer/manager can send general notice/message to all employees through the form provided on Notification page. Each message consists of two links for reply and delete. Reply can only be sent to the email of the sender. Both Inbox page and Notification page are accessible through Internal Memo menu link on the navbar. 
+
+17. HR manager can create new departments through the form on New Department page while all existing departments in the company are accessible on All Departments page. On each department, there are two links for ediiting and deleting the department. Links to New Department and All Departments are accessible through Operations menu item on the navbar.
+
+18. Furthermore, through Employees menu link, the HR manager can create profile for new employees through form available on New Employee page. Employees Directory page consists of a table that displays the list of all employess in the company. The list can be filtered by individual employee's name, department, email address or gender through a Live search bar on top of the table of employees. Manage Employees also consists of list of all employees grouped or categorized by their respective departments. An accordion is used for each department where each employee's record consists of two buttons; one for editing the employee's detail and the other button for deleting or terminating the employee from the company, an indication of firing or final dismisal.
+
+19. A click on the Logout link, accessible through Profile menu link, would log out user and end their current session.
+
+20. A click on the company's logo or the application's name on both top naigation bars would return all users to the Home page.
 
 
+## 3.2 Features Left to Implement
+1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able change their password or create new password through a link that would be sent to their individual's email address.
+
+2. Live counting of projects and customers with update on customer review to replace the static information on HR Portal Success story on Home page.
+
+3. Links to download or revise Employees Code of conduct and the Company policy to be included on the Corporate page.
+
+4. Each employee's attendance record available on their dashboard to be connected to the company's Clock in device that monitores employees' attendance
+
+5. Record of each employee's payroll and account information to be included in thier respective profile
 
 
+## 3.3 Languages and Technologies Used
+HTML5: This project uses HTML5 for layout and main markup language
 
+Material Design for Boostrap (MDB): It uses MD Bootstrap as Frontend Framework to design its layout and user interface
 
-3.2 Features Left to Implement
-to connect the Booking form to the company's email so the Admin can get an email alert when a prospective client books an appointment.
-to make it possible that the Web Admin would be able to download the client's information pdf format. The contact form would connect to a database Where form inputs are stored for future reference.
+CSS3: The project uses CSS3 for for additional styling
 
-3.3 Languages and Technologies Used
-HTML5: The project uses HTML5 for website layout
-CSS3: The project uses CSS3 for styling
-Bootstrap 4: The project uses Boostrap 4 to create carousel image slider on home page and responsive Navigation bar
 Hover.CSS: It uses Hover.css for button hover
+
 Font Awesome: It uses Font Awesome for Our services section, Team section and social links
-Google Font:
+
+JavaScript: It uses vanilla JavaScript for flash message close icon and cursor focus in Live search bar
+
+Flask: It uses Flask microframework built on Python and which is based on Jinja Templating Method to write code that provides user authentication and othe functionalities
+
+MongoDB: It uses NoSql database called MongoDB which stores user data that can be manipulated programmatically through CRUD operations
+
+Heroku: It uses Heorku platform as a Service for deployment
 
 
 4.0 Testing

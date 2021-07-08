@@ -134,8 +134,15 @@ body {
 }
 
 /* flash messages */
+.close {
+    font-size: 18px;
+    display: inline;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
 .message {
-    width: 75%;
+    width: 100%;
     height: 30px; 
     border-radius: 3px; 
     background-color: rgb(77, 16, 16);
@@ -186,7 +193,7 @@ body {
 
 .login-label {
     font-size: 15px;
-    padding-top: 25px;
+    padding-top: 15px;
 }
 
 .inner-links {

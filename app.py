@@ -77,6 +77,7 @@ def message():
 def delete_message(message_id):
     # Use .remove on message by their id
     mongo.db.messages.remove({"_id": ObjectId(message_id)})
+    flash("Message has been deleted successfully")
     return redirect(url_for("message"))
 
 
@@ -473,4 +474,4 @@ def support():
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")), debug=False)
+            port=int(os.environ.get("PORT")), debug=True)

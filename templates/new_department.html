@@ -10,16 +10,19 @@
       {% with messages = get_flashed_messages() %}
           {% if messages %}
               {% for message in messages %}
-                  <div class="row">
-                      <h5 class="white-text mx-auto message flash-text">
-                        {{ message }}
-                      </h5>
-                  </div>
+                <div class="row message">
+                  <h5 class="white-text mx-auto flash-text">
+                    {{ message }}
+                  </h5>
+                  <a class="close white-text" id="closeButton">
+                    X
+                  </a>
+                </div>
               {% endfor %}
           {% endif %}
       {% endwith %}
     </section>
-     <!-- Flash message ends -->
+    <!-- Flash message ends -->
 
     <!-- Form for adding new department -->
     <div class="container">
@@ -50,5 +53,5 @@
       </form>
     </div>
     <!-- Form for adding new department ends -->
-    
+
 {% endblock %}

@@ -27,8 +27,16 @@ $(document).ready(function(){
       }, false);
       })();
   // New employee form inputs validation ends
+
+  // Flash message close x button
+  document.getElementById("closeButton").addEventListener("click", function(e) {
+    e.preventDefault();
+    this.parentNode.style.display = "none";
+  }, false);
+  // Flash message close x button ends
 });
 
 // Set focus for Live search in employees directory
 document.getElementById("tableSearch").focus();
 // Focus for table search ends
+

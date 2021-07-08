@@ -1,9 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- Page header -->
     <div class="h2-responsive text-center font-weight-bolder card-header"> 
         Message Inbox
     </div>
+    <!-- Page header ends -->
+
+    <!-- Flash message -->
+    <section class="container">
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                <div class="row message">
+                  <h5 class="white-text mx-auto flash-text">
+                    {{ message }}
+                  </h5>
+                  <a class="close white-text" id="closeButton">
+                    X
+                  </a>
+                </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+    </section>
+     <!-- Flash message ends -->
 
     <div class="container-fluid" style="width: 80%; margin-top: 20px;">
       <div class="col">

@@ -11,9 +11,14 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="row">
-                        <h5 class="black-text mx-auto message flash-text">{{ message }}</h5>
-                    </div>
+                <div class="row message">
+                    <h5 class="white-text mx-auto flash-text">
+                        {{ message }}
+                    </h5>
+                    <a class="close white-text" id="closeButton">
+                        X
+                    </a>
+                </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
