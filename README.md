@@ -1,14 +1,14 @@
-# 1.0 Project Name: Human Resource Portal (HRP)
+## 1.0 Project Name: Human Resource Portal (HRP)
 The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. 
 The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android & ios mobile apps of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
 
 The project is deployed to Heroku on https://human-resource-portal.herokuapp.com/
 
 
-# 2.0 UX
+## 2.0 UX
 The web Application is developed for Human Resource Managers of companies to effectively store and manage their employees' data, modify their employees' employment status, communicate internally with their employees, publish job advertisements to the public, receive job applications from prospective employees and send feedback to the applicants.
 
-## 2.1 User stories
+### 2.1 User stories
 As Human Resource Manager (Admin/Super User), I want to:
 
 1. create profile account for new employees which would contain their personal data.
@@ -42,13 +42,13 @@ As a public user, I want to:
 4. apply for job online, in case there is vacancy, and get update from HR office in regard to my application
 5. follow and connect to the company through their social media platforms 
 
-## 2.2 Wireframes
+### 2.2 Wireframes
 In order to bring the idea of this project to life, wireframes were produced with the use of Figma. The folder named "wireframes" has been uploaded in this project's GitHub repository. The folder contains images of the wireframes designed to show Desktop, Tablet and Mobile views of various pages of the application
 
 
-# 3.0 Features
-## 3.1 Existing Features
-1. This Web application basically consists of about twenty-three pages.
+## 3.0 Features
+### 3.1 Existing Features
+1. This Web application basically consists of about twenty-three pages which are fundamentally html files or templates
 
 2. It consists of a top bar designed for Home page only. The top bar displays the project name and social media links by which users can connect to the company using the web application.
 
@@ -95,11 +95,15 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 19. A click on the Logout link, accessible through Profile menu link, would log out user and end their current session.
 
-20. A click on the company's logo or the application's name on both top naigation bars would return all users to the Home page.
+20. A click on the company's logo or the application's name on both top navigation bars would return all users to the Home page.
+
+21. The application has an interactive alert fucntionality that pops up on the browser window when a user clicks on delete button. This functionality is a way to confirm that the user knows what he is doing in case they accidentally click on the delete button.
+
+22. Finally the application is equiped with capabilty to communicate to user through flash messages to show them the last major action they just performed on the application. The flash message has an icon X that can be used to remove flash message from screen.
 
 
-## 3.2 Features Left to Implement
-1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able to change their password or create new password through a link that would be sent to their individual's email address.
+### 3.2 Features Left to Implement
+1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able to change their password or create new password through the link Password Reset button on Home page that would be sent to their individual's email address.
 
 2. Live counting of projects and customers with update on customer review to replace the static information on HR Portal Success story on Home page.
 
@@ -112,81 +116,112 @@ In order to bring the idea of this project to life, wireframes were produced wit
 6. To programmatically enable the checkbox on the Contact form which would allow sending of a copy of the message sent to be delievered into sender's email address
 
 
-## 3.3 Languages and Technologies Used
-HTML5: This project uses HTML5 for layout and main markup language
+### 3.3 Languages and Technologies Used
+1. <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML5:</a>  This project uses HTML5 as the backbone and main markup language.
 
-Material Design for Boostrap (MDB): It uses MD Bootstrap as Frontend Framework to design its layout and user interface
+2. <a href="https://mdbootstrap.com/docs/b4/jquery/" target="_blank">Material Design:</a> It uses Material Design for Bootstrap 4 Standard as Frontend Framework to design its layout and user interface.
 
-CSS3: The project uses CSS3 for for additional styling
+2. <a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS3:</a> The project uses CSS3 for additional styling.
 
-Hover.CSS: It uses Hover.css for button hover
+4. <a href="https://ianlunn.github.io/Hover/" target="_blank">Hover.CSS:</a> It uses Hover.css for button hover.
 
-Font Awesome: It uses Font Awesome for Our services section, Team section and social links
+5. <a href="https://fontawesome.com/" target="_blank">Font Awesome:</a> It uses Font Awesome for form input fields and button icons.
 
-JavaScript: It uses vanilla JavaScript for flash message close icon and cursor focus in Live search bar
+6. <a href="https://www.javascript.com/" target="_blank">JavaScript:</a> It uses vanilla JavaScript for flash message close icon and cursor focus in Live search bar.
 
-Flask: It uses Flask microframework built on Python and which is based on Jinja Templating Method to write code that provides user authentication and othe functionalities
+7. <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask:</a>  It uses Flask microframework based on Python Language to write about 500 lines of server code that provide dynamic content, CRUD Operations with data, user authentication and other programming functionalities.
 
-MongoDB: It uses NoSql database called MongoDB which stores user data that can be manipulated programmatically through CRUD operations
+8. <a href="https://www.mongodb.com/" target="_blank">MongoDB:</a> It uses MongoDB, a Nosql database which stores user data in various collections. The data is manipulated programmatically through CRUD operations.
 
-Heroku: It uses Heorku platform as a Service for deployment
-
-
-4.0 Testing
-All the internal and external links including menu items on navigation bar works well and the website looks good on Chrome, Mozilla and Edge browsers The website is responsive on mobile devices
-
-4.1 Code Validation
-HTML codes were tested with W3C MarkUp Validation Service. The codes returned with no error. HTML codes were tested with W3C CSS Validation Service. The codes returned with no error.
-
-4.2 Testing Responsiveness
-responsiveness-result
-
-4.3 Testing Browser Compatibility
-browser-compatibility-result
-
-4.4 Testing User Story
-As a user I want to:
-
-read general information about the company including what they do: When a user logs on to the website, at the home page, he is able to view the specific areas of repair services and the category of devices that the company can handle for repair. In the about page, he is also provided a brief information about the company and their corporate goal
-
-view the area of computer repair services offered by the company: A user is able to read about the technicians that work in the company with detail about their work experiences which can encourage the user to be confident in bringing repair jobs to the company
-
-check if those areas of services meet my immediate needs: By reading through the information provided in the Service Section of home page, a user could be able to see id if the services provided by the company meet his needs
-
-check the technicians that work in the repair center and be sure that they are qualified and certified to handle technical jobs in professional manner Our Team section on page was created to showcase the technicians that handle repair jobs for the company.
-
-to contact the company and book an appointment by either filling a form, phone call or email A user could book an appointment by filling the form provided on the Booing page
-
-to be able to connect with them on social media The social media icons on the Footer provide active links by which users or clients can connect to the company, post comments and follow the company
-
-to be able to navigate well around the site The navigation bar provided at the top of the website allow users to navigate easily and conveniently to any desired parts of the website
-
-4.5 Bugs
-The bug I encountered was the navigation bar not displaying properly at mobile view because I used hamburger menu style. I fixed this bug by adding some media query for menu-item class by giving it a width 100% at max-width: 600px and making it important
-
-At mobile view, menu items also displayed horizontally and scattered instead of vertically so I used clear both to separate them and make them display vertically in mobile view
+9. <a href="https://heroku.com" target="_blank">Heroku:</a> It uses Heorku platform as a Service for deployment to make the application visible and available for the public
 
 
-5.0 Deployment
-This project is hosted on GitHub as GitHub pages using this procedure:
+## 4.0 Testing
+All the internal and external links including menu items on navigation bar works well and the application looks good on Chrome, Mozilla and Edge browsers. The site is responsive on mobile devices.
 
-Login into my GitHub account
-On the navigation menu, click on Settings Tab on the right side
-Scroll down to GitHub Pages Section
-Click on the drop-down menu under Source and select Master Branch
-I used Cayman theme for this project
+### 4.1 Code Validation
+1. HTML codes were tested with <a href="https://validator.w3.org/#validate_by_input" target="_blank">W3C MarkUp Validation Service</a>. The codes returned with no error.
+
+2. CSS codes were tested with <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validation Service</a>. The codes returned with no error.
+
+3. JavaScript codes were tested with <a href="https://jshint.com/" target="_blank">JSHint</a>. The codes returned with no error.
 
 
-6.0 Credits
-6.1 Content
-The code for Navigation bar was copied from here
-The code for Goolge map was copied from here platform
-The code for Carousel was copied from here
-The code for Booking form and Contact form was copied from here
+### 4.2 Testing Responsiveness 
+<img src="readme-images/testing-responsiveness.png" alt="responsiveness-result">
 
-6.2 Media
-The photos used in this site were obtained from Google images
+### 4.3 Testing Browser Compatibility
+<img src="readme-images/testing-browser-compatibility.png" alt="browser-compatibility-result"> 
 
-6.3 Acknowledgement
-The inspiration for this project was my personal idea
+### 4.4 Testing User Story 
+The following user stories for Human Resource Manager (Admin/Super User) were tested and found to be working as expected. Based on results of the testing, Human Resource Manager is able to:
+1. create profile account for new employees which would contain their personal data.
+2. enable the new employees' email addresses as their unique identifers which they can use to register on the HR Portal, so as to prevent unemployed/unauthorized persons from gaining access to Portal.
+3. display individual employee's personal data and employment detail on their dashboard, accessible to them after they login
+4. create new departments and modify existing departments in the company so as to group employees into appropriate departments based on their job roles and duties
+5. view all employees list in a tabular form showing detail about their names, departments, date of employment, gender among others
+6. send notice to all current employees accessible directly on their dashboard
+7. receive comments, complains and feedback from all current employees
+8. reply to employees' messages or delete the messages where necessary
+9. modify and update indvidual employee's records or data existing in the company's database
+10. delete employees' records and terminate their contract with the company
+11. advertise new job vacancies to the public, receive applications online and send update to applicants
+12. contact the developers' agent for technical support in case of any issue arising while using the application
 
+The following user stories for employee were tested and found to be working as expected. Based on results of the testing, an employee is able to:
+1. register on the HR Portal with their email successfully
+2. login into the Portal with my email and password successfully
+3. view my dashboard to see my personal data as it is in the company's record
+4. read notifications sent to all employees by the HR manager
+5. send their comments, complains and feedback to the HR office
+6. receive response to their comments and complains from HR office
+7. change their password at their own will
+8. contact the developers' agent for Technical support such as in case they forget password or for any other assistance
+9. download mobile apps versions of the HR Portal when necessary
+
+The following user stories for public user were tested and found to be working as expected. Based on results of the testing, public user is able to:
+1. read brief information about the HR Portal
+2. contact the developers in case they need to get the software for their own company's HR department
+3. view exisitng career opportunities in the company, check current job vacancies, if any
+4. apply for job online, in case there is vacancy, and get update from HR office in regard to my application
+5. follow and connect to the company through their social media platforms 
+
+### 4.5 Bugs
+While developing this application, I encountered some bugs and fixed them as follow:
+1. The two cards on dashboard template did not initially display well in mobile view. I fixed this bug by using a container-fluid on the page to replace the container I used earlier. I also wrapped each card inside a container and that took care of the display in mobile view since cards are responsive by their core nature.
+
+2. I intended to display the current notification from HR office in the employee's dashboard but It was nasty to see that all notifications from the database were displaying and the whole stuff was messed up. So I sorted the notifications using indexing method to pick only the last notification.
+
+3. I set width manually for the row that contained cards used in register and login templates. This width created an extra white space at the top right hand of the navigation bar which made to require scrolling to the right tobe able to view the whole navigation bar. I observed the navigation itself was responsive in mobile but the white space would shoew when I put the register and login cards. So I fixed this bug by removing the width I set manually on the row that contined the cards.
+
+4. When I thought to have finished the project, I changed debug=True to debug=False in my server file. I observed later that few changes I was making won't just show in my project after hard-reloading and refreshing my browser. I fixed this bug by reverting back to debug=True. However, I didn't forget to change it back to False before I finally submitted the project.
+
+
+## 5.0 Deployment
+This project is hosted on Heroku using this procedure:
+1. I first set up some important files (requiremnts.txt & Procfile) that Heroku needs to run the App 
+2. At the terminal, I typed pip3 freeze --local > requirements.txt (this file is required to tell Heroku which apps & dependencies are required to runn the App)
+3. I typed echo web: python app.py > Procfile (this file is what helps Heroku to know which file runs the App and how to run it)
+4. I login to heroku, clicked New, Create new app 
+5. I chose GitHub option in order to set up Automatic Deployment from my Repository
+6. I typed & searched the name of my App Repo in space provided and clicked Connect
+7. I clicked on Settings Tab, then clicked on Reveal Config Vars - this is where to securely tell Heroku those required hidden variables
+8. I opened env.py, type all the 5 default environment variables with their values, as they are, but without quotations
+9. I clicked Hide Config Vars, then returned to Deploy Tab
+10. Before Deploy, I returned to my App project, at the Git command Terminal, typeed Git status to see any untracked files/pending changes 
+11. I added requiremnts.txt file and Procfile one by one and push them to GitHub separately
+12. I returned to Heroku and clicked Enable Automatic Deploys
+13. I clicked Deploy Branch, after install complete - I saw the App was successfully deployed to Heroku
+
+
+## 6.0 Credits
+### 6.1 Content
+1. The MDB logo used in this project was obtained from <a href="https://mdbootstrap.com/docs/b4/jquery/">MD Bootstrap</a> 
+2. The code used to design the project's User Interface was copied from <a href="https://mdbootstrap.com/docs/b4/jquery/">MD Bootstrap</a> 
+3. The code for the Game page was copied from <a href="https://dev.to/gscode/10-best-of-javascript-games-3mjj">here</a> 
+
+### 6.2 Media
+The images used in the Home page of this web application were obtained from <a href="images.google.com">Google images</a>
+
+### 6.3 Acknowledgement
+The inspiration for this project was my personal innovative idea
