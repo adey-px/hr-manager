@@ -68,7 +68,7 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 7. The Home page footer section also consists of Quick links to navigate some important pages in the application.
 
-8. It consists of a Register page which allows employees to register after the HR manager has created their profiles in the company's database records. The employees are required to use the same email address submitted to the HR office at their employment confirmation. No persons or individuals are allowed to register on the Portal without being duly documented as bonafide employees of the company
+8. It consists of a Register page which allows employees to register after the HR manager has created their profiles in the company's database records. The employees are required to use the same email address submitted to the HR office at their employment confirmation. The HR manager uses their email to create their profile by filling the form on New Employee page. No persons or individuals are allowed to register on the Portal without being duly documented by the HR manager, as bonafide employees of the company.
 
 9. After successful registration, each employee can login to the HR Portal using their registered email and password created. For the purpose of granting access to Code Instistute's Project Assessment Team, the following login credentials are provided for them to login as Super/Admin user and have the HR manager's previledges. 
 
@@ -79,7 +79,10 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 11. Moreover, the Login page consists of link to go to Game page where employees can play a simple Shooting game, as they wish, in their lunch break time so as to relax and releive themselves from the regular stress of work. The game is a pure CSS game.
 
-12. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties and Attendance record. 
+12. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties and Attendance record. The following login detail is provided for Project Assessment team to test the application as a registered employee
+
+                    Email: employee@hrportal.com
+                    Password: 1230user
 
 13. Also On the dashboard, there are links provided for employees to change their password, read industrial articles online and to contact Help Desk for support in case they encounter any issue while using the Portal.
 
@@ -101,38 +104,23 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 22. Finally the application is equiped with capabilty to communicate to user through flash messages to show them the last major action they just performed on the application. The flash message has an icon X that can be used to remove flash message from screen.
 
-
 ### 3.2 Features Left to Implement
 1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able to change their password or create new password through the link Password Reset button on Home page that would be sent to their individual's email address.
-
 2. Live counting of projects and customers with update on customer review to replace the static information on HR Portal Success story on Home page.
-
 3. Links to download or revise Employees Code of conduct and the Company policy to be included on the Corporate page.
-
 4. Each employee's attendance record available on their dashboard to be connected to the company's Clock in device that monitores employees' attendance
-
 5. Record of each employee's payroll and account information to be included in thier respective profile
-
 6. To programmatically enable the checkbox on the Contact form which would allow sending of a copy of the message sent to be delievered into sender's email address
-
 
 ### 3.3 Languages and Technologies Used
 1. <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML5:</a>  This project uses HTML5 as the backbone and main markup language.
-
 2. <a href="https://mdbootstrap.com/docs/b4/jquery/" target="_blank">Material Design:</a> It uses Material Design for Bootstrap 4 Standard as Frontend Framework to design its layout and user interface.
-
 2. <a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS3:</a> The project uses CSS3 for additional styling.
-
 4. <a href="https://ianlunn.github.io/Hover/" target="_blank">Hover.CSS:</a> It uses Hover.css for button hover.
-
 5. <a href="https://fontawesome.com/" target="_blank">Font Awesome:</a> It uses Font Awesome for form input fields and button icons.
-
 6. <a href="https://www.javascript.com/" target="_blank">JavaScript:</a> It uses vanilla JavaScript for flash message close icon and cursor focus in Live search bar.
-
 7. <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask:</a>  It uses Flask microframework based on Python Language to write about 500 lines of server code that provide dynamic content, CRUD Operations with data, user authentication and other programming functionalities.
-
 8. <a href="https://www.mongodb.com/" target="_blank">MongoDB:</a> It uses MongoDB, a Nosql database which stores user data in various collections. The data is manipulated programmatically through CRUD operations.
-
 9. <a href="https://heroku.com" target="_blank">Heroku:</a> It uses Heorku platform as a Service for deployment to make the application visible and available for the public
 
 
@@ -141,17 +129,19 @@ All the internal and external links including menu items on navigation bar works
 
 ### 4.1 Code Validation
 1. HTML codes were tested with <a href="https://validator.w3.org/#validate_by_input" target="_blank">W3C MarkUp Validation Service</a>. The codes returned with no error.
-
 2. CSS codes were tested with <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validation Service</a>. The codes returned with no error.
-
 3. JavaScript codes were tested with <a href="https://jshint.com/" target="_blank">JSHint</a>. The codes returned with no error.
-
+4. Python codes were tested with <a href="http://pep8online.com/" target="_blank">PEP8</a>. The codes returned with no error.
 
 ### 4.2 Testing Responsiveness 
-<img src="readme-images/testing-responsiveness.png" alt="responsiveness-result">
+<img src="readme/capture-one.png" alt="responsiveness-result">
+<img src="readme/capture-two.png" alt="responsiveness-result">
+<img src="readme/capture-three.png" alt="responsiveness-result">
+<img src="readme/capture-four.png" alt="responsiveness-result">
+<img src="readme/capture-five.png" alt="responsiveness-result">
 
 ### 4.3 Testing Browser Compatibility
-<img src="readme-images/testing-browser-compatibility.png" alt="browser-compatibility-result"> 
+<img src="readme/browser-compatibility.png" alt="browser-compatibility-result"> 
 
 ### 4.4 Testing User Story 
 The following user stories for Human Resource Manager (Admin/Super User) were tested and found to be working as expected. Based on results of the testing, Human Resource Manager is able to:
@@ -186,7 +176,19 @@ The following user stories for public user were tested and found to be working a
 4. apply for job online, in case there is vacancy, and get update from HR office in regard to my application
 5. follow and connect to the company through their social media platforms 
 
-### 4.5 Bugs
+### 4.5 Testing Existing Features
+1. All the navigation links and buttons on the application work as expected
+2. Human Resource manager can create employee's record into the database. He can also read, update and delete their records successfully and these complete CRUD functionalities.
+3. All the forms including Register form, Login form and all other forms work as expected.
+4. Registered users can change their passwords successfully after they login
+5. Public users can view all the pages in Self Service center to check for job vacancies
+6. Users can read more detail about the application and they can contact the developers
+7. Users can contact Support team in case they encounter any technical issue while using the application
+8. Employees can send message to HR office through the Complain form on their dashboard
+9. Humnan Resource manager can send notifications to employees through the notification page
+10. Employees can read the most recent notification from the HR office through the accordion on their dashboard
+
+### 4.6 Bugs
 While developing this application, I encountered some bugs and fixed them as follow:
 1. The two cards on dashboard template did not initially display well in mobile view. I fixed this bug by using a container-fluid on the page to replace the container I used earlier. I also wrapped each card inside a container and that took care of the display in mobile view since cards are responsive by their core nature.
 

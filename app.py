@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Home page route
 @app.route("/")
 @app.route("/home")
@@ -46,6 +47,7 @@ def adverts():
 @app.route("/jobs_apply")
 def jobs_apply():
     return render_template("jobs_apply.html")
+
 
 # Application Status page route
 @app.route("/apply_status")
@@ -133,9 +135,9 @@ def register():
                 flash("Passwords do not match. try again!")
                 return redirect(url_for("register"))
 
-        # Create a variable register to insert an Array of the Register form inputs
+        # Create a variable register to insert Array of the form inputs
         # Pass in the variable named password generated above
-        # NB: the variable password stands for both password inputs from the form
+        # NB: the variable password rep both password inputs from the form
         if existing_employee:
             register = {
                 "full_name": request.form.get("full_name").lower(),
@@ -178,7 +180,8 @@ def login():
                 # If both conditions are satisfied, put the user in a session
                 if correct_password:
                     session["user"] = request.form.get("email").lower()
-                    return redirect(url_for("dashboard", email=session["user"]))
+                    return redirect(
+                        url_for("dashboard", email=session["user"]))
 
                 else:
                     # If incorrect or invalid password, redirect user back
@@ -218,8 +221,10 @@ def change_password():
             new_password = request.form.get("newpass")
 
             # Update the old password with the new_password thru user id in db
-            mongo.db.users.update_one({"_id": ObjectId(user["_id"])
-            }, {"$set": {"password": generate_password_hash(new_password)}})
+            mongo.db.users.update_one(
+                {"_id": ObjectId(
+                    user["_id"])}, {"$set": {
+                        "password": generate_password_hash(new_password)}})
             flash("Your password has been updated successfully")
             return redirect(url_for("change_password"))
         else:
@@ -296,10 +301,10 @@ def emp_message(email):
     # This is bcos email & name of sender should show in message sent
     user_email = mongo.db.users.find_one(
             {"email": session["user"]})["email"]
-    
+
     user_name = mongo.db.users.find_one(
             {"email": session["user"]})["full_name"]
-    
+
     today = date.today()
 
     # Get form input message along with date & email of sender
@@ -356,7 +361,7 @@ def edit_employee(employee_id):
     if request.method == "POST":
 
         today = date.today()
-        
+
         # Dictionary from new employment template form
         edit = {
             "department": request.form.get("department"),
