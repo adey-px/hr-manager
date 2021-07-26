@@ -111,6 +111,7 @@ In order to bring the idea of this project to life, wireframes were produced wit
 4. Each employee's attendance record available on their dashboard to be connected to the company's Clock in device that monitores employees' attendance
 5. Record of each employee's payroll and account information to be included in thier respective profile
 6. To programmatically enable the checkbox on the Contact form which would allow sending of a copy of the message sent to be delievered into sender's email address
+7. The Search bar for departments, in manage_employee page, is not shown in small & medium devices. I hope to fix that in future.
 
 ### 3.3 Languages and Technologies Used
 1. <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML5:</a>  This project uses HTML5 as the backbone and main markup language.

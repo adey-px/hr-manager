@@ -1,7 +1,3 @@
-body {
-    background: white;
-}
-
 /* Main navbar for all pages*/
 .button {
     background-color: blueviolet;
@@ -22,7 +18,7 @@ body {
    background-color: #2C3539;
 }
 
-.nav-item:not(.button) a:hover { 
+.nav-item:not(.button, .footer-inner) a:hover { 
     background: rgb(187, 187, 212);
     border-radius: 10px;
 }
@@ -46,7 +42,6 @@ body {
 
 .img-fluid {
     width: 100%;
-    height: 400px;
     float: left;
 }
 
@@ -129,7 +124,8 @@ body {
 .list-styled a:hover,
 .login a:hover,
 .footer-links-dash a:hover,
-.footer-copyright a:hover {
+.footer-copyright a:hover,
+.footer-inner a:hover {
     text-decoration: underline;
 }
 
@@ -243,14 +239,25 @@ body {
 }
 
 /* Add_employee form */
-.add-form {
-    width: 40%;
+@media (min-width: 1024px) {
+    .add-form {
+        width: 80%;
+    }
 }
 
 /* Get_employee page */
 .search-bar1 {
     height: 40px;
     border-width: 1px;
+}
+
+/* footer for inner pages */
+.footer {
+    background-color: whitesmoke;
+}
+
+.left-col, .right-col {
+    padding-top: 20px;
 }
 
 /* Responsive media queries for register & login cards */
@@ -260,12 +267,8 @@ body {
     }
 }
 
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .column-1 {
-        width: 50%;
+@media (min-width: 768px) {
+    .nav-search {
+        height: 60px;
     }
-    .column-2 {
-        width: 100%;
-    }
-}
+} 

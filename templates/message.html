@@ -1,67 +1,102 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- Page header -->
-    <div class="h2-responsive text-center font-weight-bolder card-header"> 
-        Message Inbox
-    </div>
-    <!-- Page header ends -->
+  <!-- Page header -->
+  <div class="h2-responsive text-center font-weight-bolder card-header"> 
+    Message Inbox
+  </div>
+  <!-- Page header ends -->
 
-    <!-- Flash message -->
-    <section class="container">
-      {% with messages = get_flashed_messages() %}
-          {% if messages %}
-              {% for message in messages %}
-                <div class="row message">
-                  <h5 class="white-text mx-auto flash-text">
-                    {{ message }}
-                  </h5>
-                  <a class="close white-text" id="closeButton">
-                    X
-                  </a>
-                </div>
-              {% endfor %}
-          {% endif %}
-      {% endwith %}
-    </section>
-     <!-- Flash message ends -->
-
-    <div class="container-fluid" style="width: 80%; margin-top: 20px;">
-      <div class="col">
-        <div class="row row-cols-1 row-cols-md-5 g-5">
-            {% if messages %}
-              {% for message in messages %}
-            <div class="card h-20" style="width: 100%;">
-              <div class="card-body">
-                <h5 class="card-title text-center">
-                  <strong>{{ message.name }}</strong>
-                </h5>
-                <h6 class="card-title text-center">
-                  <em>{{ message.email }}</em>
-                </h6>
-                <hr>
-                  <p class="card-text">
-                    {{ message.message }}
-                  </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">{{ message.date }}</small>
-
-                <a href="{{ url_for('delete_message', message_id=message._id) }}" title="Delete"
-                  Onclick="return ConfirmDelete();">
-                  <i class="fas fa-times-circle float-right" 
-                  style="padding-left: 13px; color: red;"></i>
-                </a>
-                
-                <a href="mailto:{{ message.email }}" title="Reply">
-                  <i class="fas fa-reply float-right" style="color: black;"></i>        
-                </a>
-              </div>
+  <!-- Flash message -->
+  <section class="container">
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+            <div class="row message">
+              <h5 class="white-text mx-auto flash-text">
+                {{ message }}
+              </h5>
+              <a class="close white-text" id="closeButton">
+                X
+              </a>
             </div>
-              {% endfor %}
-            {% endif %}
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+  </section>
+  <!-- Flash message ends -->
+
+  <!-- Message card -->
+  <div class="container-fluid" style="margin-top: 20px;">
+  <div class="col">
+    <div class="row row-cols-1 row-cols-md-5 g-5">
+        {% if messages %}
+          {% for message in messages %}
+        <div class="card card-1 h-20" style="width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title text-center">
+              <strong>{{ message.name }}</strong>
+            </h5>
+            <h6 class="card-title text-center">
+              <em>{{ message.email }}</em>
+            </h6>
+            <hr>
+              <p class="card-text">
+                {{ message.message }}
+              </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{ message.date }}</small>
+
+            <a href="{{ url_for('delete_message', message_id=message._id) }}" title="Delete"
+              Onclick="return ConfirmDelete();">
+              <i class="fas fa-times-circle float-right" 
+              style="padding-left: 13px; color: red;"></i>
+            </a>
+            
+            <a href="mailto:{{ message.email }}" title="Reply">
+              <i class="fas fa-reply float-right" style="color: black;"></i>        
+            </a>
+          </div>
         </div>
+          {% endfor %}
+        {% endif %}
+    </div>
+  </div>
+  </div>
+  <!-- Message card ends -->
+
+  <!-- footer for inner pages -->
+  <div class="container-fluid footer" style="margin-top: 200px;">
+    <div class="row">
+      <div class="col-md-6">
+          <h6 class="copyright-in black-text text-center left-col">
+            @ 2021 All rights reserved
+          </h6>
+      </div>
+
+      <div class="col-md-6">
+        <ul class="text-center right-col">
+          <li class="footer-inner" style="padding-right: 10px; display: inline;">
+              <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                Privacy Policy
+              </a>
+          </li>
+
+          <li class="footer-inner" style="padding-right: 10px; display: inline;">
+            <a class="black-text" href="{{ url_for('terms_of_use') }}">
+              Terms of Use
+            </a>
+          </li>
+          <li class="footer-inner" style="padding-right: 25px; display: inline;">
+            <a class="black-text" href="{{ url_for('help_desk') }}">
+              Help
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
+<!-- footer for inner pages end -->
 
 {% endblock %}

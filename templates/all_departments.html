@@ -26,20 +26,20 @@
   <!-- Flash message ends -->
 
   <!-- List of departments section -->
-  <div class="container" style="margin-top: 20px;">
+  <div class="container" style="margin-top: 20px; margin-bottom: 500px;">
     <div class="row row-cols-1 row-cols-md-4">
       {% for item in ment %}
         <div class="col mb-4">
-          <div class="card" style="width: 100%; height: 200px; background: rgb(216, 240, 240);">
+          <div class="card" style="background: rgb(216, 240, 240);">
             <div class="card-body mx-auto">
               <span>
-                <h4 class="card-title text-center">
+                <h5 class="card-title text-center">
                   {{ item.department }}
-                </h4>
+                </h5>
               </span>
                   <!-- Link to edit department -->
                   <a href="{{ url_for('edit_department', item_id=item._id) }}">
-                    <button type="button" class="btn btn-mdb-color btn-md" style="margin-top: 80px;">
+                    <button type="button" class="btn btn-mdb-color btn-md mx-auto">
                       <span class="white-text">
                         Edit
                       </span> 
@@ -48,7 +48,7 @@
                   <!-- Link to delete department -->
                   <a href="{{ url_for('delete_department', item_id=item._id) }}" 
                     onclick="return confirm('Are you sure you want to delete this department?');">
-                    <button type="button" class="btn btn-danger btn-md" style="margin-top: 80px;">
+                    <button type="button" class="btn btn-danger btn-md mx-auto">
                       <span class="white-text">
                         Delete
                       </span> 
@@ -61,5 +61,38 @@
     </div>
   </div>
   <!-- List of departments section ends -->
+
+ <!-- footer for inner pages -->
+ <div class="container-fluid footer">
+  <div class="row">
+      <div class="col-md-6">
+          <h6 class="copyright-in black-text text-center left-col">
+              @ 2021 All rights reserved
+          </h6>
+      </div>
+
+      <div class="col-md-6">
+          <ul class="text-center right-col">
+              <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                  <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                      Privacy Policy
+                  </a>
+              </li>
+  
+              <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                  <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                     Terms of Use
+                  </a>
+              </li>
+              <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                  <a class="black-text" href="{{ url_for('help_desk') }}">
+                     Help
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+<!-- footer for inner pages end -->
 
 {% endblock %}

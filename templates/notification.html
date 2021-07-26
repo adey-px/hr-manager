@@ -8,59 +8,92 @@
   </div>
 
   <!-- flash message -->
-    <section class="container">
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                  <div class="row message">
-                    <h5 class="white-text mx-auto flash-text">
-                      {{ message }}
-                    </h5>
-                    <a class="close white-text" id="closeButton">
-                      X
-                    </a>
-                  </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
+  <section class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+              <div class="row message">
+                <h5 class="white-text mx-auto flash-text">
+                  {{ message }}
+                </h5>
+                <a class="close white-text" id="closeButton">
+                  X
+                </a>
+              </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+  </section>
 
-    <!-- Employee notice form -->
-    <div class="container" style="margin-top: 50px;">
-      <div class="card mx-auto" style="width: 60%; height: 600px;">        
-        <div class="header" style="height: 80px;">
-          <div class="row d-flex justify-content-center">
-            <h5 class="black-text mb-0 py-5">
-              <strong>Notice To All Employees</strong>
-            </h5>
+  <!-- Employee notice form -->
+  <div class="container" style="margin-top: 50px; margin-bottom: 530px;">
+    <div class="card mx-auto" style="width: 60%; height: 600px;">        
+      <div class="header" style="height: 80px;">
+        <div class="row d-flex justify-content-center">
+          <h5 class="black-text mb-0 py-5">
+            <strong>Notice To All Employees</strong>
+          </h5>
+        </div>
+      </div>
+      <form action="{{ url_for('notification') }}" method="post">
+        <div class="card-body mx-4">
+          <div class="md-form">
+            <input type="text" id="subject" name="subject" class="form-control" required>
+            <label for="form106">Subject</label>
+          </div>
+
+          <div class="md-form" style="padding-top: 60px;">
+            <textarea id="message" name="message" class="md-textarea form-control" rows="10" 
+              placeholder="Message" minlength="5" maxlength="50" required></textarea>
+          </div>
+
+          <div class="row d-flex align-items-center mb-3 mt-4">
+            <div class="col-md-12">
+              <div class="text-center">
+                <button class="btn btn-block white-text btn-mdb-color text-capitalize" style="font-size: 15px;">
+                  Send 
+                  <i class="fas fa-paper-plane white-text" style="font-size: 20px; padding-left: 5px;"></i>
+                </button>
+              </div>
+            </div>             
           </div>
         </div>
-        <form action="{{ url_for('notification') }}" method="post">
-          <div class="card-body mx-4">
-            <div class="md-form">
-              <input type="text" id="subject" name="subject" class="form-control" required>
-              <label for="form106">Subject</label>
-            </div>
-
-            <div class="md-form" style="padding-top: 60px;">
-              <textarea id="message" name="message" class="md-textarea form-control" rows="10" 
-                placeholder="Message" minlength="5" maxlength="50" required></textarea>
-            </div>
-
-            <div class="row d-flex align-items-center mb-3 mt-4">
-              <div class="col-md-12">
-                <div class="text-center">
-                  <button class="btn btn-block white-text btn-mdb-color text-capitalize" style="font-size: 15px;">
-                    Send 
-                    <i class="fas fa-paper-plane white-text" style="font-size: 20px; padding-left: 5px;"></i>
-                  </button>
-                </div>
-              </div>             
-            </div>
-          </div>
-        </form>          
-      </div>
+      </form>          
     </div>
-    <!-- Employee notice form ends -->
+  </div>
+  <!-- Employee notice form ends -->
+
+  <!-- footer for inner pages -->
+  <div class="container-fluid footer">
+    <div class="row">
+        <div class="col-md-6">
+            <h6 class="copyright-in black-text text-center left-col">
+                @ 2021 All rights reserved
+            </h6>
+        </div>
+
+        <div class="col-md-6">
+            <ul class="text-center right-col">
+                <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                    <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                        Privacy Policy
+                    </a>
+                </li>
+    
+                <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                    <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                       Terms of Use
+                    </a>
+                </li>
+                <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                    <a class="black-text" href="{{ url_for('help_desk') }}">
+                       Help
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- footer for inner pages end -->
 
 {% endblock %}

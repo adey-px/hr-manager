@@ -5,15 +5,17 @@
   <div class="h2-responsive text-center font-weight-bolder card-header"> 
     Employees Directory
   </div>
+  <!-- page header -->
   
   <!-- Live Search bar -->
   <div class="container">
     <div class="row">
       <div class="col">
-        <nav class="navbar navbar-dark btn-mdb-color" style="height: 40px; margin-top: 10px;">
+        <nav class="navbar navbar-dark btn-mdb-color" 
+          style="height: 50px; margin-top: 10px;">
             <h6 class="white-text mx-auto align-middle">
               <i class="fas fa-search" style="font-size: 20px;"></i>
-              Search employees by name, department, email address or gender
+                Filter employees by name, department, email address or gender
             </h6>
         </nav>
       </div>
@@ -22,7 +24,7 @@
   <!-- Live Search bar ends -->
 
   <!-- Table list of employees -->
-  <div class="container">
+  <div class="container" style="margin-bottom: 200px;">
     <div class="row">
       <div class="col">
         <div class="container">
@@ -81,5 +83,38 @@
     </div>
   </div>
   <!-- Table list of employees end -->
+
+  <!-- footer for inner pages -->
+  <div class="container-fluid footer">
+    <div class="row">
+        <div class="col-md-6">
+            <h6 class="copyright-in black-text text-center left-col">
+                @ 2021 All rights reserved
+            </h6>
+        </div>
+
+        <div class="col-md-6">
+            <ul class="text-center right-col">
+                <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                    <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                        Privacy Policy
+                    </a>
+                </li>
+    
+                <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                    <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                       Terms of Use
+                    </a>
+                </li>
+                <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                    <a class="black-text" href="{{ url_for('help_desk') }}">
+                       Help
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- footer for inner pages end -->
 
 {% endblock %}

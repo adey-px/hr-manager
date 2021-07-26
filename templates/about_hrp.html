@@ -12,9 +12,8 @@
         <!-- card body-->
         <div class="card card-image mx-auto" 
             style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);
-                width: 80%; margin-bottom: s0px;">
+                width: 80%; margin-bottom: 400px;">
 
-            <!-- card content -->
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                 <div>
                     <h5 class="pink-text"><i class="fas fa-chart-pie"></i>
@@ -80,17 +79,48 @@
                         will find it valuable to your organization.
                     </p>
 
-                    
                     <!-- button -->
                     <a href="{{ url_for('support') }}" class="btn btn-pink"><i class="fas fa-clone left"></i>
                         Contact Us
                     </a>
                 </div>
             </div>
-
         </div>
         <!-- Card ends here -->
     </div>
     <!-- main container ends here -->
+
+    <!-- footer for inner pages -->
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-md-6">
+                <h6 class="copyright-in black-text text-center left-col">
+                    @ 2021 All rights reserved
+                </h6>
+            </div>
+
+            <div class="col-md-6">
+                <ul class="text-center right-col">
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                            Privacy Policy
+                        </a>
+                    </li>
+        
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                           Terms of Use
+                        </a>
+                    </li>
+                    <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                        <a class="black-text" href="{{ url_for('help_desk') }}">
+                           Help
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer for inner pages end -->
     
 {% endblock %}

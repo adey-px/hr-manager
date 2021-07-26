@@ -34,13 +34,11 @@ $(document).ready(function(){
     this.parentNode.style.display = "none";
   }, false);
   // Flash message close x button ends
-
 });
 
 // Set focus for Live search in employees directory
 document.getElementById("tableSearch").focus();
 // Focus for table search ends
-
 
 // Alert to confirm delete of messages in message.html
 function ConfirmDelete()

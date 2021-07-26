@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <!-- page header -->
+  <div class="h2-responsive text-center font-weight-bolder card-header"> 
+    Corporate
+  </div>
+  <!-- page header ends -->
+
+  <!-- card container for privacy policy -->
+  <div class="container">
+    <div class="card mx-auto border-primary"  
+      style="width: 100%; height: fit-content; margin-top: 100px; margin-bottom: 900px;">
+      <div class="card-body">        
+        <p class="card-text" style="font-size: 16px;">
+          Thank you for your interest in working for our company.
+          However, due to the residual impact of COVID-19, we are not 
+          recruiting workers right now. 
+        </p>
+        <p class="card-text" style="font-size: 16px;">
+          We strongly encourage you to keep checking this site in order 
+          to see updates about new jobs avaialability.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- card container for privacy policy -->
+
+  <!-- footer for inner pages -->
+  <div class="container-fluid footer">
+    <div class="row">
+        <div class="col-md-6">
+            <h6 class="copyright-in black-text text-center left-col">
+                @ 2021 All rights reserved
+            </h6>
+        </div>
+
+        <div class="col-md-6">
+            <ul class="text-center right-col">
+                <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                    <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                        Privacy Policy
+                    </a>
+                </li>
+    
+                <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                    <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                      Terms of Use
+                    </a>
+                </li>
+                <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                    <a class="black-text" href="{{ url_for('help_desk') }}">
+                      Help
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <!-- footer for inner pages end -->
+
+
+{% endblock %}

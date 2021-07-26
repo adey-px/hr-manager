@@ -26,7 +26,7 @@
     <!-- Flash message ends -->
 
     <!-- Registration form -->
-    <div class="container">
+    <div class="container" style="margin-bottom: 900px;">
         <div class="row">
             <div class="col">
                 <div class="card reg-card column mx-auto">
@@ -88,5 +88,38 @@
         </div>
         <!-- Bottom links end -->
     </div>
+
+    <!-- footer for inner pages -->
+    <div class="container-fluid footer" style="margin-top: 200px;">
+        <div class="row">
+            <div class="col-md-6">
+                <h6 class="copyright-in black-text text-center left-col">
+                    @ 2021 All rights reserved
+                </h6>
+            </div>
+
+            <div class="col-md-6">
+                <ul class="text-center right-col">
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                            Privacy Policy
+                        </a>
+                    </li>
+        
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                           Terms of Use
+                        </a>
+                    </li>
+                    <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                        <a class="black-text" href="{{ url_for('help_desk') }}">
+                           Help
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer for inner pages end -->
 
 {% endblock %}

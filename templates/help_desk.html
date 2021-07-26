@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- Page header -->
     <div class="h2-responsive text-center font-weight-bolder card-header"> 
         Help Desk
     </div>
+    <!-- Page header ends -->
 
-    <div class="container">
+    <!-- maain container-->
+    <div class="container" style="margin-bottom: 500px;">
         <div class="row">
 
+            <!-- left column -->
             <div class="col-12 col-md-6">
-                <div style="margin-top: 30px;">
+                <div style="margin-top: 150px;">
                     <p>
                         We appreciate your patience while using this portal.
                         But in case you encounter any technical issue, feel free
@@ -35,7 +39,9 @@
                     </p>
                 </div>
             </div>
+            <!-- left column ends -->
 
+            <!-- right column -->
             <div class="col-12 col-md-6">
                 <section class="container">
                     {% with messages = get_flashed_messages() %}
@@ -51,7 +57,7 @@
                     {% endwith %}
                 </section>
 
-                <div class="card" style="width: 100%; height: 600px; margin-top: 20px; margin-bottom: 60px;">
+                <div class="card" style="width: 100%; height: 600px; margin-top: 60px; margin-bottom: 60px;">
                     <h5 class="card-header btn-mdb-color white-text text-center py-4">
                         <strong>Contact us</strong>
                     </h5>    
@@ -90,7 +96,42 @@
                     </div>
                 </div>
             </div>
+            <!-- right column ends -->
         </div>    
     </div>
+    <!-- main container ends -->
 
+    <!-- footer for inner pages -->
+    <div class="container-fluid footer" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-6">
+                <h6 class="copyright-in black-text text-center left-col">
+                    @ 2021 All rights reserved
+                </h6>
+            </div>
+
+            <div class="col-md-6">
+                <ul class="text-center right-col">
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                            Privacy Policy
+                        </a>
+                    </li>
+        
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                           Terms of Use
+                        </a>
+                    </li>
+                    <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                        <a class="black-text" href="{{ url_for('help_desk') }}">
+                           Help
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer for inner pages end -->
+    
 {% endblock %}

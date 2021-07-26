@@ -27,53 +27,88 @@
     <!-- Flash message ends -->
 
     <!-- New employee form -->
-    <div class="row">
-        <div class="col-12">
-            <form class="text-center border border-light p-5 mx-auto add-form needs-validation" 
-                method="POST" action="{{ url_for('new_employee') }}" novalidate>
-
-                {% if dpt|length > 0 %}
-                <select class="custom-select mb-4" name="department" id="department" required>
-                    <option value="">Select Department</option>
-                    {% for item in dpt %}
-                    <option>{{ item.department }}</option>
-                    {% endfor %}
-                </select>
-                {% endif %}
-        
-                <input type="text" name="first_name" id="first_name" class="form-control mb-4" 
-                    placeholder="First Name" required>
-
-                <input type="text" name="last_name" id="last_name" class="form-control mb-4" 
-                    placeholder="Last Name" required>
-
-                <input type="email" name="email" id="email" class="form-control mb-4" 
-                    placeholder="E-mail" required>
-
-                <input type="number" name="mobile" id="mobile" class="form-control mb-4" 
-                    placeholder="Mobile" required>
-
-                <input type="text" name="address" id="address" class="form-control mb-4" 
-                    placeholder="Home Address" required>
-        
-                <select class="custom-select mb-4" name="gender" id="gender" required>
-                    <option value="">Gender</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                </select>
-
-                <div class="md-form">
-                    <textarea id="duties" name="duties" class="form-control rounded-0" rows="5" 
-                        minlength="5" maxlength="450" required></textarea>
-                    <label for="message">Official Duties</label>
-                </div>
+    <div class="container" style="margin-bottom: 410px;">
+        <div class="row">
+            <div class="col-12">
+                <form class="text-center border border-light p-5 mx-auto add-form needs-validation" 
+                    method="POST" action="{{ url_for('new_employee') }}" novalidate>
+    
+                    {% if dpt|length > 0 %}
+                    <select class="custom-select mb-4" name="department" id="department" required>
+                        <option value="">Select Department</option>
+                        {% for item in dpt %}
+                        <option>{{ item.department }}</option>
+                        {% endfor %}
+                    </select>
+                    {% endif %}
             
-                <button type="submit" class="btn btn-block white-text text-center btn-mdb-color login-label text-capitalize">
-                     Add Employee <i class="fas fa-plus-square" style="font-size: 20px;"></i>
-                </button>
-            </form>
+                    <input type="text" name="first_name" id="first_name" class="form-control mb-4" 
+                        placeholder="First Name" required>
+    
+                    <input type="text" name="last_name" id="last_name" class="form-control mb-4" 
+                        placeholder="Last Name" required>
+    
+                    <input type="email" name="email" id="email" class="form-control mb-4" 
+                        placeholder="E-mail" required>
+    
+                    <input type="number" name="mobile" id="mobile" class="form-control mb-4" 
+                        placeholder="Mobile" required>
+    
+                    <input type="text" name="address" id="address" class="form-control mb-4" 
+                        placeholder="Home Address" required>
+            
+                    <select class="custom-select mb-4" name="gender" id="gender" required>
+                        <option value="">Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+    
+                    <div class="md-form">
+                        <textarea id="duties" name="duties" class="form-control rounded-0" rows="5" 
+                            minlength="5" maxlength="450" required></textarea>
+                        <label for="message">Official Duties</label>
+                    </div>
+                
+                    <button type="submit" class="btn btn-block white-text text-center btn-mdb-color login-label text-capitalize">
+                         Add Employee <i class="fas fa-plus-square" style="font-size: 20px;"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     <!-- New employee form ends -->
+
+    <!-- footer for inner pages -->
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-md-6">
+                <h6 class="copyright-in black-text text-center left-col">
+                    @ 2021 All rights reserved
+                </h6>
+            </div>
+
+            <div class="col-md-6">
+                <ul class="text-center right-col">
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('privacy_policy') }}">
+                            Privacy Policy
+                        </a>
+                    </li>
+        
+                    <li class="footer-inner" style="padding-right: 10px; display: inline;">
+                        <a class="black-text" href="{{ url_for('terms_of_use') }}">
+                           Terms of Use
+                        </a>
+                    </li>
+                    <li class="footer-inner" style="padding-right: 25px; display: inline;">
+                        <a class="black-text" href="{{ url_for('help_desk') }}">
+                           Help
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer for inner pages end -->
 
 {% endblock %}

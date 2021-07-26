@@ -28,7 +28,7 @@ body{
     counter-increment:birds;
   }
   
-  .sum{position:fixed; left:48%; top:120px; font-size:24px; fonot-weight:bold;}
+  .sum{position:fixed; left:40%; top:120px; font-size:24px; font-weight:bold;}
   
   /*print to screen dead birds*/
   .sum:after{
@@ -155,9 +155,9 @@ body{
   
   
   .gameover{
-    position:fixed; z-index:5000; left:0; top:0; bottom:0; right:0;
+    position:fixed; z-index:5000; left:0; top:20; bottom:10; right:0; background-color: #000;
     animation:gameover 25s linear forwards;
-    font-size:80px; color:rgb(197, 91, 91); font-weight:bold; text-align:center; 
+    font-size:60px; color:rgb(197, 91, 91); font-weight:bold; text-align:center; 
     text-indent:0;  
     line-height:500px;
   }

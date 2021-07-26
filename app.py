@@ -31,6 +31,18 @@ def about_hrp():
     return render_template("about_hrp.html")
 
 
+# Privacy Policy page route
+@app.route("/privacy_policy")
+def privacy_policy():
+    return render_template("privacy.html")
+
+
+# Terms of Use page route
+@app.route("/terms_of_use")
+def terms_of_use():
+    return render_template("terms.html")
+
+
 # Careers page route
 @app.route("/careers")
 def careers():
@@ -313,7 +325,7 @@ def emp_message(email):
             "date": today.strftime("%B %d, %Y"),
             "email": user_email,
             "name": user_name,
-            "message": request.form.get("mess")
+            "message": request.form.get("message")
         }
         mongo.db.messages.insert_one(messa)
         flash("Your message has been sent successfully")
