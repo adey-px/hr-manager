@@ -1,15 +1,4 @@
-/* Main navbar for all pages*/
-.button {
-    background-color: blueviolet;
-    border-radius: 10px;
-}
-
-.button a:hover {
-    background-color: orange;
-    border-radius: 10px;
-}
-
-/* Home page top navbar */
+/* Home page styling */
 .icon {
     font-size: 25px;
 }
@@ -31,7 +20,6 @@
     margin-left: 40px;
 }
 
-/* Home page employee image and self service */
 .btn-block {
     width: 100%;
 }
@@ -61,6 +49,19 @@
     color: orange;
 }
 
+/* Mobile app download links */
+.mobile-apps {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.app-store {
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+}
+/* Mobile app download links ends */
+
 .hm-text1 {
     background-color: white;
     height: 30px;
@@ -88,29 +89,18 @@
     border-radius: 15px;
 }
 
+/* Success story header */
 .ss-header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 0px;
 }
+/* Success story header ends */
 
 .read-more a:hover {
     color: orange;
 }
 
-/* Home page mobile download links */
-.mobile-apps {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.app-store {
-    width: 130px;
-    height: 35px;
-    display: inline-block;
-}
-
 /* Hide home page note in mobile view */
-@media (max-width: 812px) {
+@media (max-width: 760px) {
     .note {
       display: none;
     }
@@ -127,6 +117,16 @@
 .footer-copyright a:hover,
 .footer-inner a:hover {
     text-decoration: underline;
+}
+
+.button {
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+
+.button a:hover {
+    background-color: orange;
+    border-radius: 10px;
 }
 
 /* flash messages */
@@ -195,13 +195,6 @@
 .inner-links {
     padding-top: 60px;
 }
-
-/* Hide home page note in mobile view */
-@media (max-width: 812px) {
-    .game {
-      display: none;
-    }
-  }
 
 /* Dashboard page */
 .table-item {
@@ -272,3 +265,27 @@
         height: 60px;
     }
 } 
+
+/* Media query for home page in ipad view */
+@media (min-width: 768px) and (max-width: 1020px) {
+    .right-home-title {
+        display: none;
+    }
+    .btn-home-icon {
+        font-size: 20px;
+        color: orange;
+    }
+    .scenter-link {
+        font-size: 9px;
+    }
+    .hvr-reveal {
+        height: 150px;
+    }
+} 
+
+/* Media query for home page in iphone 6 view */
+@media (min-width: 414px) and (max-width: 730px) {
+    .hvr-reveal {
+        margin-bottom: 20px;
+    }
+}

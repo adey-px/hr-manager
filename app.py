@@ -464,12 +464,6 @@ def delete_department(item_id):
     return redirect(url_for("all_departments"))
 
 
-# Game page route
-@app.route("/game")
-def game():
-    return render_template("game.html")
-
-
 # Support page route
 @app.route("/support", methods=["GET", "POST"])
 def support():
