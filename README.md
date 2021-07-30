@@ -1,12 +1,12 @@
 ## 1.0 Project Name: Human Resource Portal (HRP)
 The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. 
-The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android & ios mobile apps of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
+The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android app & ios mobile app of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
 
 The project is deployed to Heroku on https://human-resource-portal.herokuapp.com/
 
 
 ## 2.0 UX
-The web Application is developed for Human Resource Managers of companies to effectively store and manage their employees' data, modify their employees' employment status, communicate internally with their employees, publish job advertisements to the public, receive job applications from prospective employees and send feedback to the applicants.
+The web Application is developed for Human Resource Managers of companies to effectively store and manage their employees' data, modify their employees' information and communicate internally with their employees. They can also publish job advertisements to the public, receive job applications from prospective employees and send feedback to the applicants.
 
 ### 2.1 User stories
 As Human Resource Manager (Admin/Super User), I want to:
@@ -17,7 +17,8 @@ As Human Resource Manager (Admin/Super User), I want to:
 4. create new departments and modify existing departments in the company so as to group employees into appropriate departments based on their job roles and duties
 5. view all employees list in a tabular form showing detail about their names, departments, date of employment, gender among others
 6. send notice to all current employees accessible directly on their dashboard
-7. receive comments, complains and feedback from all current employees
+7. receive comments, complains and feedback from all current employees in my Inbox
+8. reply to the employees' messages or delete the messages if necessary
 8. reply to employees' messages or delete the messages where necessary
 9. modify and update indvidual employee's records or data existing in the company's database
 10. delete employees' records and terminate their contract with the company
@@ -92,7 +93,7 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 16. HR manager can create new departments through the form on New Department page while all existing departments in the company are accessible on All Departments page. On each department, there are two links for ediiting and deleting the department. Links to New Department and All Departments are accessible through Operations menu item on the navbar.
 
-17. Furthermore, through Employees menu link, the HR manager can create profile for new employees through form available on New Employee page. Employees Directory page consists of a table that displays the list of all employess in the company. The list can be filtered by individual employee's name, department, email address or gender through a Live search bar on top of the table of employees. Manage Employees also consists of list of all employees grouped or categorized by their respective departments. An accordion is used for each department where each employee's record consists of two buttons; one for editing the employee's detail and the other button for deleting or terminating the employee from the company, an indication of firing or final dismisal.
+17. Furthermore, through Employees menu link, the HR manager can create profile for new employees through form available on New Employee page. Employees Directory page consists of a table that displays the list of all employess in the company. The list can be filtered by individual employee's name, department, email address or gender through a Live search bar on top of the table of employees. Manage Employees also consists of list of all employees grouped or categorized by their respective departments. An accordion is used for each department where each employee's record consists of two buttons; one for editing the employee's detail and the other button for deleting or terminating the employee from the company, an indication of firing or final dismisal. It also consists of a Search to filter Departments by name.
 
 18. A click on the Logout link, accessible through Profile menu link, would log out user and end their current session.
 
@@ -100,7 +101,9 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 20. The application has an interactive alert fucntionality that pops up on the browser window when a user clicks on delete button. This functionality is a way to confirm that the user knows what he is doing in case they accidentally click on the delete button.
 
-21. Finally the application is equiped with capabilty to communicate to user through flash messages to show them the last major action they just performed on the application. The flash message has an icon X that can be used to remove flash message from screen.
+21. The search bar to filter Department by name on Manage employees page is hidden in mobile view
+
+22. Finally the application is equiped with capabilty to communicate to user through flash messages to show them the last major action they just performed on the application. The flash message has an icon X that can be used to remove flash message from screen.
 
 ### 3.2 Features Left to Implement
 1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able to change their password or create new password through the link Password Reset button on Home page that would be sent to their individual's email address.
@@ -110,7 +113,9 @@ In order to bring the idea of this project to life, wireframes were produced wit
 5. Record of each employee's payroll and account information to be included in thier respective profile
 6. To programmatically enable the checkbox on the Contact form which would allow sending of a copy of the message sent to be delievered into sender's email address
 7. The Search bar for departments, in manage_employee page, is not shown in small & medium devices. I hope to fix that in future.
-
+8. To add text editor and editing functionalities such as Bold, Underline and others, in the notification form and complaint form on Notification page and Dashboard page respectively.
+9. The space left in the Self Service section of the Home page is meant to accomodate addional buttons and links in future expansion of the application
+ 
 ### 3.3 Languages and Technologies Used
 1. <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML5:</a>  This project uses HTML5 as the backbone and main markup language.
 2. <a href="https://mdbootstrap.com/docs/b4/jquery/" target="_blank">Material Design:</a> It uses Material Design for Bootstrap 4 Standard as Frontend Framework to design its layout and user interface.
