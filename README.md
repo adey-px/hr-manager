@@ -77,32 +77,30 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 10. The Login page consists of links to return to Home page and another link to navigate to Register page for new employees
 
-11. Moreover, the Login page consists of link to go to Game page where employees can play a simple Shooting game, as they wish, in their lunch break time so as to relax and releive themselves from the regular stress of work. The game is a pure CSS game.
-
-12. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties and Attendance record. The following login detail is provided for Project Assessment team to test the application as a registered employee
+11. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties and Attendance record. The following login detail is provided for Project Assessment team to test the application as a registered employee
 
                     Email: employee@hrportal.com
                     Password: 1230user
 
-13. Also On the dashboard, there are links provided for employees to change their password, read industrial articles online and to contact Help Desk for support in case they encounter any issue while using the Portal.
+12. Also On the dashboard, there are links provided for employees to change their password, read industrial articles online and to contact Help Desk for support in case they encounter any issue while using the Portal.
 
-14. Moreover, on the dashboard, there is a Complain form by which employees can send their complains, request or feedback to the HR Office directly. There is also a section on the dashboard where all employees can receive and read notifications sent from HR office. The latest notification is displayed in the space provided.
+13. Moreover, on the dashboard, there is a Complain form by which employees can send their complains, request or feedback to the HR Office directly. There is also a section on the dashboard where all employees can receive and read notifications sent from HR office. The latest notification is displayed in the space provided.
 
-15. The Corporate page consists of general information to all employees about the company's Code of Conduct and Company Policy
+14. The Corporate page consists of general information to all employees about the company's Code of Conduct and Company Policy
 
-16. Messages sent by employees to HR office are collected and viewable on Inbox page while the HR officer/manager can send general notice/message to all employees through the form provided on Notification page. Each message consists of two links for reply and delete. Reply can only be sent to the email of the sender. Both Inbox page and Notification page are accessible through Internal Memo menu link on the navbar. 
+15. Messages sent by employees to HR office are collected and viewable on Inbox page while the HR officer/manager can send general notice/message to all employees through the form provided on Notification page. Each message consists of two links for reply and delete. Reply can only be sent to the email of the sender. Both Inbox page and Notification page are accessible through Internal Memo menu link on the navbar. 
 
-17. HR manager can create new departments through the form on New Department page while all existing departments in the company are accessible on All Departments page. On each department, there are two links for ediiting and deleting the department. Links to New Department and All Departments are accessible through Operations menu item on the navbar.
+16. HR manager can create new departments through the form on New Department page while all existing departments in the company are accessible on All Departments page. On each department, there are two links for ediiting and deleting the department. Links to New Department and All Departments are accessible through Operations menu item on the navbar.
 
-18. Furthermore, through Employees menu link, the HR manager can create profile for new employees through form available on New Employee page. Employees Directory page consists of a table that displays the list of all employess in the company. The list can be filtered by individual employee's name, department, email address or gender through a Live search bar on top of the table of employees. Manage Employees also consists of list of all employees grouped or categorized by their respective departments. An accordion is used for each department where each employee's record consists of two buttons; one for editing the employee's detail and the other button for deleting or terminating the employee from the company, an indication of firing or final dismisal.
+17. Furthermore, through Employees menu link, the HR manager can create profile for new employees through form available on New Employee page. Employees Directory page consists of a table that displays the list of all employess in the company. The list can be filtered by individual employee's name, department, email address or gender through a Live search bar on top of the table of employees. Manage Employees also consists of list of all employees grouped or categorized by their respective departments. An accordion is used for each department where each employee's record consists of two buttons; one for editing the employee's detail and the other button for deleting or terminating the employee from the company, an indication of firing or final dismisal.
 
-19. A click on the Logout link, accessible through Profile menu link, would log out user and end their current session.
+18. A click on the Logout link, accessible through Profile menu link, would log out user and end their current session.
 
-20. A click on the company's logo or the application's name on both top navigation bars would return all users to the Home page.
+19. A click on the company's logo or the application's name on both top navigation bars would return all users to the Home page.
 
-21. The application has an interactive alert fucntionality that pops up on the browser window when a user clicks on delete button. This functionality is a way to confirm that the user knows what he is doing in case they accidentally click on the delete button.
+20. The application has an interactive alert fucntionality that pops up on the browser window when a user clicks on delete button. This functionality is a way to confirm that the user knows what he is doing in case they accidentally click on the delete button.
 
-22. Finally the application is equiped with capabilty to communicate to user through flash messages to show them the last major action they just performed on the application. The flash message has an icon X that can be used to remove flash message from screen.
+21. Finally the application is equiped with capabilty to communicate to user through flash messages to show them the last major action they just performed on the application. The flash message has an icon X that can be used to remove flash message from screen.
 
 ### 3.2 Features Left to Implement
 1. To increase the capability of this application which would allow employees to be able to change their passwords without contacting Support team, in case they can't login to the portal as a result of forgotten password. They would be able to change their password or create new password through the link Password Reset button on Home page that would be sent to their individual's email address.
@@ -221,7 +219,6 @@ This project is hosted on Heroku using this procedure:
 ### 6.1 Content
 1. The MDB logo used in this project was obtained from <a href="https://mdbootstrap.com/docs/b4/jquery/">MD Bootstrap</a> 
 2. The code used to design the project's User Interface was copied from <a href="https://mdbootstrap.com/docs/b4/jquery/">MD Bootstrap</a> 
-3. The code for the Game page was copied from <a href="https://dev.to/gscode/10-best-of-javascript-games-3mjj">here</a> 
 
 ### 6.2 Media
 The images used in the Home page of this web application were obtained from <a href="images.google.com">Google images</a>

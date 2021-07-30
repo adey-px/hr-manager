@@ -15,23 +15,25 @@
 </head>
 <body style="background-color: rgb(207, 230, 228);">
 
-    <section class="container-fluid">
+    <!-- Flash message -->
+    <section class="container">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="row message1">
-                        <h5 class="white-text mx-auto flash-text">
-                            {{ message }}
-                        </h5>
-                        <a class="close white-text" id="closeButton">
-                            X
-                        </a>
-                    </div>
+                <div class="row message">
+                    <h5 class="white-text mx-auto flash-text">
+                        {{ message }}
+                    </h5>
+                    <a class="close white-text" id="closeButton">
+                        X
+                    </a>
+                </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
     </section>
-
+    <!-- Flash message ends -->
+    
    <div class="container">
         <div class="row login-card">
             <div class="card column mx-auto">
