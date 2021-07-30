@@ -132,14 +132,18 @@ All the internal and external links including menu items on navigation bar works
 3. JavaScript codes were tested with <a href="https://jshint.com/" target="_blank">JSHint</a>. The codes returned with no error.
 4. Python codes were tested with <a href="http://pep8online.com/" target="_blank">PEP8</a>. The codes returned with no error.
 
-### 4.2 Testing Responsiveness 
+### 4.2 Testing Responsiveness
+1. All the pages of this application are well responsive on all devices including dektop, tablet and mobile devices. See images below for results.
 <img src="readme/capture-one.png" alt="responsiveness-result">
 <img src="readme/capture-two.png" alt="responsiveness-result">
 <img src="readme/capture-three.png" alt="responsiveness-result">
 <img src="readme/capture-four.png" alt="responsiveness-result">
 <img src="readme/capture-five.png" alt="responsiveness-result">
 
+2. In addition, this application's responsiveness was also tested on this site http://ami.responsivedesign.is/#
+
 ### 4.3 Testing Browser Compatibility
+This application is compatible on popular browsers including Chrome, Edge, Safari and Firefox.
 <img src="readme/browser-compatibility.png" alt="browser-compatibility-result"> 
 
 ### 4.4 Testing User Story 
@@ -177,15 +181,17 @@ The following user stories for public user were tested and found to be working a
 
 ### 4.5 Testing Existing Features
 1. All the navigation links and buttons on the application work as expected
-2. Human Resource manager can create employee's record into the database. He can also read, update and delete their records successfully and these complete CRUD functionalities.
-3. All the forms including Register form, Login form and all other forms work as expected.
-4. Registered users can change their passwords successfully after they login
-5. Public users can view all the pages in Self Service center to check for job vacancies
-6. Users can read more detail about the application and they can contact the developers
-7. Users can contact Support team in case they encounter any technical issue while using the application
-8. Employees can send message to HR office through the Complain form on their dashboard
-9. Humnan Resource manager can send notifications to employees through the notification page
-10. Employees can read the most recent notification from the HR office through the accordion on their dashboard
+2. Human Resource manager can create employee's record into the database. 
+3. He can also read, update and delete their records successfully and these complete CRUD functionalities.
+4. All the forms including Register form, Login form and all other forms work as expected.
+5. Registered users can change their passwords successfully after they login
+6. Public users can view all the pages in Self Service center to check for job vacancies
+7. Users can read more detail about the application and they can contact the developers
+8. Users can contact Support team in case they encounter any technical issue while using the application
+9. Employees can send message to HR office through the Complain form on their dashboard
+10. Humnan Resource manager can send notifications to employees through the notification page
+11. Employees can read the most recent notification from the HR office through the accordion on their dashboard
+12. All the links on the Home page footer and inner pages are working as expected
 
 ### 4.6 Bugs
 While developing this application, I encountered some bugs and fixed them as follow:
