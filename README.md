@@ -2,7 +2,7 @@
 The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. 
 The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android app & ios mobile app of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
 
-The project is deployed to Heroku on https://human-resource-portal.herokuapp.com/
+The project is deployed to Heroku on https://fsk-hresource-portal.herokuapp.com/
 
 
 ## 2.0 UX
