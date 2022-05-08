@@ -1,6 +1,5 @@
 ## 1.0 Project Name: Human Resource Portal (HRP)
-The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. 
-The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android app & ios mobile app of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
+The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android app & ios mobile app of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
 
 The project is deployed to Heroku on https://fsk-hresource-portal.herokuapp.com/
 
@@ -137,21 +136,7 @@ All the internal and external links including menu items on navigation bar works
 3. JavaScript codes were tested with <a href="https://jshint.com/" target="_blank">JSHint</a>. The codes returned with no error.
 4. Python codes were tested with <a href="http://pep8online.com/" target="_blank">PEP8</a>. The codes returned with no error.
 
-### 4.2 Testing Responsiveness
-1. All the pages of this application are well responsive on all devices including dektop, tablet and mobile devices. See images below for results.
-<img src="readme/capture-one.png" alt="responsiveness-result">
-<img src="readme/capture-two.png" alt="responsiveness-result">
-<img src="readme/capture-three.png" alt="responsiveness-result">
-<img src="readme/capture-four.png" alt="responsiveness-result">
-<img src="readme/capture-five.png" alt="responsiveness-result">
-
-2. In addition, this application's responsiveness was also tested on this site http://ami.responsivedesign.is/#
-
-### 4.3 Testing Browser Compatibility
-This application is compatible on popular browsers including Chrome, Edge, Safari and Firefox.
-<img src="readme/browser-compatibility.png" alt="browser-compatibility-result"> 
-
-### 4.4 Testing User Story 
+### 4.2 Testing User Story 
 The following user stories for Human Resource Manager (Admin/Super User) were tested and found to be working as expected. Based on results of the testing, Human Resource Manager is able to:
 1. create profile account for new employees which would contain their personal data.
 2. enable the new employees' email addresses as their unique identifers which they can use to register on the HR Portal, so as to prevent unemployed/unauthorized persons from gaining access to Portal.
