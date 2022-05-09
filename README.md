@@ -72,15 +72,9 @@ In order to bring the idea of this project to life, wireframes were produced wit
 
 9. After successful registration, each employee can login to the HR Portal using their registered email and password created. For the purpose of granting access to Code Instistute's Project Assessment Team, the following login credentials are provided for them to login as Super/Admin user and have the HR manager's previledges. 
 
-                   Email: admin@hrportal.com
-                   Password: 1230master
-
 10. The Login page consists of links to return to Home page and another link to navigate to Register page for new employees
 
 11. After successful login, employees get to their dashboard where they can view a welcome message, detail of their records with the company, their assigned duties and Attendance record. The following login detail is provided for Project Assessment team to test the application as a registered employee
-
-                    Email: employee@hrportal.com
-                    Password: 1230user
 
 12. Also On the dashboard, there are links provided for employees to change their password, read industrial articles online and to contact Help Desk for support in case they encounter any issue while using the Portal.
 
