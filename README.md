@@ -1,5 +1,5 @@
 ## 1.0 Project Name: Human Resource Portal (HRP)
-The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android app & ios mobile app of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
+The aim of the project is to develop a custom application for Human Resource management of a company. The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android app & ios mobile app of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
 
 
 ## 2.0 UX
