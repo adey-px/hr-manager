@@ -1,8 +1,6 @@
 ## 1.0 Project Name: Human Resource Portal (HRP)
 The aim of the project is to develop a custom application for Human Resource management of a company. The borrowed name of the company used in this case project is called MDB. The application consists of a home page for public users. The home page has a header bar, navigation bar, static image of employees in a meeting, a Self-service center for job seekers & employees, links to download future Android app & ios mobile app of the application, a brief note on the need for HRP and its success story, and finally a footer which also shows information about HRP and links to contact the developers.
 
-The project is deployed to Heroku on https://fsk-hresource-portal.herokuapp.com/
-
 
 ## 2.0 UX
 The web Application is developed for Human Resource Managers of companies to effectively store and manage their employees' data, modify their employees' information and communicate internally with their employees. They can also publish job advertisements to the public, receive job applications from prospective employees and send feedback to the applicants.
